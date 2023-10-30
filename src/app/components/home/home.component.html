@@ -90,8 +90,8 @@
 <body>
   <div class="flex justify-between flex-wrap items-center w-[100%] mx-auto mt-6">
     <span class="px-28 text-3xl text-main font-semibold">TOP COURSES</span>
-    <div class="mr-24 border-course-order p-2 ">
-      <select  id="course-order" class="w-64"> 
+    <div class="mr-24 border-course-order p-3 ">
+      <select  id="course-order" class="w-64 select-box"> 
         <option value="newest">Release Date (newest first)</option> 
         <option value="oldest">Release Date (oldest first)</option> 
         <option value="overall">Overall Rating</option> 
@@ -100,7 +100,35 @@
     </div>
   </div>
 
-  <div>
-    
+  <div class="relative mt-16 ml-32 mr-32 overflow-hidden">
+     <ul class="grid grid-cols-4 gap-x-0 gap-y-20 text-main">
+      <li *ngFor="let course of courses" >
+        <div class="h-full ">
+          <div>
+            <img [src]="course.img" class="w-[282px] h-32">
+          </div>
+        
+          <div class="border-course h-36 w-[282px]">
+            <div class="relative left-2 top-3 text-gray-400">   
+              {{course.courseCategory}}
+            </div>
+            <div class="relative left-2 top-5 font-bold">
+              {{course.courseName}}
+            </div>
+            <hr />
+            <div class="relative top-16 flex gap-[140px]">
+              <span class="ml-2 text-sm flex flex-nowrap  text-[12px]"><mat-icon class="text-[17px] relative top-[1px] ">query_builder</mat-icon>{{course.courseDuration}}</span>
+              <span class="font-bold">{{course.courseAccess}}</span>
+            </div>
+            
+          </div>
+        </div>
+        
+        
+      </li>
+     </ul>
   </div>
+
+  
+
 </body>
