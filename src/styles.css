@@ -109,6 +109,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   opacity: 0;
 }
 
+.border-course-order {
+  border: 1px solid #aaa;
+  border-radius: 0.2rem;
+}
+
 
 
 
