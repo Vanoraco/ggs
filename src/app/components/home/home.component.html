@@ -51,7 +51,7 @@
 
       <div>
         <ul class="flex flex-wrap gap-[2vw] mt-5 text-white font-[Roboto, sans-serif] text-base font-medium">
-          <li class="home-nav "><a href="https://lms.goodgradestudent.com/">HOME</a></li>
+          <li class="home-nav"><a href="https://lms.goodgradestudent.com/">HOME</a></li>
           <li class="home-nav"><a href="https://lms.goodgradestudent.com/courses/">COURSES</a></li>
           <li class="home-nav"><a href="https://lms.goodgradestudent.com/about-us/">ABOUT US</a></li>
           <li class="home-nav"><a href="https://lms.goodgradestudent.com/contact-us">CONTACT US</a></li>
@@ -87,7 +87,7 @@
     
 </header>
 
-<body>
+<div>
   <div class="flex justify-between flex-wrap items-center w-[100%] mx-auto mt-6">
     <span class="px-28 text-3xl text-main font-semibold">TOP COURSES</span>
     <div class="mr-24 border-course-order p-3 ">
@@ -131,4 +131,43 @@
 
   
 
-</body>
+</div>
+
+<div class="main-img relative top-24 w-[100%] flex flex-nowrap">
+  <div class="w-[50%]">
+    <h1 class="text-main relative py-40 px-72 whitespace-nowrap ">
+      <span class="text-white font-bold text-4xl">Get Your Training</span><span class="text-[#eab830] font-semibold text-4xl"> For Free</span>
+    </h1>
+    <div class="triangle-separator relative -top-28 left-32">
+     <div class="triangle">
+     </div>
+    </div>
+  </div>
+  
+  
+  <div class="relative w-[276px] mt-32 ">
+    <div class="relative ml-40 mr-56">
+      <section class="listing-apply bg-white border rounded relative h-[400px] w-[420px] pr-12 pl-9 pt-12">
+        <h2 class="text-center w-[276] h-[47px]"><span class="text-4xl text-main font-semibold">Sign up now</span></h2>
+
+        <form [formGroup]="applyForm" class="flex flex-col" (submit)="submitApp()">
+
+         <div class="flex flex-col gap-4 relative left-10">
+          <input type="text" formControlName="name" id="name" placeholder="Whats your name..." class="bg-[#EEEFEF] text-center top-6 w-[276px] h-[47px] focus:bg-white" required>
+          <input type="email" formControlName="email" id="email" placeholder="Whats your email..." class="bg-[#EEEFEF] text-center top-4 w-[276px] h-[47px] focus:bg-white" required>
+          <input type="text" formControlName="phone" id="phone" placeholder="Phone..." class="bg-[#EEEFEF] text-center top-4 w-[276px] h-[47px] focus:bg-white" required>
+         </div> 
+
+         <div class="relative top-[70px]">
+          <button type="submit" class=" relative center-btn  bg-[#012E5A] text-white w-[135px] p-6"><span class="relative bottom-2 text-main font-semibold">GET IT!</span></button>
+         </div>
+    
+          
+        </form>
+      </section>
+    </div>
+  </div>
+  
+</div>
+
+

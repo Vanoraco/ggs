@@ -1,5 +1,7 @@
 
-
+* {
+  box-sizing: border-box;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -24,6 +26,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-size: cover;
 }
 
+.main-img {
+    height: 90vh;
+    width: 100%;
+    background-image: url(../../../assets/Images/students.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .search-icon {
   padding: 4px 7.5px;
   box-shadow: inset 0 0 0 0 #eab830;
@@ -41,6 +51,121 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .home-nav:hover {
   color:#eab830;
 }
+
+.triangle {
+  width: 80px;
+}
+
+.triangle::before {
+    position: relative;
+    top: -25px;
+    left: 35px;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-width: 3px 3px 0 0;
+    border-style: solid;
+    border-color: #eab830;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    
+}
+
+.active-link {
+  position: absolute;
+  top: -25px;
+  left: 35px;
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-width: 3px 3px 0 0;
+  border-style: solid;
+  border-color: #eab830;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg); 
+}
+
+.active-link-separator {
+  position: relative;
+  width: 80px;
+  height: 3px;
+  margin: 0 auto;
+  background-color: #eab830;
+}
+
+.active-link-separator::before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  width: 33px;
+  height: 3px;
+}
+
+.active-link-separator::after {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    width: 33px;
+    height: 3px;
+ }
+
+/*.triangle::after {
+  position: relative;
+  top: 2px;
+  left: 1px;
+  content: "";
+  display: block;
+  width: 2px;
+  height: 2px;
+  border-width: 3px 3px 0 0;
+  border-style: solid;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+ 
+}*/
+
+
+
+.triangle-separator {
+    position: relative;
+    width: 80px;
+    height: 3px;
+    margin: 0 auto;
+    background-color: #eab830;
+}
+
+
+.triangle-separator::before {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    width: 33px;
+    height: 3px;
+}
+
+.triangled-separator .triangle {
+  display: inline-block;
+  border: 0!important;
+  font-size: 0;
+  position: absolute;
+    top: -3px;
+    left: 50%;
+    margin-left: -3px;
+}
+
+
+
+.triangle-separator::after {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    width: 33px;
+    height: 3px;
+    
+}
+
 
 @keyframes slideLeft {
   0% {transform:translateX(0);}
@@ -73,6 +198,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: #fff;
   animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   animation-delay: 1s;
+}
+
+.center-btn {
+  height: 20px !important;
+  margin-top: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 @keyframes rev-block {
