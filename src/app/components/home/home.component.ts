@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Course } from 'src/app/shared/models/Courses';
 import { CourseService } from 'src/app/services/course.service';
+import { Teacher } from 'src/app/shared/models/Teachers';
+import { TeacherService } from 'src/app/services/teacher.service';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -10,6 +12,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class HomeComponent {
   courses: Course[] = [];
+  teachers: Teacher[] = [];
 
  applyForm = new FormGroup({
   name: new FormControl(''),
@@ -21,7 +24,8 @@ export class HomeComponent {
   console.log('Succeeded')
  }
 
-  constructor(private courseService: CourseService) {
+  constructor(private courseService: CourseService, private teacherService: TeacherService) {
     this.courses = this.courseService.getAll()
+    this.teachers = this.teacherService.getAll()
   }
 }

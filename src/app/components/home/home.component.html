@@ -133,7 +133,7 @@
 
 </div>
 
-<div class="main-img relative top-24 w-[100%] flex flex-nowrap">
+<div class="main-img relative top-24 w-[100%]  flex ">
   <div class="w-[50%]">
     <h1 class="text-main relative py-40 px-72 whitespace-nowrap ">
       <span class="text-white font-bold text-4xl">Get Your Training</span><span class="text-[#eab830] font-semibold text-4xl"> For Free</span>
@@ -169,5 +169,61 @@
   </div>
   
 </div>
+
+<div class="w-full  h-[796px] bg-[#DDE6F9] flex gap-60">
+  <div class="relative ml-32 mt-56">
+    <a href="" class="bg-[#395BCF] p-3"><span class="text-white text-main font-bold">TEACHER OF MONTH</span></a>
+    <h1 class="relative top-20"><span class="text-[55px] font-bold text-main">Selam</span></h1>
+     <p class="relative top-24 font-semibold text-xl text-main">Professor of Business Administraton</p>
+     <p class="relative top-28 text-xl text-main">Develops and designs curriculum plans to foster student learning, stimulate class discussions, and ensures student engagement.</p>
+     <h2 class="relative top-36"><span class="text-main font-semibold">TEACHER COURSES:</span></h2>
+    </div>
+    <div>
+      <img src="../../../assets/Images/happy.jpg" alt="Teacher of the month" class="h-[696px] w-[850px] relative top-[96px]">
+    </div>
+</div>
+
+
+<div class="bg-[#F3F2F7] h-[1170px] ">
+  <div class="relative top-16 w-[1080px]">
+  <div >
+    <h1><span class="relative text-4xl text-main font-semibold top-7 flex align-middle justify-center left-56 text-main">Professional Staff</span></h1>
+    <div class="relative top-[88px] left-56">
+     <div class="triangle-separator ">
+      <div class="triangle"></div>
+      
+      </div>
+    </div>
+    <div class="relative w-[600px] left-[450px]">
+
+    <p class="relative top-56 flex align-middle justify-center text-main font-medium ">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+  </div>
+  </div>
+  
+  <div class="relative top-72 left-36">
+    <ul class="grid grid-cols-4 gap-40 relative left-1  right-12" >
+      <li *ngFor="let teacher of teachers" class="relative mr-16">
+
+        <div class="w-[277px] h[-404px]">
+        
+         <div class=""><img [src]="teacher.img" alt="" class=" relative left-1"></div>
+         <div>
+         <div class="text-base font-semibold relative top-8 left-1 text-[#457893] text-main"><p >{{teacher.name}}</p></div>
+         <div class="text-sm relative left-1 top-6 font-sans"><p class="">{{teacher.teachCourse}}</p></div>
+         <div class="text-sm relative left-1 top-9 w-[290px]"><p c>{{teacher.desc}}</p></div>
+        </div>
+         
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  
+</div>
+<div class="relative top-[500px]">
+  <button class="center-btn bg-[#012E5A] text-white text-main font-semibold p-6 w-44"><span class=" relative bottom-2">OUR TEACHERS</span></button>
+</div>
+</div>
+
 
 
