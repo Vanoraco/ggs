@@ -1,0 +1,232 @@
+<p>coursedetail works!</p>
+
+<div *ngFor="let course of courseDetail">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+
+  <i class="text-[#2169A8]"><span>&nbsp;&nbsp;</span></i>
+  <hr class="h-1 bg-[#878c90] mt-10" />
+
+  <section class="flex px-[310px] pt-10 main pb-10">
+    <div class="w-2/3 mr-10">
+      
+      <div class="text-5xl font-bold mb-8">{{ course.coursename }}</div>
+      <div>
+        <div class="flex">
+          <div class="flex items-center mb-8 pr-16">
+            <img
+              class="w-10 h-10 rounded-full mr-4"
+              src="{{ course.photo }}"
+              alt="photo of teacher"
+            />
+            <div class="text-sm">
+              <div class="text-gray-600 l">{{ course.role }}</div>
+              <div class="text-black">{{ course.name }}</div>
+            </div>
+          </div>
+          
+        
+
+          <div class="flex items-center mb-8">
+            <div >
+            <img
+              class="w-10 h-10 rounded-full mr-4"
+              src="https://i.pinimg.com/564x/9c/73/03/9c7303e335dca4b3c6680907a7049d11.jpg"
+              alt="Avatar of Jonathan Reinink"
+            />
+        </div>
+            <div class="text-sm">
+              <div class="text-gray-600 ">Category:</div>
+              <div class="text-gray-900">{{ course.category }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <p-tabView orientation="left">
+            <p-tabPanel header="Description" class="bg-blue-600 text-blue-600">
+              <img
+                class=""
+                src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/154833-OUCY4R-62-870x440.jpg "
+              />
+              <p>{{course.description}}</p>
+            </p-tabPanel>
+            <p-tabPanel header="Curriculum" class="line-height-3 m-0">
+              {{ course.curriculum }}
+            </p-tabPanel>
+            <p-tabPanel header="FAQ" class="line-height-3 m-0">
+              <div class="card">
+                <p-accordion>
+                    <p-accordionTab header="FAQ 1" [selected]="true" class="line-height-3 m-0">
+                        FAQ CONTENT 1
+                    </p-accordionTab>
+                    <p-accordionTab header="FAQ 2" class="line-height-3 m-0">
+                        FAQ CONTENT 2
+                    </p-accordionTab>
+                    <p-accordionTab header="FAQ 3" class="line-height-3 m-0">
+                       FAQ CONTENT 3
+                    </p-accordionTab>
+                </p-accordion>
+              </div>
+            </p-tabPanel>
+            <p-tabPanel header="Announcement" class="line-height-3 m-0">
+              {{ course.announcement }}
+            </p-tabPanel>
+            <p-tabPanel header="Reviews" class="line-height-3 m-0">
+              {{ course.review }}
+            </p-tabPanel>
+          </p-tabView>
+        </div>
+      </div>
+      <!-- <div class="flex">
+      <div class="bg-gray-300 w-1/5 h-12 text-center">
+        <hr class="h-1 bg-[#2169A8] mb-2" />
+        <a class="text-black" href="">Description</a>
+      </div>
+      <div class="bg-gray-300 w-1/5 h-12 text-center">
+        <hr class="h-1 bg-[#2169A8] mb-2" />
+        <a class="text-black" href="">Curriculum</a>
+      </div>
+      <div class="bg-gray-300 w-1/5 h-12 text-center">
+        <hr class="h-1 bg-[#2169A8] mb-2" />
+        <a class="text-black" href="">FAQ</a>
+      </div>
+      <div class="bg-gray-300 w-1/5 h-12 text-center">
+        <hr class="h-1 bg-[#2169A8] mb-2" />
+        <a class="text-black" href="">Announcement</a>
+      </div>
+      <div class="bg-gray-300 w-1/5 h-12 text-center  ">
+        <hr class="h-1 bg-[#2169A8] mb-2" />
+        <a class="text-black " href="">Reviews</a>
+      </div>
+    </div> -->
+    </div>
+
+    <div>
+      <p class="pb-7">
+        <i class="fab fa-linkedin text-[#3F729B]"><span>&nbsp;&nbsp;</span></i
+        >Add to wishlist
+      </p>
+      <div class="">
+        <button
+          class="bg-green-400 hover:bg-green-700 text-white font-bold py-5 px-4 rounded-xl w-64 mb-5 text-xl txt-main"
+        >
+          Get course
+        </button>
+        <div class="flex justify-between">
+          <p class="pt-3">
+            Enrolled: <label class="font-bold">2 students</label>
+          </p>
+        
+          
+          <i class="pi pi-users text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-4" />
+        <div class="flex justify-between">
+          <p class="pt-3">
+            Duration: <label class="font-bold"> 1 month</label>
+          </p>
+          <i class="pi pi-clock text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+        <div class="flex justify-between">
+          <p class="pt-3">Lectures: <label class="font-bold"> 11</label></p>
+          <i class="pi pi-users text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+
+        <div class="flex justify-between">
+          <p class="pt-3">Video: <label class="font-bold">05:00 min</label></p>
+          <i class="pi pi-video text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+
+        <div class="flex justify-between">
+          <p class="pt-3">Level: <label class="font-bold"></label></p>
+          <i class="pi pi-chart-bar text-2xl text-blue-700"></i>
+        </div>
+        <hr class="h-5" />
+      </div>
+
+      <div class="flex justify-between pt-14">
+        <hr class="h-1 w-1/5 bg-[#385BCE]" />
+        <hr class="h-1 w-2/3 mt-0.5" />
+      </div>
+
+      <h1 class="text-xl font-bold pb-5 pt-8">Archive</h1>
+
+      <div class="">
+        <div class="inline-block relative w-full">
+          <select
+            class="block appearance-none w-full bg-white border border-gray-400 0 px-4 py-3 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option>Select month</option>
+            <option>july</option>
+            <option>jun</option>
+            <option>april</option>
+          </select>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-blue-700"
+          >
+            <svg
+              class="fill-current h-4 w-4 f"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between pt-14">
+        <hr class="h-1 w-1/5 bg-[#385BCE]" />
+        <hr class="h-1 w-2/3 mt-0.5" />
+      </div>
+
+      <h1 class="pt-14 pb-7 font-bold text-2xl">Worrking hours</h1>
+      <div class="divide-y divide-dashed text-gray-700">
+        <div class="flex justify-between hover:text-blue-600">
+          <div class="pb-1">Monday</div>
+          <div>9:30 am - 6:00 pm</div>
+        </div>
+        <div class="flex justify-between hover:text-blue-600">
+          <div class="pb-1">Tuesday</div>
+          <div>9:30 am - 6:00 pm</div>
+        </div>
+        <div class="flex justify-between hover:text-blue-600">
+          <div class="pb-1">Wednsday</div>
+          <div>9:30 am - 6:00 pm</div>
+        </div>
+        <div class="flex justify-between hover:text-blue-600">
+          <div class="pb-1">Tursday</div>
+          <div>9:30 am - 6:00 pm</div>
+        </div>
+        <div class="flex justify-between hover:text-blue-600">
+          <div class="pb-1">Friday</div>
+          <div>9:30 am - 5:00 pm</div>
+        </div>
+        <div class="flex justify-between">
+          <div class="pb-1 hover:text-red-600">Saturday</div>
+          <div class="">
+            <span class="pl-2 pr-2 text-white bg-red-600 rounded">closed</span>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="pb-1 hover:text-red-600">Sunday</div>
+          <div class="">
+            <span class="pl-2 pr-2 text-white bg-red-600 rounded">closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
