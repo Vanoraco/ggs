@@ -13,6 +13,7 @@ import routeConfig from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 import { TabViewModule } from 'primeng/tabview';
 import { AccordionModule } from 'primeng/accordion';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { AccordionModule } from 'primeng/accordion';
     HomeComponent,
     AboutusComponent,
     CoursedetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
