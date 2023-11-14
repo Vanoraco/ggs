@@ -52,6 +52,40 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color:#eab830;
 }
 
+.menu {
+   display: none;
+   height: 100px;
+  
+}
+
+.menu-container:hover .menu {
+  position: relative;
+   display: block;
+}
+
+
+
+.slide {
+  clear:both;
+  width:100%;
+  height:0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height .4s ease;
+}
+
+.slide li {
+  padding : 30px;
+}
+ 
+#touch {
+  position: relative; opacity: 0; height: 0px;
+}    
+
+#touch:checked + .slide {
+  height: 700px;
+} 
+
 .triangle {
   width: 80px;
 }
@@ -297,6 +331,71 @@ hr::after {
   content: '';
 }
 
+@media screen and (min-width: 650px) {
+  .res-nav {
+    display: flex;
+    flex-direction: column-reverse;
+  
+  }
+
+  .res-text {
+    font-size: 6px;
+  }
+
+  .res-side {
+    position: relative;
+    right: 230px;
+    display: flex;
+    gap: 0;
+    top: -8px;
+  }
+
+  .res-side-reg {
+    position: relative;
+    right: -60px;
+    display: flex;
+    gap: 3px;
+  }
+
+  .res-icons {
+    position: relative;
+    top: 8px;
+    left: 14px;
+    font-size: 8px;
+    font-weight: bold;
+  }
+
+  .res-icon-reg {
+    position: relative;
+    top: 5px;
+    left: 14px;
+    font-size: 8px;
+    font-weight: bold;
+  }
+
+  .res-bg {
+    height: 53px;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .slide {
+    height: 100px;
+    clear:both;
+    width:100%;
+    overflow: hidden;
+    text-align: center;
+    transition: height .4s ease;
+  }
+
+  .slide li {
+    padding: 1px;
+    position: relative;
+    right: 3px;
+  }
+ 
+}
 
 
 

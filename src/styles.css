@@ -5,3 +5,5 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,800;1,900&display=swap');
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";

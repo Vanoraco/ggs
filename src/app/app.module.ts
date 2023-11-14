@@ -10,12 +10,13 @@ import {FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
 import routeConfig from './components/routes';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutusComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +24,8 @@ import routeConfig from './components/routes';
     BrowserAnimationsModule,
     MatIconModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

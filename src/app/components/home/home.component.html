@@ -1,41 +1,42 @@
-
-<header class="overflow-hidden background-img">
-    <div class="bg-[#012e5a] h-10 info-font w-[100%]">
-    <nav class="flex justify-between flex-wrap items-center w-[100%] mx-auto">
+<div class="overflow-hidden w-[610px] lg:w-full">
+<header class="overflow-x-hidden background-img ">
+    <div class="bg-[#012e5a] h-36 info-font lg:h-10 ">
+    <nav class=" float-right flex flex-col-reverse 
+             lg:flex lg:flex-row lg:justify-between lg:flex-wrap lg:items-center lg:w-[100%] lg:mx-auto">
 
       <div class="pl-20">
-        <ul class="flex items-center gap-[2vw] ml-16">
-          <li>
-            <mat-icon class="top-icons text-white">call</mat-icon>
-            <span class="text-white text-[12px]">251-116-674192 | 62</span>
+        <ul class="flex flex-col-reverse relative top-3 .text-main lg:flex lg:flex-row lg:items-center lg:gap-[2vw] lg:ml-16 lg:top-0">
+          <li class="relative left-40 lg:relative lg:left-0 ">
+            <mat-icon class="top-icons text-white text-[10px]">call</mat-icon>
+            <span class="text-white text-[17px] lg:text-[12px]">251-116-674192 | 62</span>
           </li>
 
-          <li>
+          <li class="relative right-8 lg:right-0">
             <mat-icon class="top-icons text-white">place</mat-icon>
-            <span class="text-white text-[12px]">Bole Medhanealem, Abyssina Building 3rd floor</span>
+            <span class="text-white text-[17px] lg:text-[12px]">Bole Medhanealem, Abyssina Building 3rd floor</span>
           </li>
 
-          <li>
-            <mat-icon class="top-icons text-white">access_time</mat-icon>
-            <span class="text-white text-[12px]">Mon - Sat 8.30 - 11.00 </span>
+          <li class="relative left-40 lg:left-0">
+            <mat-icon class="top-icons text-white text-[10px]">access_time</mat-icon>
+            <span class="text-white text-[17px] mt-2 lg:text-[12px]">Mon - Sat 8.30 - 11.00 </span>
           </li>
         </ul>
       </div>
 
-      <div class="pr-20">
-        <ul class=" flex items-center gap-[0.5vw] mr-24">
+      <div class="pl-52 relative left-16">
+        <ul class=" flex items-center gap-3 mr-24 relative right-0">
 
-          <li>
-            <mat-icon class="relative top-1 text-lg text-white">person</mat-icon>
+          <li class="">
+            <mat-icon class="relative top-1 text-lg text-white ">person</mat-icon>
           </li>
 
           <li>
-            <a href="" class="inline-block mt-2 text-white text-[12px]">Login</a>
+            <a href="" class="inline-block mt-2 text-white text-[17px] lg:text-[12px]">Login</a>
           </li>
   
           <li class="text-white">
             <span>| </span>
-            <a href="" class="inline-block mt-2 text-[12px]">Register</a>
+            <a href="" class="inline-block mt-2 text-[17px] ml-3 lg:text-[12px]">Register</a>
           </li>
         </ul>
       </div>
@@ -43,39 +44,47 @@
     </nav>
     </div>
 
-    <div class="mr-auto ml-auto pl-40 pr-4 pt-7 flex gap-[25vw]">
+    <div class="mr-auto ml-auto pl-40 pr-4 pt-7 flex h-40 gap-[25vw] bg-white lg:bg-transparent">
       
-      <div class="align-middle">
-        <a href="https://lms.goodgradestudent.com/"><img src="../../../assets/Images/good.webp" alt="" class="w-64 h-auto"></a>
+      <div class="align-middle relative right-28 lg:relative lg:w-64 lg:left-9">
+        <a href="https://lms.goodgradestudent.com/"><img src="../../../assets/Images/good.webp" alt="" class="w-80 h-auto"></a>
       </div>
 
-      <div>
-        <ul class="flex flex-wrap gap-[2vw] mt-5 text-white font-[Roboto, sans-serif] text-base font-medium">
-          <li class="home-nav"><a href="https://lms.goodgradestudent.com/">HOME</a></li>
-          <li class="home-nav"><a href="https://lms.goodgradestudent.com/courses/">COURSES</a></li>
-          <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
-          <li class="home-nav"><a href="https://lms.goodgradestudent.com/contact-us">CONTACT US</a></li>
-          <li class="home-nav"><a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a></li>
-          <li><a href="https://lms.goodgradestudent.com/user-account"><mat-icon>favorite_border</mat-icon></a></li>
-          <li><span  class="border-solid border-[3.3px] border-x-white text-[20px]  search-icon"><mat-icon class="py-1 font-medium" >search</mat-icon></span></li>
-        </ul>
-      </div>
+      <div class="menu-container">
+        <label for="touch" class="lg:hidden"><span><mat-icon class="text-yellow-500 relative top-4 right-1 left-20 text-[35px] font-bold lg:hidden">dehaze</mat-icon></span></label>               
+        <input type="checkbox" id="touch"> 
+        
        
+      
+        <ul class="slide font-[Roboto, sans-serif] flex flex-col relative z-10 top-[20px] right-2 w-44 text-base font-medium bg-slate-200   
+        lg:flex lg:flex-row lg:flex-wrap lg:gap-[2vw] lg:mt-5 lg:mr-4 lg:bg-transparent
+          lg:text-white lg:w-[500px] lg:relative lg:-top-3 text-main lg:font-semibold lg:text-sm
+         text-black ">
+          <li class="home-nav display"><a href="https://lms.goodgradestudent.com/">HOME</a></li>
+          <li class="home-nav display"><a href="https://lms.goodgradestudent.com/courses/">COURSES</a></li>
+          <li class="home-nav display"><a href="/about-us">ABOUT US</a></li>
+          <li class="home-nav display"><a href="https://lms.goodgradestudent.com/contact-us">CONTACT US</a></li>
+          <li class="home-nav display"><a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a></li>
+          <li><a href="https://lms.goodgradestudent.com/user-account"><mat-icon>favorite_border</mat-icon></a></li>
+          <li><span  class="border-solid border-[3.3px] border-x-white text-[20px]  search-icon"><mat-icon class="p-0 font-extrabold text-lg" >search</mat-icon></span></li>
+        </ul>
+      
+    </div>
     </div>
 
-    <div class="text-white ml-60 mt-10">
+    <div class="text-white lg:ml-60 lg:mt-10">
       <div class="">
-        <p class="text-[24px] font-extrabold text-main rev-block">
+        <p class="text-[25px] text-center relative top-20 text-yellow-500 font-semibold lg:text-[24px] lg:font-extrabold text-main lg:rev-block">
           <span>
           GOOD GRADE STUDENT MAKES SCHOOLING FUN!
         </span></p>
-        <p class="text-[100px] pt-20 absolute text-main font-[800] rev-block">
+        <p class="text-[50px] text-center font-bold relative top-36 lg:text-[100px] lg:pt-20 lg:absolute text-main lg:font-[800] lg:rev-block">
           <span>
             BE BETTER
           </span>
         
         </p>
-        <p class="text-[100px] pt-40 absolute text-main font-[800] rev-block">
+        <p class="text-[50px] text-center font-bold relative top-40 lg:text-[100px] lg:pt-40 lg:absolute lg:text-main lg:font-[800] lg:rev-block">
           <span>
             LEARN BETTER
           </span>
@@ -88,9 +97,9 @@
 </header>
 
 <div>
-  <div class="flex justify-between flex-wrap items-center w-[100%] mx-auto mt-6">
-    <span class="px-28 text-3xl text-main font-semibold">TOP COURSES</span>
-    <div class="mr-24 border-course-order p-3 ">
+  <div class="flex justify-between flex-wrap items-center w-[100%] mx-auto mt-6 ">
+    <span class="lg:px-28 lg:text-3xl text-main font-semibold ml-6 text-3xl px-28">TOP COURSES</span>
+    <div class="lg:mr-24 border-course-order lg:p-3 ml-6  relative top-3 ">
       <select  id="course-order" class="w-64 select-box"> 
         <option value="newest">Release Date (newest first)</option> 
         <option value="oldest">Release Date (oldest first)</option> 
@@ -100,12 +109,12 @@
     </div>
   </div>
 
-  <div class="relative mt-16 ml-32 mr-32 overflow-hidden">
-     <ul class="grid grid-cols-4 gap-x-0 gap-y-20 text-main">
-      <li *ngFor="let course of courses" >
+  <div class="relative mt-16 lg:ml-32 lg:mr-32 ml-0 overflow-hidden">
+     <ul class="lg:grid lg:grid-cols-4 lg:gap-x-6 lg:gap-y-20 text-main grid grid-cols-1 w-full lg:w-fit">
+      <li *ngFor="let course of courses" class="">
         <div class="h-full ">
           <div>
-            <img [src]="course.img" class="w-[282px] h-32">
+            <img [src]="course.img" class="lg:w-[282px] lg:h-32">
           </div>
         
           <div class="border-course h-36 w-[282px]">
@@ -227,6 +236,6 @@
   <button class="center-btn bg-[#012E5A] text-white text-main font-semibold p-6 w-44"><span class=" relative bottom-2">OUR TEACHERS</span></button>
 </div>
 </div>
-
+</div>
 
 
