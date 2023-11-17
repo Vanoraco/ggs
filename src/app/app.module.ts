@@ -11,12 +11,14 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
 import routeConfig from './components/routes';
 import { ButtonModule } from 'primeng/button';
+import { AddCourseComponent } from './components/add-course/add-course.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutusComponent
+    AboutusComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
