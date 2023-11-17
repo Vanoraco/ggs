@@ -9,10 +9,15 @@ import { MatIconModule } from '@angular/material/icon';
 import {FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
-import routeConfig from './components/routes';
+import  routeConfig  from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
-import { TabViewModule } from 'primeng/tabview';
+
 import { AccordionModule } from 'primeng/accordion';
+import {MatTabsModule} from '@angular/material/tabs';
+
+
+
+
 
 
 @NgModule({
@@ -27,9 +32,11 @@ import { AccordionModule } from 'primeng/accordion';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatTabsModule,
     ReactiveFormsModule,
-    TabViewModule,
     AccordionModule,
+   
+    
     RouterModule.forRoot(routeConfig)
   ],
   providers: [],

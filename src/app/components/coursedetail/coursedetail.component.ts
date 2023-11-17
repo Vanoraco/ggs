@@ -9,6 +9,8 @@ import { CoursedetailService } from 'src/app/services/coursedetail.service';
 })
 export class CoursedetailComponent {
   
+  
+  
 [x: string]: any;
   courseDetail: CourseDet[] = []
   constructor(private coursedetailservice: CoursedetailService){

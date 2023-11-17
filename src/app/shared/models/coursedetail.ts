@@ -1,22 +1,21 @@
 export interface CourseDet {
-    id: number;
-    coursename: string;
-    
-    role:string,
-    name:string,
-    photo: string;
+  id: number;
+  coursename: string;
 
-    category: string,
+  role: string;
+  name: string;
+  photo: string;
 
-    description:string,
-    curriculum:string,
-    faq:string,
-    announcement:string;
-    review:string,
+  category: string;
 
-    enrolled:string,
-    duration:string,
-    lectures:number,
-    video:string,
-    level:number,
-  }
+  description: string;
+  curriculum: string;
+  faq: string;
+  announcement: string;
+
+  enrolled: string;
+  duration: string;
+  lectures: number;
+  video: string;
+  level: number;
+}
