@@ -13,11 +13,6 @@ import  routeConfig  from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 
 import { AccordionModule } from 'primeng/accordion';
-import {MatTabsModule} from '@angular/material/tabs';
-
-
-
-
 
 
 @NgModule({
@@ -26,6 +21,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     HomeComponent,
     AboutusComponent,
     CoursedetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
