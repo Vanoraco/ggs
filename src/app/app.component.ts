@@ -8,4 +8,5 @@ import { initFlowbite } from 'flowbite';
 })
 export class AppComponent {
   title = 'ggs';
+  
 }

@@ -6,30 +6,36 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import {FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
 import routeConfig from './components/routes';
-import { ButtonModule } from 'primeng/button';
-import { AddCourseComponent } from './components/add-course/add-course.component';
+import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
+
+import { AccordionModule } from 'primeng/accordion';
+import { LoginComponent } from './login/login.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutusComponent,
-    AddCourseComponent
+    CoursedetailComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatTabsModule,
     ReactiveFormsModule,
+    AccordionModule,
+
     RouterModule.forRoot(routeConfig),
-    ButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
