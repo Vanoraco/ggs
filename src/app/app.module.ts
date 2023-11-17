@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import {FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
-import  routeConfig  from './components/routes';
+import routeConfig from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 
 import { AccordionModule } from 'primeng/accordion';
-
+import { LoginComponent } from './login/login.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,10 @@ import { AccordionModule } from 'primeng/accordion';
     MatTabsModule,
     ReactiveFormsModule,
     AccordionModule,
-   
-    
-    RouterModule.forRoot(routeConfig)
+
+    RouterModule.forRoot(routeConfig),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
