@@ -15,6 +15,14 @@ import { CoursedetailComponent } from './components/coursedetail/coursedetail.co
 import { AccordionModule } from 'primeng/accordion';
 import { LoginComponent } from './login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { EditorModule } from 'primeng/editor';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import { TabViewModule } from 'primeng/tabview';
+
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+
+import { AddCourseComponent } from './components/add-course/add-course.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -23,6 +31,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     AboutusComponent,
     CoursedetailComponent,
     LoginComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +39,12 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserAnimationsModule,
     MatIconModule,
     MatTabsModule,
+    EditorModule,
+    TabViewModule,
+    InputTextareaModule,
+    OverlayPanelModule,
     ReactiveFormsModule,
     AccordionModule,
-
     RouterModule.forRoot(routeConfig),
   ],
   providers: [],

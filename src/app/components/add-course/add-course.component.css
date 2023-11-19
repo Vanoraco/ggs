@@ -1,4 +1,42 @@
 
+
+
 .text-main {
     font-family: 'Exo', sans-serif;
+}
+
+input {
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+#definp::-webkit-input-placeholder {
+    color: black !important;
+    font-weight: 200;
+  }
+
+#definp {
+    color: black !important;
+    font-weight: 300 !important;
+}
+
+input::placeholder {
+    color: white;
+    font-weight: 700;
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.custom-file-upload {
+    border: 1px dashed #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    height: 320px;
+    width: 760px;
+    border-radius: 4px;
+    cursor: pointer;
 }
