@@ -6,15 +6,20 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import {FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
 import routeConfig from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
-import { TabViewModule } from 'primeng/tabview';
+
 import { AccordionModule } from 'primeng/accordion';
+<<<<<<< HEAD
 import { LoginComponent } from './components/login/login.component';
 
+=======
+import { LoginComponent } from './login/login.component';
+import { MatTabsModule } from '@angular/material/tabs';
+>>>>>>> a2fc63efec4765dc93c9cccc0750666d3040c762
 
 @NgModule({
   declarations: [
@@ -29,12 +34,13 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatTabsModule,
     ReactiveFormsModule,
-    TabViewModule,
     AccordionModule,
-    RouterModule.forRoot(routeConfig)
+
+    RouterModule.forRoot(routeConfig),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
