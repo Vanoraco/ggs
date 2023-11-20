@@ -13,7 +13,7 @@ import routeConfig from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 import { TabViewModule } from 'primeng/tabview';
 import { AccordionModule } from 'primeng/accordion';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
