@@ -9,6 +9,7 @@
 
         <input type="text" name="" id="definp" class="ml-20 relative top-28 h-10 w-[800px] rounded" placeholder="Your couse Title Here ..." formControlName="title"> <br>
        
+
         <label class="relative top-36 left-20 text-2xl text-main"> Category </label> <br>
        
         <div class="mt-40 relative left-20">  
@@ -262,6 +263,7 @@
         </div>
         </div>
        
+     
         
       
         <p-tabView class="relative top-28 left-20
@@ -285,19 +287,20 @@
             
             </p-tabPanel>
             <p-tabPanel header="FAQ" >
-                <div class="bg-[#f1f1f1] h-72" id="faq-wrapper">
+                <form *ngFor="let faq of faqs; let i = index" >
+                <div class="bg-[#f1f1f1] h-72 relative top-4 mt-5" id="faq-wrapper" >
                     <div class="faq-number">
                 <label for="" class="ml-3 relative top-2">
-                    Question
+                    Question {{i + 1}}
                 </label> <br>
                 
-                <textarea [rows]="1" [cols]="30" pInputTextarea [autoResize]="true" 
+                <textarea [rows]="1" [cols]="30" pInputTextarea [autoResize]="true"  
                 class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" placeholder="Enter FAQ Question" onfocus="this.placeholder = ''"
                 onblur="this.placeholder = 'Enter FAQ Question'"
                 ></textarea> <br>
     
                 <label for="" class="relative top-3 left-3">
-                    Answer
+                    Answer {{i + 1}}
                 </label> <br>
                 <textarea [rows]="5" [cols]="80" pInputTextarea [autoResize]="true" 
                 class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" onfocus="this.placeholder = ''" placeholder="Enter FAQ Answer"
@@ -306,6 +309,9 @@
                </div>
             
             </div>
+
+          </form>
+          <button (click)="addFaq()" class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New FAQ item</span></button>
     
             
             </p-tabPanel>
@@ -318,22 +324,22 @@
     
     <div class="relative ml-36 text-main">
         <div class="relative top-36">
-        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main h-12 bg-[#5cbc87]" >
+        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main h-14 bg-[#5cbc87] hover:bg-blue-950 hover:cursor-pointer" >
          <i class="pi pi-dollar text-3xl ml-5 relative top-2 text-blue-500"></i>
         </div>
     
-        <div class="relative top-52">
-            <input type="number" min="1" placeholder="Duration" id="definp" class="rounded text-main h-12">
-            <i class="pi pi-stopwatch text-3xl ml-5 relative top-2 text-blue-500"></i>
+        <div class="relative top-52 border border-dashed hover:border-blue-700 h-16">
+            <input type="number" min="1" placeholder="Duration" id="definp" class="rounded text-main h-[62px] border-none">
+            <i class="pi pi-stopwatch text-3xl ml-5 relative top-2 right-1 text-blue-500"></i>
         </div>
     
-        <div class="relative top-64">
-            <input type="number" min="0" placeholder="Video" id="definp" class="rounded text-main h-12">
-            <i class="pi pi-video text-3xl ml-5 relative top-2 text-blue-500"></i>
+        <div class="relative top-64 border border-dashed hover:border-blue-700 h-16">
+            <input type="number" min="0" placeholder="Video" id="definp" class="rounded text-main h-[62px] border-none">
+            <i class="pi pi-video text-3xl ml-5 relative top-2 right-1 text-blue-500"></i>
         </div>
     
-        <div class="relative top-72">
-            <select name="" id="" class="w-52 rounded" >
+        <div class="relative top-72 border border-dashed hover:border-blue-700 h-16">
+            <select name="" id="" class="w-52 rounded h-[62px] border-none" >
                 <option value="Beginner">Beginner</option>
                 <option value="Intermidate">Intermidate</option>
                 <option value="Advanced">Advanced</option>
@@ -343,9 +349,15 @@
     </div>
 </div>
 <div class="relative top-96">
-<button type="submit">Submit</button>
+<button type="submit" id="de">Submit</button>
 </div>
     </form>
+
+  
+
+   
+
+    
    
 
 

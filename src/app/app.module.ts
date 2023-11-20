@@ -16,6 +16,8 @@ import { AccordionModule } from 'primeng/accordion';
 import { LoginComponent } from './login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { EditorModule } from 'primeng/editor';
+import { ButtonModule } from 'primeng/button';
+
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { TabViewModule } from 'primeng/tabview';
 
@@ -40,6 +42,7 @@ import { from } from 'rxjs';
     MatIconModule,
     MatTabsModule,
     EditorModule,
+    ButtonModule,
     TabViewModule,
     InputTextareaModule,
     OverlayPanelModule,
