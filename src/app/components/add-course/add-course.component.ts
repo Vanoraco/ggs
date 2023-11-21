@@ -21,8 +21,28 @@ interface Faq {
 
 export class AddCourseComponent {
 
-  courseForm!:FormGroup;
 
+  imageSrc: any;
+
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+
+    if (file) {
+      this.readAndPreview(file);
+    }
+  }
+
+  readAndPreview(file: File): void {
+    const reader = new FileReader();
+
+    reader.onload = (e: any) => {
+      this.imageSrc = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  courseForm!:FormGroup;
   faqs: Faq[] = [{
     'Question': '',
     'Answer': ''
@@ -48,6 +68,8 @@ export class AddCourseComponent {
 get fc() {
   return this.courseForm.controls;
 }
+
+
 
 submit() {
   console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value});
