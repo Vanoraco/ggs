@@ -23,6 +23,7 @@ export class AddCourseComponent {
 
 
   imageSrc: any;
+  label: any;
 
   onFileSelected(event: any): void {
     const file = event.target.files[0];
@@ -40,6 +41,12 @@ export class AddCourseComponent {
     };
 
     reader.readAsDataURL(file);
+  }
+
+  onChange(event: any) {
+    const target = event.target;
+    const label = target.options[target.selectedIndex].label;
+     this.label = label;
   }
 
   courseForm!:FormGroup;
