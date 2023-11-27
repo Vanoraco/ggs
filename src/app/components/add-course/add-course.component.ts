@@ -98,12 +98,12 @@ export class AddCourseComponent {
     });
    
     this.faqForm = this.formBuilder.group({
-      question: [''],
-      answer: [''],
       aliases: this.formBuilder.array([
-        this.formBuilder.control('')
+        
       ])
     })
+
+    this.addFaq()
 
 }
 
@@ -117,15 +117,22 @@ get faqAliase() {
   return this.faqForm.get('aliases') as FormArray;
 }
 
+newFaq(): FormGroup {
+  return this.formBuilder.group({
+    question: '',
+    answer: '',
+  })
+}
 
 
 submit() {
-  console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value});
+  console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
+               faq: this.faqAliase.value});
 }
 
 addFaq() {
   
-    this.faqAliase.push(this.formBuilder.control(''));
+    this.faqAliase.push(this.newFaq());
   
 }
 

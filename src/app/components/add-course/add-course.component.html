@@ -330,16 +330,19 @@
             
             </p-tabPanel>
             <p-tabPanel header="FAQ" >
-                <form *ngFor="let faq of faqs; let i = index" >
-                <div class="bg-[#f1f1f1] h-72 relative top-3 mt-5" id="faq-wrapper" >
-                    <div class="faq-number">
+                <form  [formGroup]="faqForm" (ngSubmit)="submit()">
+                
+                <div formArrayName="aliases">
+                <div class="bg-[#f1f1f1] h-72 relative top-3 mt-5" id="faq-wrapper" 
+                *ngFor="let faq of faqAliase.controls; let i=index">
+                <div [formGroupName]="i">
                 <label for="" class="ml-3 relative top-2">
                     Question {{i + 1}}
                 </label> <br>
                 
                 <textarea [rows]="1" [cols]="30" pInputTextarea [autoResize]="true"  
                 class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" placeholder="Enter FAQ Question" onfocus="this.placeholder = ''"
-                onblur="this.placeholder = 'Enter FAQ Question'"
+                onblur="this.placeholder = 'Enter FAQ Question'" formControlName="question"
                 ></textarea> <br>
     
                 <label for="" class="relative top-3 left-3">
@@ -347,16 +350,16 @@
                 </label> <br>
                 <textarea [rows]="5" [cols]="80" pInputTextarea [autoResize]="true" 
                 class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" onfocus="this.placeholder = ''" placeholder="Enter FAQ Answer"
-                onblur="this.placeholder = 'Enter FAQ Answer'"
+                onblur="this.placeholder = 'Enter FAQ Answer'" formControlName="answer"
                 ></textarea>
-               </div>
-            
             </div>
-
+            </div>
+            <button (click)="addFaq()" class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New FAQ item</span></button>
+        </div>
+                
+                  
           </form>
-          <button (click)="addFaq()" class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New FAQ item</span></button>
-    
-            
+          
             </p-tabPanel>
             <p-tabPanel header="Announcement" >
                 <div class="relative top-7 h-[320px]"><p-editor formControlName="announce" [style]="{height: '320px'}"></p-editor></div>
