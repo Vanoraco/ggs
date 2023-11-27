@@ -292,11 +292,11 @@
             <p-tabPanel header="Description" >
                 <div class="flex flex-col  ">
                     <label for="img" class="custom-file-upload">
-                        <div *ngIf="imageSrc">
+                        <div *ngIf="imageSrc" class="hover:opacity-10">
                             <img [src]="imageSrc" alt="">
                         </div>
-                        <i class="pi pi-image text-4xl flex justify-center mt-32 text-blue-500"></i>
-                        <p class="flex justify-center mt-6 text-main font-semibold">Upload Course Image</p>
+                        <i class="pi pi-image text-4xl flex justify-center mt-32 text-blue-500" *ngIf="!imageSrc"></i>
+                        <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="!imageSrc">Upload Course Image</p>
                         <input type="file" id="img" name="img" accept="image/*" class="hidden h-32" formControlName="img" (change)="onFileSelected($event)">
                         
                     </label>
@@ -305,15 +305,33 @@
                 <div class="relative top-7 h-[320px]"><p-editor formControlName="text" [style]="{height: '320px'}"></p-editor></div>
             </p-tabPanel>
             <p-tabPanel header="Curriculum" >
-               <div class="bg-[#f1f1f1] h-96">
+
+                <div>
+                    
+                 <form *ngFor="let sec of section">
+                    <div class="bg-[#f1f1f1] h-96 relative mt-4">
+                    <input type="text" placeholder="Section Title" id="definp" class="mt-3 ml-3  "/><br>
+                     
+                    <div *ngIf="display ">
+                        <button >Text</button>
+                    <button >Video</button>
+                    </div>
+                      
+                </div>
+                 </form>
+                 <button (click)="addLesson()" class="absolute top-48 bg-blue-500 w-40 mt-2 ml-3 h-6 rounded-sm"><i class="pi pi-plus-circle text-white right-3"></i><span class="relative left-2 text-white">New Lesson</span></button>
+                 <input type="text" *ngIf="selectedTab == 'text'" placeholder="Enter Text" />
+                 <input type="file" *ngIf="selectedTab == 'video'" accept="video/*" />
+                 
+                 <button (click)="addSection()" class="relative top-9 bg-[#f1f1f1] h-10 w-40 "><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New Section</span></button>
                 
-               </div>
+                </div>
                
             
             </p-tabPanel>
             <p-tabPanel header="FAQ" >
                 <form *ngFor="let faq of faqs; let i = index" >
-                <div class="bg-[#f1f1f1] h-72 relative top-4 mt-5" id="faq-wrapper" >
+                <div class="bg-[#f1f1f1] h-72 relative top-3 mt-5" id="faq-wrapper" >
                     <div class="faq-number">
                 <label for="" class="ml-3 relative top-2">
                     Question {{i + 1}}
@@ -349,35 +367,39 @@
     
     <div class="relative ml-36 text-main">
         <div class="relative top-36">
-        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main h-14 bg-[#5cbc87] hover:bg-blue-950 hover:cursor-pointer" >
+        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main font-bold h-14 bg-[#5cbc87] hover:bg-blue-950 hover:cursor-pointer" >
          <i class="pi pi-dollar text-3xl ml-5 relative top-2 text-blue-500"></i>
         </div>
     
         <div class="relative top-52 border border-dashed hover:border-blue-700 h-16">
-            <input type="number" min="1" placeholder="Duration" id="definp" class="rounded text-main h-[62px] border-none ">
+            <span class="ml-2">Duration:</span>
+            <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none ">
             <i class="pi pi-stopwatch text-3xl ml-5 relative top-2 right-1 text-blue-500"></i>
         </div>
     
         <div class="relative top-64 border border-dashed hover:border-blue-700 h-16">
-            <input type="number" min="0" placeholder="Video" id="definp" class="rounded text-main h-[62px] border-none">
-            <i class="pi pi-video text-3xl ml-5 relative top-2 right-1 text-blue-500"></i>
+            <span class="ml-2">Video:</span>
+            <input type="number" min="0" placeholder="0" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none">
+            <i class="pi pi-video text-3xl ml-9 relative top-2 right-1 text-blue-500"></i>
         </div>
     
         <div class="relative top-72 border border-dashed hover:border-blue-700 h-16">
-            <select name="" id="" class="w-52 rounded h-[62px] border-none" >
+            <span class="ml-2">Level:</span>
+            <select name="" id="" class="w-52 rounded h-[62px] border-none font-bold ml-3" >
                 <option value="Beginner">Beginner</option>
                 <option value="Intermidate">Intermidate</option>
                 <option value="Advanced">Advanced</option>
             </select>
-            <i class="pi pi-sort-amount-down-alt text-3xl ml-5 relative top-2 text-blue-500"></i>
+            <i class="pi pi-sort-amount-down-alt text-3xl ml-12 relative top-2 text-blue-500"></i>
         </div>
     </div>
 </div>
 <div class="relative top-96">
-<button type="submit" id="de">Submit</button>
+<button type="submit" id="de" class="relative left-52 bg-[#385bce] w-44 h-12 text-white text-main font-semibold text-base">Publish Course</button>
 </div>
     </form>
 
+   
   
 
    

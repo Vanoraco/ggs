@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TabViewModule } from 'primeng/tabview'
@@ -8,6 +8,18 @@ import { TabViewModule } from 'primeng/tabview'
 interface Faq {
   Question: string;
   Answer: string;
+}
+
+interface Lesson {
+  title: string;
+  duration: string;
+  shortDes: string;
+  content: string;
+  material: string
+}
+
+interface Section {
+  title: string;
 }
 
 
@@ -21,10 +33,11 @@ interface Faq {
 
 export class AddCourseComponent {
 
-
+  
   imageSrc: any;
   label: any;
-
+  selectedTab = '';
+  display = false
   onFileSelected(event: any): void {
     const file = event.target.files[0];
 
@@ -55,6 +68,22 @@ export class AddCourseComponent {
     'Answer': ''
   }];
 
+  faqForm!: FormGroup;
+
+  section: Section[] = [{
+    'title':''
+  }]
+
+  lesson: Lesson[] = [{
+    'title': '',
+    'duration': '',
+    'shortDes': '',
+    'content': '',
+    'material': ''
+  }]
+
+  
+
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -67,6 +96,14 @@ export class AddCourseComponent {
       parentCategory: '',
       img: '',
     });
+   
+    this.faqForm = this.formBuilder.group({
+      question: [''],
+      answer: [''],
+      aliases: this.formBuilder.array([
+        this.formBuilder.control('')
+      ])
+    })
 
 }
 
@@ -76,6 +113,10 @@ get fc() {
   return this.courseForm.controls;
 }
 
+get faqAliase() {
+  return this.faqForm.get('aliases') as FormArray;
+}
+
 
 
 submit() {
@@ -83,11 +124,39 @@ submit() {
 }
 
 addFaq() {
-  var faq = {
-    "Question":"",
-    "Answer": "",
-    }
-  this.faqs.push(faq);
+  
+    this.faqAliase.push(this.formBuilder.control(''));
+  
+}
+
+addSection() {
+  var section = {
+    'title': ''
+  }
+  this.section.push(section);
+}
+
+addLesson() {
+  var lesson = {
+    'title': '',
+    'duration': '',
+    'shortDes': '',
+    'content': '',
+    'material': ''
+  }
+  this.lesson.push(lesson);
+  this.display = true
+}
+
+isTextClicked() {
+  this.selectedTab = 'text';
+}
+
+isVideoClicked() {
+  this.selectedTab = 'video';
 }
 
 }
+
+
+

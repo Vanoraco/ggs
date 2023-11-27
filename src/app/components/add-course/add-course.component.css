@@ -41,29 +41,8 @@ input::placeholder {
     cursor: pointer;
 }
 
-p-button:hover {
-       background-color: black;
-}
-
-#blink {
-   
+.p-button-label {
     
-    border: 10px solid #9ae2ff;
-    animation-name: blinking;
-    animation-duration: 1s;
-    animation-iteration-count: 100;
-  }
-
-  @keyframes blinking {
-    50% {
-      border-color: #ffcd5f;
-    }
-  }
-
-  .ui-button-text {
-    color: blue;
-    font-size: 20px;
-  }
-
+}
   
  
