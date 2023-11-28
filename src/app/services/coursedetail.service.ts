@@ -22,10 +22,10 @@ protected CourseDetailList: CourseDet[] = [
     announcement:'',
     
 
-    enrolled:'enrole',
-    duration:'two months',
+    enrolled:'36 students',
+    duration:' 10 hours',
     lectures:11,
-    video:'video',
+    video:'9 hours',
     level:2
     
 }

@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap');
+.txt-main {
+    font-family: 'Exo', sans-serif;
+
+}
+
+.example-container {
+
+    height: 90vh;
+    margin: 12px;
+  }
+  
+  mat-drawer-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mat-tab-group .mat-tab-label {
+    background-color:blue;
+  }
+  
+  .mat-tab-group .mat-tab-label span {
+    background-color: inherit;
+  }
+  
+ 
+  
+ 
+  
+  
+ 

@@ -15,7 +15,23 @@ import { CoursedetailComponent } from './components/coursedetail/coursedetail.co
 import { AccordionModule } from 'primeng/accordion';
 import { LoginComponent } from './login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { CurriculumComponent } from './components/curriculum/curriculum.component';
+import { SidebarModule } from 'primeng/sidebar';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { QuizComponent } from './components/quiz/quiz.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { FormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { EditorModule } from 'primeng/editor';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
 
+import { TabViewModule } from 'primeng/tabview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +39,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     AboutusComponent,
     CoursedetailComponent,
     LoginComponent,
+    CurriculumComponent,
+    QuizComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +49,22 @@ import { MatTabsModule } from '@angular/material/tabs';
     BrowserAnimationsModule,
     MatIconModule,
     MatTabsModule,
+    FormsModule,
+    MatListModule,
     ReactiveFormsModule,
     AccordionModule,
+    MatSlideToggleModule,
 
+    SidebarModule,
+    PaginatorModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
+    EditorModule,
+    DropdownModule,
+    InputTextModule,
+    TabViewModule,
     RouterModule.forRoot(routeConfig),
   ],
   providers: [],

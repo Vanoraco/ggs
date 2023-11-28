@@ -1,0 +1,99 @@
+<div class="pt-[20vh]">
+  
+  <div *ngIf="!quizStarted">
+    <p>Quiz</p>
+    <p class="text-xl">Quiz Instructions</p>
+    <div class="flex">
+      <span class="material-icons text-[20px] mt-1 text-blue-600">
+        help_outline
+      </span>
+      <p class="pr-4 pl-1">Question Count: {{ totalRecords }}</p>
+      <span class="material-icons text-blue-600 text-[20px] mt-1 pr-1">
+        check_circle_outline
+      </span>
+      <p class="pr-5">Passing grade: {{ passingGrade }}%</p>
+      <span class="material-icons text-blue-600 text-[20px] mt-1 pr-1">
+        schedule
+      </span>
+      <p class="">Time limit: {{ timeLimit }} minutes</p>
+    </div>
+    <button (click)="startQuiz()" class="bg-blue-600 text-white rounded p-2">
+      Start Quiz
+    </button>
+  </div>
+
+  <div *ngIf="quizStarted && !quizFinished">
+    <p>
+      Question {{ (currentPage - 1) * rowsPerPage + 1 }} of {{ totalRecords }}
+    </p>
+    <p class="text-2xl font-bold">{{ currentQuestion.question }}</p>
+    <ul class="text-xl pl-2">
+      <li *ngFor="let option of currentQuestion.options">
+        <label>
+          <input
+            type="radio"
+            name="selectedOption"
+            [value]="option"
+            [(ngModel)]="currentQuestion.selectedOption"
+          />
+          {{ option }}
+        </label>
+      </li>
+    </ul>
+    <button (click)="submitAnswer()" class="bg-blue-700 rounded p-2 text-white">
+      Submit
+    </button>
+<div class=" mt-5 flex border border-blue-800">
+    <p-paginator
+      [rows]="rowsPerPage"
+      [totalRecords]="totalRecords"
+      (onPageChange)="loadPageData($event)"
+      class=""
+    ></p-paginator>
+  </div>
+  </div>
+
+  <div *ngIf="quizFinished" class="">
+    <p>Quiz</p>
+    <p class="text-3xl font-bold">Quiz course name</p>
+    <div class="bg-[#FFEBEC] rounded-xl p-2 w-full">
+      <h3>Result</h3>
+      <div class="flex justify-between">
+        <div class="flex gap-5">
+          <p class="text-6xl font-bold text-red-600">
+            {{ getScorePercentage() }}%
+          </p>
+
+          <div class="">
+            <p>
+              <span class="font-bold">{{ correctAnswers }}</span> out of <span class="font-bold">{{ totalRecords }} </span>questions answered
+              correctly.
+            </p>
+            <p class="-mt-5">Passing grade: 50%</p>
+          </div>
+        </div>
+        <button
+          *ngIf="!isPassingGrade()"
+          (click)="restartQuiz()"
+          class="bg-blue-700 rounded text-white px-5 h-8"
+        >
+          Retake
+        </button>
+      </div>
+    </div>
+    <div class="flex pt-5">
+      <span class="material-icons text-[20px] mt-1 text-blue-600">
+        help_outline
+      </span>
+      <p class="pr-3 pl-1">Question Count: {{ totalRecords }}</p>
+      <span class="material-icons text-blue-600 text-[20px] mt-1 pr-1">
+        check_circle_outline
+      </span>
+      <p class="pr-3">Passing grade: {{ passingGrade }}%</p>
+      <span class="material-icons text-blue-600 text-[20px] mt-1 pr-1">
+        schedule
+      </span>
+      <p class="">Time limit: {{ timeLimit }} minutes</p>
+    </div>
+  </div>
+</div>

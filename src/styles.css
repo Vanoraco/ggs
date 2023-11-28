@@ -8,3 +8,34 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+
+body {
+    @apply transition-colors;
+  }
+  
+  .dark-mode {
+    @apply bg-[#171717] text-white;
+  }
+
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: rgb(241, 245, 249);
+    color: black;
+    width: 160px;
+    border-radius: 0%;
+    
+    font-family: 'Exo', sans-serif;
+    
+    height: 60px;
+    }
+
+ .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+   border-top: 3px solid rgb(63, 131, 248);
+    background: white;
+    color: black;
+ }
+
+
+.p-tabview .p-tabview-nav li a {
+    display: flex;
+    justify-content: center;
+  }

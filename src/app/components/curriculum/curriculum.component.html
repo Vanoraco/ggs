@@ -1,0 +1,407 @@
+<section  >
+  <hr class="bg-gray-400 h-0.5 text-xs" />
+  <!-- header section -->
+  <div class="flex bg-gray-200 justify-between text-xs">
+    <div class="flex">
+      <a class="px-3.5"[routerLink]="['/coursedet']">
+        <mat-icon class="text-gray-700 font-bold pt-1.5">arrow_back</mat-icon>
+      </a>
+      <button mat-raised-button (click)="drawer.toggle()">Curriculum</button>
+      <div class="text-sm pl-4">
+        <div class="text-gray-600">Course:</div>
+        <div class="text-gray-900 font-bold">
+          Communication et gestion interculturelles
+        </div>
+      </div>
+    </div>
+    <div class="flex pt-3">
+      <a class="font-bold pr-3">Lesson</a>
+      <a class="font-bold">Materials</a>
+    </div>
+    
+    <div class="flex">
+      <div class="border-l border-gray-300 px-2"></div>
+      <button (click)="toggleDarkMode()" class="pr-2">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-6 h-6"
+        >
+          <path
+            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            class="fill-sky-400/20 stroke-sky-500"
+          ></path>
+          <path
+            d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+            class="stroke-sky-500"
+          ></path>
+        </svg>
+      </button>
+      <div class="border-l border-gray-300 px-2"></div>
+      <button class="pr-3">discussion</button>
+    </div>
+  </div>
+  <hr class="bg-gray-400 h-0.5" />
+
+  <mat-drawer-container class="example-container txt-main" #hasBackdrop value="false">
+    <mat-drawer #drawer mode="side" class="w-1/5 bg-gray-200">
+
+      <div class="bg-gray-200">
+        
+        <p class="font-bold text-xl pl-5">
+          Communication et gestion interculturelles
+        </p>
+        <div id="accordion-open" data-accordion="open" class="bg-gray-200">
+          <div id="accordion-open-heading-1">
+            <button
+              type="button"
+              class="flex items-start justify-between w-full p-3 font-medium rtl:text-right text-white bg-gray-600 border border-gray-200 focus:ring-4 focus:ring-gray-200 gap-3"
+              data-accordion-target="#accordion-open-body-1"
+              aria-expanded="true"
+              aria-controls="accordion-open-body-1"
+            >
+              <span class="flex items-start">Chapter 1</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            id="accordion-open-body-1"
+            class="hidden"
+            aria-labelledby="accordion-open-heading-1"
+          >
+            <div class="p-3 border border-b-0 border-gray-200">
+              <div class="flex justify-between">
+
+                <div class="text-xl">Introduction</div>
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  [(ngModel)]="checkBoxValue"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                />
+              </div>
+              <div class="flex">
+                <img
+                  src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                />
+                <a
+                  mat-list-item
+                  (click)="selectTab('Tab 1')"
+                  class="pl-2 text-gray-600 text-xs pointer-cursor"
+                  >Text lesson</a
+                >
+              </div>
+            </div>
+            <hr class="bg-gray-400 h-0.5" />
+            <div
+              class="p-3 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <div class="flex justify-between">
+                <div class="text-xl">Introduction</div>
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  [(ngModel)]="checkBoxValue"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                />
+              </div>
+              <div class="flex">
+                <img
+                  src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                />
+                <a
+                  mat-list-item
+                  (click)="selectTab('Tab 2')"
+                  class="pl-2 text-gray-600 text-xs"
+                  >Text lesson</a
+                >
+              </div>
+            </div>
+          </div>
+          <div>
+            <div id="accordion-open-heading-2">
+              <button
+                type="button"
+                class="flex items-start justify-between w-full p-3 font-medium rtl:text-right text-white bg-gray-600 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 gap-3"
+                data-accordion-target="#accordion-open-body-2"
+                aria-expanded="false"
+                aria-controls="accordion-open-body-2"
+              >
+                <span class="flex items-start">Chapter 2</span>
+                <svg
+                  data-accordion-icon
+                  class="w-3 h-3 rotate-180 shrink-0"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5 5 1 1 5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div
+              id="accordion-open-body-2"
+              class="hidden"
+              aria-labelledby="accordion-open-heading-2"
+            >
+              <div
+                class="p-3 border border-b-0 border-gray-200 dark:border-gray-700"
+              >
+                <div class="flex justify-between">
+                  <div class="text-xl">Introduction</div>
+                  <input
+                    id="link-checkbox"
+                    type="checkbox"
+                    value=""
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                  />
+                </div>
+                <div class="flex">
+                  <img
+                    src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                  />
+
+                  <a
+                    mat-list-item
+                    (click)="selectTab('Tab 3')"
+                    class="pl-2 text-gray-600 text-xs"
+                    >Text lesson</a
+                  >
+                </div>
+              </div>
+              <hr class="bg-gray-400 h-0.5" />
+              <div
+                class="p-3 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+              >
+                <div class="flex justify-between">
+                  <div class="text-xl">Introduction</div>
+                  <input
+                    id="link-checkbox"
+                    type="checkbox"
+                    value=""
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                  />
+                </div>
+                <div class="flex">
+                  <img
+                    src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                  />
+
+                  <a
+                    mat-list-item
+                    (click)="selectTab('Tab 4')"
+                    class="pl-2'
+                     text-gray-600 text-xs"
+                    >Text lesson</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="accordion-open-heading-3">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-3 font-medium rtl:text-right text-white bg-gray-600 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 gap-3"
+              data-accordion-target="#accordion-open-body-3"
+              aria-expanded="false"
+              aria-controls="accordion-open-body-3"
+            >
+              <span class="flex items-start"> Chapter 3</span>
+              <svg
+                data-accordion-icon
+                class="w-3 h-3 rotate-180 shrink-0"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5 5 1 1 5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            id="accordion-open-body-3"
+            class="hidden"
+            aria-labelledby="accordion-open-heading-3"
+          >
+            <div
+              class="p-3 border border-t-0 border-gray-200 dark:border-gray-700"
+            >
+              <div class="flex justify-between">
+                <div class="text-xl">Introduction</div>
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                />
+              </div>
+              <div class="flex">
+                <img
+                  src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                />
+
+                <a
+                  mat-list-item
+                  (click)="selectTab('Tab 5')"
+                  class="pl-2 text-gray-600 text-xs"
+                  >Text lesson</a
+                >
+              </div>
+            </div>
+            <hr class="bg-gray-400 h-0.5" />
+            <div
+              class="p-3 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+              <div class="flex justify-between">
+                <div class="text-xl">Introduction</div>
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                />
+              </div>
+              <div class="flex">
+                <img
+                  src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                />
+
+                <a
+                  mat-list-item
+                  (click)="selectTab('Tab 6')"
+                  class="pl-2 text-gray-600 text-xs"
+                  >Text lesson</a
+                >
+              </div>
+            </div>
+            <hr class="bg-gray-400 h-0.5" />
+            <div
+              class="p-3 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+            >
+            
+              <div class="flex justify-between">
+                <div class="text-xl">Quiz : Application mobiles</div>
+                <input
+                  id="link-checkbox"
+                  type="checkbox"
+                  value=""
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 mt-1"
+                />
+              </div>
+              <div class="flex">
+                <img
+                  src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/quiz.svg"
+                  class="masterstudy-curriculum-accordion__image"
+                />
+
+                <p class="pl-2 text-gray-600 text-xs"><a
+                  mat-list-item
+                  (click)="selectTab('Tab 7')"
+                  class="pl-2 text-gray-600 text-xs"
+                  >10 Questions</a
+                ></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <div [class.dark-mode]="darkModeService.darkMode">
+        <section>
+          <div class="h-[90vh] text-xl px-64 overflow-y-auto">
+            <div *ngIf="selectedTab === 'Tab 1'">
+              
+              deleniti ullam minus eligendi, sit, fuga placeat vero possimus
+              mollitia inventore commodi beatae, omnis a maxime pariatur
+              consequuntur quam quis odio?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Excepturi, saepe. Architecto commodi, amet maiores ex quia
+              veritatis repellat maxime beatae? Ullam maiores ducimus ipsa
+              temporibus ea ratione veniam quas inventore!
+              deleniti ullam minus eligendi, sit, fuga placeat vero possimus
+              mollitia inventore commodi beatae, omnis a maxime pariatur
+              consequuntur quam quis odio?
+            </div>
+            <div *ngIf="selectedTab === 'Tab 2'">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Excepturi, saepe. Architecto commodi, amet maiores ex quia
+              veritatis repellat maxime beatae? Ullam maiores ducimus ipsa
+              temporibus ea ratione veniam quas inventore!
+              deleniti ullam minus eligendi, sit, fuga placeat vero possimus
+              mollitia inventore commodi beatae, omnis a maxime pariatur
+              consequuntur quam quis odio?
+            </div>
+            <div *ngIf="selectedTab === 'Tab 3'">
+              amet cocing elit. Ullam eius nisi blandiiste libero
+              numquam harum iusto! Veniam omnis dolores quae enim repudiandae
+              ipsam.
+            </div>
+            <div *ngIf="selectedTab === 'Tab 4'">fourth lesson</div>
+            <div *ngIf="selectedTab === 'Tab 5'">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
+              beatae soluta ipsum debitis, quos sed mollitia reprehende
+            </div>
+            <div *ngIf="selectedTab === 'Tab 6'">
+              seventh lesson
+            </div>
+            <div *ngIf="selectedTab === 'Tab 7'">
+              <app-quiz></app-quiz></div>
+          </div>
+        </section>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <div class="flex justify-around px-64">
+    <div class="flex">
+      <mat-icon
+        class="mt-0.5 mr-2 text-gray-800"
+        aria-hidden="true"
+        (click)="goToPreviousTab()"
+        >arrow_back</mat-icon
+      >
+      <button class="text-gray" (click)="goToPreviousTab()">Previous</button>
+    </div>
+    <button
+      class="bg-blue-700 text-white px-4 py-1 rounded"
+      (click)="goToNextTab()"
+    >
+      Complete & Next
+    </button>
+  </div>
+</section>
