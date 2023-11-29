@@ -17,7 +17,7 @@ input {
 
 #definp {
     color: black !important;
-    font-weight: 300 !important;
+    font-weight: 600 !important;
 }
 
 input::placeholder {
@@ -41,8 +41,6 @@ input::placeholder {
     cursor: pointer;
 }
 
-.p-button-label {
-    
-}
+
   
  

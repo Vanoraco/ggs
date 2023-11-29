@@ -306,26 +306,42 @@
             </p-tabPanel>
             <p-tabPanel header="Curriculum" >
 
-                <div>
-                    
-                 <form *ngFor="let sec of section">
-                    <div class="bg-[#f1f1f1] h-96 relative mt-4">
-                    <input type="text" placeholder="Section Title" id="definp" class="mt-3 ml-3  "/><br>
-                     
-                    <div *ngIf="display ">
-                        <button >Text</button>
-                    <button >Video</button>
-                    </div>
-                      
-                </div>
-                 </form>
-                 <button (click)="addLesson()" class="absolute top-48 bg-blue-500 w-40 mt-2 ml-3 h-6 rounded-sm"><i class="pi pi-plus-circle text-white right-3"></i><span class="relative left-2 text-white">New Lesson</span></button>
-                 <input type="text" *ngIf="selectedTab == 'text'" placeholder="Enter Text" />
-                 <input type="file" *ngIf="selectedTab == 'video'" accept="video/*" />
-                 
-                 <button (click)="addSection()" class="relative top-9 bg-[#f1f1f1] h-10 w-40 "><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New Section</span></button>
                 
-                </div>
+                    <form [formGroup]="curriForm" (ngSubmit)="submit()">
+                    <div formArrayName="sections">
+                        <div *ngFor="let sec of sections().controls; let secIndex=index">
+                            <div [formGroupName]="secIndex">
+                                
+                      
+                        <label class="ml-2">Section Title {{secIndex + 1}}</label>
+                        <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-full">
+                      
+
+                      <div formArrayName="lessons">
+
+                        <div *ngFor="let lesson of sectionLessons(secIndex).controls; let lessonIndex=index">
+                          <div *ngIf="display">  
+                             <div (click)="isTextClicked()" class="hover:cursor-pointer">Text</div>
+                             <div (click)="isVideoClicked()" class="hover:cursor-pointer">Video</div>
+                          </div>                          
+                            <div [formGroupName]="lessonIndex">
+                             <input type="text" formControlName="title" *ngIf="selectedTextTab || selectedVideoTab">
+                             <input type="text" formControlName="text" *ngIf="selectedTextTab">
+                             <input type="file" formControlName="video" accept="video/*" *ngIf="selectedVideoTab">
+                            </div>
+                        
+ 
+                        </div>
+                        
+                    </div>
+                    <button (click)="addLesson(secIndex)"class="relative top-4 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Lesson</span></button>
+                         
+                        </div>
+                      </div>
+                    </div>
+                    <button (click)="addSection()"class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Section</span></button>
+                    </form>
+                
                
             
             </p-tabPanel>
@@ -336,6 +352,7 @@
                 <div class="bg-[#f1f1f1] h-72 relative top-3 mt-5" id="faq-wrapper" 
                 *ngFor="let faq of faqAliase.controls; let i=index">
                 <div [formGroupName]="i">
+                    <span class="float-right relative top-3 right-2 hover:cursor-pointer" (click)="removeFaq(i)"><i class="pi pi-trash"></i></span>
                 <label for="" class="ml-3 relative top-2">
                     Question {{i + 1}}
                 </label> <br>
@@ -352,6 +369,7 @@
                 class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" onfocus="this.placeholder = ''" placeholder="Enter FAQ Answer"
                 onblur="this.placeholder = 'Enter FAQ Answer'" formControlName="answer"
                 ></textarea>
+               
             </div>
             </div>
             <button (click)="addFaq()" class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New FAQ item</span></button>
@@ -368,10 +386,10 @@
     
         </div>
     
-    <div class="relative ml-36 text-main">
+    <div class="relative ml-36 text-main ">
         <div class="relative top-36">
-        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main font-bold h-14 bg-[#5cbc87] hover:bg-blue-950 hover:cursor-pointer" >
-         <i class="pi pi-dollar text-3xl ml-5 relative top-2 text-blue-500"></i>
+        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main font-bold h-14 bg-[#5cbc87] hover:bg-blue-950 hover:cursor-pointer">
+         <i class="pi pi-dollar text-3xl ml-5 relative top-2  text-blue-500"></i>
         </div>
     
         <div class="relative top-52 border border-dashed hover:border-blue-700 h-16">

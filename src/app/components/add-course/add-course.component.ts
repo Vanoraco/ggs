@@ -36,7 +36,9 @@ export class AddCourseComponent {
   
   imageSrc: any;
   label: any;
-  selectedTab = '';
+  selectedTextTab = false;
+  selectedVideoTab = false;
+  onNextLesson = true
   display = false
   onFileSelected(event: any): void {
     const file = event.target.files[0];
@@ -63,16 +65,13 @@ export class AddCourseComponent {
   }
 
   courseForm!:FormGroup;
-  faqs: Faq[] = [{
-    'Question': '',
-    'Answer': ''
-  }];
-
+ 
   faqForm!: FormGroup;
 
-  section: Section[] = [{
-    'title':''
-  }]
+  curriForm!: FormGroup;
+
+  lessonForm!: FormGroup;
+
 
   lesson: Lesson[] = [{
     'title': '',
@@ -98,10 +97,13 @@ export class AddCourseComponent {
     });
    
     this.faqForm = this.formBuilder.group({
-      aliases: this.formBuilder.array([
-        
-      ])
+      aliases: this.formBuilder.array([ ])
     })
+
+    this.curriForm = this.formBuilder.group({
+      sections: this.formBuilder.array([])
+    })
+
 
     this.addFaq()
 
@@ -117,11 +119,53 @@ get faqAliase() {
   return this.faqForm.get('aliases') as FormArray;
 }
 
+get curri() {
+  return this.lessonForm.get('lesson') as FormArray;
+}
+
+get section() {
+  return this.curriForm.get('section')?.get('lessons') as FormArray;
+}
+
+sections() {
+  return this.curriForm.get('sections') as FormArray;
+}
+
+
 newFaq(): FormGroup {
   return this.formBuilder.group({
     question: '',
     answer: '',
   })
+}
+
+newLesson(): FormGroup {
+  return this.formBuilder.group({
+    title: '',
+    text: '',
+    duration: '',
+    video: '',
+    material: ''
+  })
+}
+
+newSection(): FormGroup {
+  return this.formBuilder.group({
+    sectionTitle: '',
+    lessons: this.formBuilder.array([])
+  })
+}
+
+sectionLessons(lesIndex:number) : FormArray {
+  return this.sections().at(lesIndex).get("lessons") as FormArray
+}
+addLesson(lesIndex: number) {
+   this.sectionLessons(lesIndex).push(this.newLesson())
+   this.display = true
+}
+
+addSection() {
+  this.sections().push(this.newSection())
 }
 
 
@@ -136,31 +180,21 @@ addFaq() {
   
 }
 
-addSection() {
-  var section = {
-    'title': ''
-  }
-  this.section.push(section);
+removeFaq(i: number) {
+  this.faqAliase.removeAt(i)
 }
 
-addLesson() {
-  var lesson = {
-    'title': '',
-    'duration': '',
-    'shortDes': '',
-    'content': '',
-    'material': ''
-  }
-  this.lesson.push(lesson);
-  this.display = true
-}
 
 isTextClicked() {
-  this.selectedTab = 'text';
+  this.selectedTextTab = true;
+  this.onNextLesson = false
+  this.display = false
 }
 
 isVideoClicked() {
-  this.selectedTab = 'video';
+  this.selectedVideoTab = true;
+  this.onNextLesson = false
+  this.display = false
 }
 
 }
