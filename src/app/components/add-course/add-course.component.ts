@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TabViewModule } from 'primeng/tabview'
+import { DropdownModule } from 'primeng/dropdown';
 
 
 interface Faq {
@@ -78,7 +79,8 @@ export class AddCourseComponent {
   lessonForm!: FormGroup;
 
   videos: videoType[] | undefined;
-  slectedVideoType: videoType | undefined;
+
+  selectedVideoType: videoType | undefined;
 
 
   lessonType: string[] = [''];
@@ -169,6 +171,15 @@ addLesson(lesIndex: number) {
    this.sectionLessons(lesIndex).push(this.newLesson())
    this.display = true
 }
+
+removeSection(secIndex:number) {
+  this.sections().removeAt(secIndex);
+}
+
+removeSectionLesson(secIndex:number,lessonIndex:number) {
+  this.sectionLessons(secIndex).removeAt(lessonIndex);
+}
+ 
 
 addSection() {
   this.sections().push(this.newSection())

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -20,6 +21,7 @@ import { ButtonModule } from 'primeng/button';
 
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { TabViewModule } from 'primeng/tabview';
+import { DropdownModule } from 'primeng/dropdown';
 
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 
@@ -47,6 +49,7 @@ import { from } from 'rxjs';
     InputTextareaModule,
     OverlayPanelModule,
     ReactiveFormsModule,
+    DropdownModule,
     AccordionModule,
     RouterModule.forRoot(routeConfig),
   ],

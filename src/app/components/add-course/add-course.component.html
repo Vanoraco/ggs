@@ -315,18 +315,19 @@
                         </div>
                     <div formArrayName="sections" *ngIf="!display">
                         <div *ngFor="let sec of sections().controls; let secIndex=index">
-                            <div [formGroupName]="secIndex" class="relative top-9">
+                            <div [formGroupName]="secIndex" class="relative mt-6">
                                 
-                      
+                                <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
                         <label class="ml-2 text-main">Section {{secIndex + 1}} Title </label>
                         <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-full">
-                      
+                        
 
                       <div formArrayName="lessons">
                         <div *ngFor="let lesson of sectionLessons(secIndex).controls; let lessonIndex=index">
                                                     
                             <div [formGroupName]="lessonIndex" class="relative mt-12">
-                                
+
+                                 <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
                                 <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
                                 <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-full" >
                                 <div class="mt-3">
@@ -335,13 +336,12 @@
                                 </div>
                                 <div class="relative top-7" *ngIf="lessonType[lessonIndex + 1] == 'text'"><span class="text-main">Text Lesson:</span><p-editor formControlName="textLesson" [style]="{height: '320px'}"></p-editor></div>
                                 <span class="text-main relative top-6" *ngIf="lessonType[lessonIndex + 1] == 'video'">Video Lesson:</span>
-                                <div>
+                                
                                 <label for="vid" class="relative top-8 custom-file-upload" *ngIf="lessonType[lessonIndex + 1] == 'video'">
-                                    
-                                   
+                            
                                     <input type="file" class="hidden" id="vid" formControlName="videoLesson" accept="video/*">
                                 </label>
-                                </div>
+                                
                             
                             </div>
                         
@@ -350,7 +350,7 @@
                         
                     </div>
                     
-                    <button (click)="addLesson(secIndex)" class="relative top-16 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Lesson</span></button>
+                    <button (click)="addLesson(secIndex)" class="relative top-3 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Lesson</span></button>
                          
                         </div>
                       </div>
