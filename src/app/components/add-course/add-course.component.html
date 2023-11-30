@@ -310,36 +310,38 @@
                     <form [formGroup]="curriForm" (ngSubmit)="submit()">
                     <div formArrayName="sections">
                         <div *ngFor="let sec of sections().controls; let secIndex=index">
-                            <div [formGroupName]="secIndex">
+                            <div [formGroupName]="secIndex" class="relative top-9">
                                 
                       
-                        <label class="ml-2">Section Title {{secIndex + 1}}</label>
+                        <label class="ml-2 text-main">Section {{secIndex + 1}} Title </label>
                         <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-full">
                       
 
                       <div formArrayName="lessons">
-
                         <div *ngFor="let lesson of sectionLessons(secIndex).controls; let lessonIndex=index">
-                          <div *ngIf="display">  
-                             <div (click)="isTextClicked()" class="hover:cursor-pointer">Text</div>
-                             <div (click)="isVideoClicked()" class="hover:cursor-pointer">Video</div>
-                          </div>                          
-                            <div [formGroupName]="lessonIndex">
-                             <input type="text" formControlName="title" *ngIf="selectedTextTab || selectedVideoTab">
-                             <input type="text" formControlName="text" *ngIf="selectedTextTab">
-                             <input type="file" formControlName="video" accept="video/*" *ngIf="selectedVideoTab">
+                                                    
+                            <div [formGroupName]="lessonIndex" class="relative mt-12">
+                                
+                                <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
+                                <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-full" >
+                                <span class="ml-2">Duration:</span>
+                                <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none " formControlName="duration">
+                                <div class="relative top-7"><p-editor formControlName="textLesson" [style]="{height: '320px'}"></p-editor></div>
+                                <label class="relative top-10"><input type="file" class="" formControlName="videoLesson" accept="video/*" ></label>
+                            
                             </div>
                         
  
                         </div>
                         
                     </div>
-                    <button (click)="addLesson(secIndex)"class="relative top-4 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Lesson</span></button>
+                    
+                    <button (click)="addLesson(secIndex)" class="relative top-16 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Lesson</span></button>
                          
                         </div>
                       </div>
                     </div>
-                    <button (click)="addSection()"class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Section</span></button>
+                    <button (click)="addSection()" class="relative top-24 mt-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Section</span></button>
                     </form>
                 
                

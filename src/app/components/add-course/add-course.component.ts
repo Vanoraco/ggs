@@ -142,9 +142,9 @@ newFaq(): FormGroup {
 newLesson(): FormGroup {
   return this.formBuilder.group({
     title: '',
-    text: '',
+    textLesson: '',
     duration: '',
-    video: '',
+    videoLesson: '',
     material: ''
   })
 }
@@ -166,12 +166,14 @@ addLesson(lesIndex: number) {
 
 addSection() {
   this.sections().push(this.newSection())
+  this.selectedTextTab = false
+  this.selectedVideoTab = false
 }
 
 
 submit() {
   console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
-               faq: this.faqAliase.value});
+               faq: this.faqAliase.value, section: this.sections().value});
 }
 
 addFaq() {
