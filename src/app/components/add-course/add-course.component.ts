@@ -22,6 +22,11 @@ interface Section {
   title: string;
 }
 
+interface videoType {
+  name: string;
+  code: string;
+}
+
 
 @Component({
   selector: 'app-add-course',
@@ -34,7 +39,7 @@ interface Section {
 export class AddCourseComponent {
 
   
-  imageSrc: any;
+  fileSrc: any;
   label: any;
   selectedTextTab = false;
   selectedVideoTab = false;
@@ -52,7 +57,7 @@ export class AddCourseComponent {
     const reader = new FileReader();
 
     reader.onload = (e: any) => {
-      this.imageSrc = e.target.result;
+      this.fileSrc = e.target.result;
     };
 
     reader.readAsDataURL(file);
@@ -72,15 +77,11 @@ export class AddCourseComponent {
 
   lessonForm!: FormGroup;
 
+  videos: videoType[] | undefined;
+  slectedVideoType: videoType | undefined;
 
-  lesson: Lesson[] = [{
-    'title': '',
-    'duration': '',
-    'shortDes': '',
-    'content': '',
-    'material': ''
-  }]
 
+  lessonType: string[] = [''];
   
 
   constructor(private formBuilder: FormBuilder) {}
@@ -106,6 +107,11 @@ export class AddCourseComponent {
 
 
     this.addFaq()
+
+    this.videos = [
+      { name: 'External Link', code: 'el' },
+      {name: 'Local Device', code:'ld'}
+    ]
 
 }
 
@@ -188,14 +194,12 @@ removeFaq(i: number) {
 
 
 isTextClicked() {
-  this.selectedTextTab = true;
-  this.onNextLesson = false
+  this.lessonType.push('text')
   this.display = false
 }
 
 isVideoClicked() {
-  this.selectedVideoTab = true;
-  this.onNextLesson = false
+  this.lessonType.push('video')
   this.display = false
 }
 
