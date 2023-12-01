@@ -46,6 +46,8 @@ export class AddCourseComponent {
   selectedVideoTab = false;
   onNextLesson = true
   display = false
+  counter: number = -1;
+  
   onFileSelected(event: any): void {
     const file = event.target.files[0];
 
@@ -83,7 +85,7 @@ export class AddCourseComponent {
   selectedVideoType: videoType | undefined;
 
 
-  lessonType: string[] = [''];
+  lessonType: string[][] = [[]];
   
 
   constructor(private formBuilder: FormBuilder) {}
@@ -169,7 +171,8 @@ sectionLessons(lesIndex:number) : FormArray {
 }
 addLesson(lesIndex: number) {
    this.sectionLessons(lesIndex).push(this.newLesson())
-   this.display = true
+   
+   
 }
 
 removeSection(secIndex:number) {
@@ -183,14 +186,14 @@ removeSectionLesson(secIndex:number,lessonIndex:number) {
 
 addSection() {
   this.sections().push(this.newSection())
-  this.selectedTextTab = false
-  this.selectedVideoTab = false
+  this.lessonType.push([])
+  
 }
 
 
 submit() {
   console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
-               faq: this.faqAliase.value, section: this.sections().value});
+               faq: this.faqAliase.value, section: this.sections().value,ld:this.lessonType, co: this.lessonType.length});
 }
 
 addFaq() {
@@ -204,14 +207,18 @@ removeFaq(i: number) {
 }
 
 
-isTextClicked() {
-  this.lessonType.push('text')
+isTextClicked(secIndex:number) {
+  this.lessonType[secIndex].push('text')
   this.display = false
+  this.counter++
 }
 
-isVideoClicked() {
-  this.lessonType.push('video')
+
+
+isVideoClicked(secIndex:number) {
+  this.lessonType[secIndex].push('video')
   this.display = false
+  this.counter++
 }
 
 }

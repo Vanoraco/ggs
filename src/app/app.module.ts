@@ -28,6 +28,7 @@ import {OverlayPanelModule} from 'primeng/overlaypanel';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { from } from 'rxjs';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { from } from 'rxjs';
     AboutusComponent,
     CoursedetailComponent,
     LoginComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    
   ],
   imports: [
     BrowserModule,
