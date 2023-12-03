@@ -292,11 +292,11 @@
             <p-tabPanel header="Description" >
                 <div class="flex flex-col  ">
                     <label for="img" class="custom-file-upload">
-                        <div *ngIf="fileSrc" class="hover:opacity-10">
-                            <img [src]="fileSrc" alt="" class="h-[320px] w-[760px] py-2 px-2">
+                        <div *ngIf="imageSrc" class="hover:opacity-10">
+                            <img [src]="imageSrc" alt="">
                         </div>
-                        <i class="pi pi-image text-4xl flex justify-center mt-32 text-blue-500" *ngIf="!fileSrc"></i>
-                        <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="!fileSrc">Upload Course Image</p>
+                        <i class="pi pi-image text-4xl flex justify-center mt-32 text-blue-500" *ngIf="!imageSrc"></i>
+                        <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="!imageSrc">Upload Course Image</p>
                         <input type="file" id="img" name="img" accept="image/*" class="hidden h-32" formControlName="img" (change)="onFileSelected($event)">
                         
                     </label>
@@ -308,12 +308,9 @@
 
                 
                     <form [formGroup]="curriForm" (ngSubmit)="submit()">
-                        
-                    <div>
                     <div formArrayName="sections">
-                        
-                        <div *ngFor="let sec of sections().controls; let secIndex=index" >
-                            <div [formGroupName]="secIndex" class="relative mt-16" >
+                        <div *ngFor="let sec of sections().controls; let secIndex=index">
+                            <div [formGroupName]="secIndex" class="relative top-9">
                                 
                                 <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
                         <label class="ml-2 text-main" >Section {{secIndex + 1}} Title </label>
@@ -329,27 +326,10 @@
                                  <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
                                 <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
                                 <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-full" >
-                                <div class="mt-3">
                                 <span class="ml-2">Duration:</span>
-                                <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold border-none " formControlName="duration">
-                                </div>
-                                
-                                <span class="text-main relative top-6" *ngIf="displayLesson && selectedVideoTab">Video Lesson:</span>
-                                
-                                 <label for="vid" class="relative top-8 custom-file-upload" *ngIf="displayLesson && selectedVideoTab">
-                            
-                            <input type="file" class="hidden" id="vid" formControlName="videoLesson" accept="video/*">
-                        </label>  
-
-                        <label *ngIf="displayLesson && selectedTextTab">
-                        <div class="relative top-7" *ngIf="displayLesson && selectedTextTab">
-                            
-                            <span class="text-main">Text Lesson:</span>
-                            <p-editor formControlName="textLesson" [style]="{height: '320px'}" ></p-editor>
-                        
-                        </div>
-                
-                    </label>
+                                <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none " formControlName="duration">
+                                <div class="relative top-7"><p-editor formControlName="textLesson" [style]="{height: '320px'}"></p-editor></div>
+                                <label class="relative top-10"><input type="file" class="" formControlName="videoLesson" accept="video/*" ></label>
                             
                             </div>
  
