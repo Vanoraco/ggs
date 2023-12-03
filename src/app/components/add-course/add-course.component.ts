@@ -45,8 +45,10 @@ export class AddCourseComponent {
   selectedTextTab = false;
   selectedVideoTab = false;
   onNextLesson = true
+  displaySection = false
   display = false
-  counter: number = -1;
+  displayLesson = false
+  counter: number = 0;
   
   onFileSelected(event: any): void {
     const file = event.target.files[0];
@@ -169,10 +171,13 @@ newSection(): FormGroup {
 sectionLessons(lesIndex:number) : FormArray {
   return this.sections().at(lesIndex).get("lessons") as FormArray
 }
-addLesson(lesIndex: number) {
-   this.sectionLessons(lesIndex).push(this.newLesson())
-   
-   
+addLesson(secIndex: number) {
+   this.sectionLessons(secIndex).push(this.newLesson())
+}
+
+changeDisplay() {
+  this.displaySection = true
+  this.displayLesson = false
 }
 
 removeSection(secIndex:number) {
@@ -187,7 +192,24 @@ removeSectionLesson(secIndex:number,lessonIndex:number) {
 addSection() {
   this.sections().push(this.newSection())
   this.lessonType.push([])
-  
+  this.displaySection = true
+  this.displayLesson = false
+}
+
+addTextLesson(lesIndex: number) {
+  this.sectionLessons(lesIndex).push(this.newLesson())
+  this.displayLesson = true
+  this.displaySection = false
+  this.selectedTextTab = true
+  this.selectedVideoTab = false
+}
+
+addVideoLesson(lesIndex: number) {
+  this.sectionLessons(lesIndex).push(this.newLesson())
+  this.displayLesson = true
+  this.displaySection = false
+  this.selectedVideoTab = true
+  this.selectedTextTab = false
 }
 
 
@@ -199,7 +221,7 @@ submit() {
 addFaq() {
   
     this.faqAliase.push(this.newFaq());
-  
+    this.display = true
 }
 
 removeFaq(i: number) {

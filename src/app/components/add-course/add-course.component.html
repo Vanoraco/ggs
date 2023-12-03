@@ -309,20 +309,23 @@
                 
                     <form [formGroup]="curriForm" (ngSubmit)="submit()">
                         
-                    <div formArrayName="sections" >
-                        <div *ngFor="let sec of sections().controls; let secIndex=index">
-                            <div [formGroupName]="secIndex" class="relative mt-16">
+                    <div>
+                    <div formArrayName="sections">
+                        
+                        <div *ngFor="let sec of sections().controls; let secIndex=index" >
+                            <div [formGroupName]="secIndex" class="relative mt-16" >
                                 
                                 <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
-                        <label class="ml-2 text-main">Section {{secIndex + 1}} Title </label>
-                        <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-full">
+                        <label class="ml-2 text-main" >Section {{secIndex + 1}} Title </label>
+                        <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-full" *ngIf="displaySection">
                         
 
                       <div formArrayName="lessons">
+                       
                         <div *ngFor="let lesson of sectionLessons(secIndex).controls; let lessonIndex=index">
                                                     
-                            <div [formGroupName]="lessonIndex" class="relative mt-12">
-
+                            <div [formGroupName]="lessonIndex" class="relative mt-12" >
+                                 
                                  <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
                                 <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
                                 <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-full" >
@@ -330,36 +333,42 @@
                                 <span class="ml-2">Duration:</span>
                                 <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold border-none " formControlName="duration">
                                 </div>
-                                <div class="relative top-7" *ngIf="lessonType[secIndex + 1][lessonIndex] == 'text'"><span class="text-main">Text Lesson:</span><p-editor formControlName="textLesson" [style]="{height: '320px'}"></p-editor></div>
-                                <span class="text-main relative top-6" *ngIf="lessonType[secIndex + 1][lessonIndex] == 'video'">Video Lesson:</span>
                                 
-                                <label for="vid" class="relative top-8 custom-file-upload" *ngIf="lessonType[secIndex + 1][lessonIndex] == 'video'">
+                                <span class="text-main relative top-6" *ngIf="displayLesson && selectedVideoTab">Video Lesson:</span>
+                                
+                                 <label for="vid" class="relative top-8 custom-file-upload" *ngIf="displayLesson && selectedVideoTab">
                             
-                                    <input type="file" class="hidden" id="vid" formControlName="videoLesson" accept="video/*">
-                                </label>
-                                
+                            <input type="file" class="hidden" id="vid" formControlName="videoLesson" accept="video/*">
+                        </label>  
+
+                        <label *ngIf="displayLesson && selectedTextTab">
+                        <div class="relative top-7" *ngIf="displayLesson && selectedTextTab">
+                            
+                            <span class="text-main">Text Lesson:</span>
+                            <p-editor formControlName="textLesson" [style]="{height: '320px'}" ></p-editor>
+                        
+                        </div>
+                
+                    </label>
                             
                             </div>
-                        
  
-                        </div>
-                        <div class=" relative z-40 flex gap-3 mt-14 justify-center">
-                            <span (click)="isTextClicked(secIndex)" class="h-44 w-44 border flex justify-center rounded hover:cursor-pointer"><i class="pi pi-file-word mt-16 text-3xl" style="color: #1A56DB;"> Text</i></span>
-                            <span class="mt-16 text-2xl"> Or </span>
-                            <span (click)="isVideoClicked(secIndex)" class="h-44 w-44 border flex justify-center rounded hover:cursor-pointer"><i class="pi pi-video mt-16 blue text-3xl" style="color: #1A56DB;"> Video</i></span>
-                        </div>    
+                        </div> 
+                        
                     </div>
-
-                    
-                    <button (click)="addLesson(secIndex)" class="relative top-9 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Lesson</span></button>
-                         
+                     
+                     <div *ngIf="display">
+                      <button (click)="addTextLesson(secIndex)" class="relative top-9 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Text Lesson</span></button>
+                      <button (click)="addVideoLesson(secIndex)" class="relative top-9 left-9 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Video Lesson</span></button>
+                      
+                    </div>    
                         </div>
                         
                       </div>
                       
                     </div>
                     <button (click)="addSection()" class="relative top-24 mt-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Section</span></button>
-                    
+                  </div>
                     </form>
                 
                

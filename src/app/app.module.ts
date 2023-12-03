@@ -22,11 +22,14 @@ import { ButtonModule } from 'primeng/button';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { TabViewModule } from 'primeng/tabview';
 import { DropdownModule } from 'primeng/dropdown';
+import { TooltipModule } from 'primeng/tooltip';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { from } from 'rxjs';
+import { AddLessonComponent } from './components/add-lesson/add-lesson.component';
 
 
 @NgModule({
@@ -37,6 +40,7 @@ import { from } from 'rxjs';
     CoursedetailComponent,
     LoginComponent,
     AddCourseComponent,
+    AddLessonComponent,
     
   ],
   imports: [
@@ -47,7 +51,9 @@ import { from } from 'rxjs';
     MatTabsModule,
     EditorModule,
     ButtonModule,
+    TooltipModule,
     TabViewModule,
+    ConfirmDialogModule,
     InputTextareaModule,
     OverlayPanelModule,
     ReactiveFormsModule,

@@ -112,7 +112,7 @@
   <div class="relative mt-16 lg:ml-32 lg:mr-32 ml-0 overflow-hidden">
      <ul class="lg:grid lg:grid-cols-4 lg:gap-x-6 lg:gap-y-20 text-main grid grid-cols-1 w-full lg:w-fit">
       <li *ngFor="let course of courses" class="">
-        <div class="h-full ">
+        <div class="h-full " data-popover-target="popover-default" >
           <div>
             <img [src]="course.img" class="lg:w-[282px] lg:h-32">
           </div>
@@ -133,6 +133,9 @@
           </div>
         </div>
         
+        <div data-popover id="popover-default" role="tooltip">
+          jiii
+        </div>
         
       </li>
      </ul>
@@ -237,5 +240,6 @@
 </div>
 </div>
 </div>
+
 
 

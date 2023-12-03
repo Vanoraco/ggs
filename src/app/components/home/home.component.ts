@@ -24,6 +24,8 @@ export class HomeComponent {
   console.log('Succeeded')
  }
 
+ 
+
   constructor(private courseService: CourseService, private teacherService: TeacherService) {
     this.courses = this.courseService.getAll()
     this.teachers = this.teacherService.getAll()
