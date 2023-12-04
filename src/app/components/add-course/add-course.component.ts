@@ -54,13 +54,13 @@ export class AddCourseComponent {
     }
   }
 
-  onVideoSelected(event: any, secIndex:number): void {
+  onVideoSelected(event: any, secIndex:number, lessonIndex: number): void {
     const vid = event.target.files[0];
 
     if(vid) {
       this.read(vid)
     }
-    this.vidLoaded[secIndex+2].push(true)
+    this.vidLoaded[secIndex+1][lessonIndex] = 'selected'
   }
 
   read(vid: File): void {
@@ -69,6 +69,7 @@ export class AddCourseComponent {
      reader.onload = (e: any) => {
          this.vidSrc = '../../../assets/Images/spinner.gif'
      }
+     
 
      reader.readAsDataURL(vid)
   }
@@ -109,7 +110,7 @@ export class AddCourseComponent {
   }]
 
   lessonType: string[][] = [[]];
-  vidLoaded: boolean[][] = [[]];
+  vidLoaded: string[][] = [[]];
   
 
   constructor(private formBuilder: FormBuilder) {}
@@ -230,13 +231,13 @@ addVideoLesson(secIndex: number) {
   this.selectedVideoTab = true
   this.selectedTextTab = false
   this.lessonType[secIndex+1].push('video')
-  this.vidLoaded.push([])
+  this.vidLoaded[secIndex + 1].push('notse')
 }
 
 
 submit() {
   console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
-               faq: this.faqAliase.value, section: this.sections().value,ld:this.lessonType, co: this.lessonType.length});
+               faq: this.faqAliase.value, section: this.sections().value,ld:this.lessonType, fv: this.vidLoaded, co: this.lessonType.length});
 }
 
 addFaq() {

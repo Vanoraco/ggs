@@ -312,7 +312,7 @@
                         <div *ngFor="let sec of sections().controls; let secIndex=index" class="border-[3px] rounded-md border-blue-700 mt-16">
                             <div [formGroupName]="secIndex" class="relative mt-14">
                                 
-                                <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
+                                <span class="float-right relative top-1 right-5 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
                         <label class="ml-2 text-main" >Section {{secIndex + 1}} Title </label>
                         <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-[90%]">
                         
@@ -323,7 +323,7 @@
                                                     
                             <div [formGroupName]="lessonIndex" class="relative mt-12" >
                                  
-                                 <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
+                                 <span class="float-right relative top-1 right-5 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
                                 <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
                                 <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-[90%]" >
                                 <span class="ml-2">Duration:</span>
@@ -335,13 +335,14 @@
                                 </div>
                                 <br><span *ngIf="lessonType[secIndex+1][lessonIndex] == 'video'" class="relative top-6 ml-6 w-full text-main">Video-Lesson:</span>
                                 <label class="relative top-10 ml-8 mb-6 custom-video-upload" *ngIf="lessonType[secIndex+1][lessonIndex] == 'video'">
-                                    <div *ngIf="vidSrc && vidLoaded[secIndex+2][lessonIndex]" class="">
+                                    <div *ngIf="vidLoaded[secIndex+1][lessonIndex] == 'selected'" class="">
                                         <img [src]="vidSrc" class="ml-52 align-middle">
                                     </div>
-                                    <i class="pi pi-video text-5xl flex justify-center mt-32 text-blue-500" *ngIf="!vidSrc"></i>
-                                    <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="!vidSrc">Upload Video Lesson</p>
-                                    <input type="file" class="hidden" formControlName="videoLesson" accept="video/*" (change)="onVideoSelected($event, secIndex)">
+                                    <i class="pi pi-video text-5xl flex justify-center mt-32 text-blue-500" *ngIf="vidLoaded[secIndex+1][lessonIndex] == 'notse'"></i>
+                                    <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="vidLoaded[secIndex+1][lessonIndex] == 'notse'">Upload Video Lesson</p>
+                                    <input type="file" class="hidden" formControlName="videoLesson" accept="video/*" (change)="onVideoSelected($event, secIndex, lessonIndex)">
                                 </label>
+
                             
                             </div>
  

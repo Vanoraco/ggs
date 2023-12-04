@@ -35,3 +35,22 @@
   }
 
   
+
+  
+  @media (max-width: 600px) {
+
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+      background: rgb(241, 245, 249);
+      color: black;
+      width: 100px;
+      border-radius: 0%;
+      font-size: small;
+      font-family: 'Exo', sans-serif;
+      height: 30px;
+      }
+
+      
+    
+  }
+
+  
