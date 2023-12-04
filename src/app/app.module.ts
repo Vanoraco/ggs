@@ -31,7 +31,6 @@ import { AddCourseComponent } from './components/add-course/add-course.component
 import { from } from 'rxjs';
 import { AddLessonComponent } from './components/add-lesson/add-lesson.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +38,7 @@ import { AddLessonComponent } from './components/add-lesson/add-lesson.component
     AboutusComponent,
     CoursedetailComponent,
     LoginComponent,
-    AddCourseComponent,
-    AddLessonComponent,
-    
+    AddCourseComponent
   ],
   imports: [
     BrowserModule,

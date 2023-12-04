@@ -41,6 +41,15 @@ input::placeholder {
     cursor: pointer;
 }
 
+.custom-video-upload {
+    border: 1px dashed #27c589;
+    display: inline-block;
+    padding: 6px 12px;
+    height: 320px;
+    width: 90%;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
   
  

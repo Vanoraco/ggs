@@ -36,6 +36,7 @@ export class AddCourseComponent {
 
   
   imageSrc: any;
+  vidSrc: any;
   label: any;
   selectedTextTab = false;
   selectedVideoTab = false;
@@ -51,6 +52,25 @@ export class AddCourseComponent {
     if (file) {
       this.readAndPreview(file);
     }
+  }
+
+  onVideoSelected(event: any, secIndex:number): void {
+    const vid = event.target.files[0];
+
+    if(vid) {
+      this.read(vid)
+    }
+    this.vidLoaded[secIndex+2].push(true)
+  }
+
+  read(vid: File): void {
+     const reader = new FileReader();
+
+     reader.onload = (e: any) => {
+         this.vidSrc = '../../../assets/Images/spinner.gif'
+     }
+
+     reader.readAsDataURL(vid)
   }
 
   readAndPreview(file: File): void {
@@ -77,9 +97,7 @@ export class AddCourseComponent {
 
   lessonForm!: FormGroup;
 
-  videos: videoType[] | undefined;
-
-  selectedVideoType: videoType | undefined;
+ 
 
 
   lesson: Lesson[] = [{
@@ -91,6 +109,7 @@ export class AddCourseComponent {
   }]
 
   lessonType: string[][] = [[]];
+  vidLoaded: boolean[][] = [[]];
   
 
   constructor(private formBuilder: FormBuilder) {}
@@ -192,22 +211,26 @@ addSection() {
   this.lessonType.push([])
   this.displaySection = true
   this.displayLesson = false
+  this.vidLoaded.push([])
 }
 
-addTextLesson(lesIndex: number) {
-  this.sectionLessons(lesIndex).push(this.newLesson())
+addTextLesson(secIndex: number) {
+  this.sectionLessons(secIndex).push(this.newLesson())
   this.displayLesson = true
   this.displaySection = false
   this.selectedTextTab = true
   this.selectedVideoTab = false
+  this.lessonType[secIndex+1].push('text')
 }
 
-addVideoLesson(lesIndex: number) {
-  this.sectionLessons(lesIndex).push(this.newLesson())
+addVideoLesson(secIndex: number) {
+  this.sectionLessons(secIndex).push(this.newLesson())
   this.displayLesson = true
   this.displaySection = false
   this.selectedVideoTab = true
   this.selectedTextTab = false
+  this.lessonType[secIndex+1].push('video')
+  this.vidLoaded.push([])
 }
 
 
@@ -227,23 +250,8 @@ removeFaq(i: number) {
 }
 
 
-isTextClicked() {
-  this.selectedTextTab = true;
-  this.onNextLesson = false
-isTextClicked(secIndex:number) {
-  this.lessonType[secIndex].push('text')
-  this.display = false
-  this.counter++
-}
 
-isVideoClicked() {
-  this.selectedVideoTab = true;
-  this.onNextLesson = false
-isVideoClicked(secIndex:number) {
-  this.lessonType[secIndex].push('video')
-  this.display = false
-  this.counter++
-}
+
 
 }
 

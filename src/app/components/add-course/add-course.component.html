@@ -308,13 +308,13 @@
 
                 
                     <form [formGroup]="curriForm" (ngSubmit)="submit()">
-                    <div formArrayName="sections">
-                        <div *ngFor="let sec of sections().controls; let secIndex=index">
-                            <div [formGroupName]="secIndex" class="relative top-9">
+                    <div formArrayName="sections" >
+                        <div *ngFor="let sec of sections().controls; let secIndex=index" class="border-[3px] rounded-md border-blue-700 mt-16">
+                            <div [formGroupName]="secIndex" class="relative mt-14">
                                 
                                 <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
                         <label class="ml-2 text-main" >Section {{secIndex + 1}} Title </label>
-                        <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-full" *ngIf="displaySection">
+                        <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-[90%]">
                         
 
                       <div formArrayName="lessons">
@@ -325,11 +325,23 @@
                                  
                                  <span class="float-right relative top-1 right-2 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
                                 <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
-                                <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-full" >
+                                <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-[90%]" >
                                 <span class="ml-2">Duration:</span>
                                 <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none " formControlName="duration">
-                                <div class="relative top-7"><p-editor formControlName="textLesson" [style]="{height: '320px'}"></p-editor></div>
-                                <label class="relative top-10"><input type="file" class="" formControlName="videoLesson" accept="video/*" ></label>
+                                <div class="relative top-7 w-[90%] left-9" *ngIf="lessonType[secIndex+1][lessonIndex] == 'text'">
+                                    <br><span class="relative bottom-3 ml-6 w-full text-main">Text-Lesson:</span>
+                                    <p-editor formControlName="textLesson" [style]="{height: '320px'}">
+                                    </p-editor>
+                                </div>
+                                <br><span *ngIf="lessonType[secIndex+1][lessonIndex] == 'video'" class="relative top-6 ml-6 w-full text-main">Video-Lesson:</span>
+                                <label class="relative top-10 ml-8 mb-6 custom-video-upload" *ngIf="lessonType[secIndex+1][lessonIndex] == 'video'">
+                                    <div *ngIf="vidSrc && vidLoaded[secIndex+2][lessonIndex]" class="">
+                                        <img [src]="vidSrc" class="ml-52 align-middle">
+                                    </div>
+                                    <i class="pi pi-video text-5xl flex justify-center mt-32 text-blue-500" *ngIf="!vidSrc"></i>
+                                    <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="!vidSrc">Upload Video Lesson</p>
+                                    <input type="file" class="hidden" formControlName="videoLesson" accept="video/*" (change)="onVideoSelected($event, secIndex)">
+                                </label>
                             
                             </div>
  
@@ -338,8 +350,8 @@
                     </div>
                      
                      <div *ngIf="display">
-                      <button (click)="addTextLesson(secIndex)" class="relative top-9 left-6 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Text Lesson</span></button>
-                      <button (click)="addVideoLesson(secIndex)" class="relative top-9 left-9 bg-[#f1f1f1] h-8 w-32"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Video Lesson</span></button>
+                      <button (click)="addTextLesson(secIndex)" class="relative top-9 left-6 bg-[#f1f1f1] h-8 w-44"><i class="pi pi-plus-circle text-blue-500 right-3 align-middle"></i><span class="relative left-2 align-middle">Add Text Lesson</span></button>
+                      <button (click)="addVideoLesson(secIndex)" class="relative top-9 left-9 bg-[#f1f1f1] h-8 w-44"><i class="pi pi-plus-circle text-blue-500 right-3 align-middle"></i><span class="relative left-2 align-middle">Add Video Lesson</span></button>
                       
                     </div>    
                         </div>
