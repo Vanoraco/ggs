@@ -21,20 +21,7 @@
     font-size: small;
     font-family: 'Exo', sans-serif;
 
-@import "primeicons/primeicons.css";
-
-
-  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
-    background: rgb(241, 245, 249);
-    color: black;
-    width: 160px;
-    border-radius: 0%;
-    
-    font-family: 'Exo', sans-serif;
-    
-
-    height: 60px;
-    }
+}
 
  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
    border-top: 3px solid rgb(63, 131, 248);
@@ -70,5 +57,5 @@
 
   
 
-  }
+  
 

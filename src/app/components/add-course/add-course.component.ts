@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
-import {MatTabsModule} from '@angular/material/tabs';
-import { TabViewModule } from 'primeng/tabview'
-import { DropdownModule } from 'primeng/dropdown';
 
 
 interface Faq {
@@ -112,7 +108,7 @@ export class AddCourseComponent {
   lessonType: string[][] = [[]];
   vidLoaded: string[][] = [[]];
   
-
+   
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -149,13 +145,7 @@ get faqAliase() {
   return this.faqForm.get('aliases') as FormArray;
 }
 
-get curri() {
-  return this.lessonForm.get('lesson') as FormArray;
-}
 
-get section() {
-  return this.curriForm.get('section')?.get('lessons') as FormArray;
-}
 
 sections() {
   return this.curriForm.get('sections') as FormArray;
@@ -193,10 +183,7 @@ addLesson(secIndex: number) {
    this.sectionLessons(secIndex).push(this.newLesson())
 }
 
-changeDisplay() {
-  this.displaySection = true
-  this.displayLesson = false
-}
+
 
 removeSection(secIndex:number) {
   this.sections().removeAt(secIndex);
@@ -210,26 +197,16 @@ removeSectionLesson(secIndex:number,lessonIndex:number) {
 addSection() {
   this.sections().push(this.newSection())
   this.lessonType.push([])
-  this.displaySection = true
-  this.displayLesson = false
   this.vidLoaded.push([])
 }
 
 addTextLesson(secIndex: number) {
   this.sectionLessons(secIndex).push(this.newLesson())
-  this.displayLesson = true
-  this.displaySection = false
-  this.selectedTextTab = true
-  this.selectedVideoTab = false
   this.lessonType[secIndex+1].push('text')
 }
 
 addVideoLesson(secIndex: number) {
   this.sectionLessons(secIndex).push(this.newLesson())
-  this.displayLesson = true
-  this.displaySection = false
-  this.selectedVideoTab = true
-  this.selectedTextTab = false
   this.lessonType[secIndex+1].push('video')
   this.vidLoaded[secIndex + 1].push('notse')
 }
@@ -241,7 +218,6 @@ submit() {
 }
 
 addFaq() {
-  
     this.faqAliase.push(this.newFaq());
     this.display = true
 }
@@ -249,9 +225,6 @@ addFaq() {
 removeFaq(i: number) {
   this.faqAliase.removeAt(i)
 }
-
-
-
 
 
 }
