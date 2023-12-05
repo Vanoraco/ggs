@@ -13,6 +13,7 @@ import routeConfig from './components/routes';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 
 import { AccordionModule } from 'primeng/accordion';
+import { LoginComponent } from './components/login/login.component';
 import { LoginComponent } from './login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
@@ -38,6 +39,7 @@ import { CoursepageComponent } from './components/coursepage/coursepage.componen
 import { PanelModule } from 'primeng/panel';
 import { CheckboxModule } from 'primeng/checkbox';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 @NgModule({
   declarations: [
