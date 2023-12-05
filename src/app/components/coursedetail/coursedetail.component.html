@@ -1,3 +1,41 @@
+<header class="overflow-hidden background-img">
+  <div class="bg-[#012e5a] h-10 info-font w-[100%]"></div>
+
+  <div class="mr-auto ml-auto pl-[400px] pr-[400px] pt-7 flex gap-[10vw]">
+    <div class="align-middle">
+      <a href="https://lms.goodgradestudent.com/"
+        ><img src="../../../assets/Images/good.webp" alt="" class="w-64 h-auto"
+      /></a>
+    </div>
+    <div>
+      <ul
+        class="flex flex-wrap gap-[2vw] mt-5 text-black font-[Roboto, sans-serif] text-base font-medium"
+      >
+        <li class="home-nav">
+          <a href="https://lms.goodgradestudent.com/">HOME</a>
+        </li>
+        <li class="home-nav"><a [routerLink]="['/coursepage']">COURSES</a></li>
+        <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
+        <li class="home-nav"><a [routerLink]="['/cont']">CONTACT US</a></li>
+        <li class="home-nav">
+          <a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a>
+        </li>
+        <li>
+          <a href="https://lms.goodgradestudent.com/user-account"
+            ><mat-icon>favorite_border</mat-icon></a
+          >
+        </li>
+        <li>
+          <span
+            class="border-solid border-[3.3px] border-x-white text-[20px] search-icon"
+            ><mat-icon class="py-1 font-medium">search</mat-icon></span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
 <div *ngFor="let course of courseDetail">
   <link
     rel="stylesheet"
@@ -5,13 +43,16 @@
   />
 
   <hr class="h-1 bg-[#878c90] mt-10 mb-10" />
-  <section class="flex flex-col lg:flex-row px-8 xl:px-[320px]">
-    <div class="w-full xl:w-3/4 md:w-full pr-[7px]">
+  <section class="flex flex-col lg:flex-row px-8 xl:px-[400px]">
+    <div class="w-full lg:w-3/4 md:w-full pr-[7px]">
       <div
         class="text-3xl md:text-4xl xl:text-start lg:text-start md text-center sm:text-center lg:text-4xl xl:text-5xl font-bold mb-8 txt-main"
       >
         {{ course.coursename }}
       </div>
+
+      <!-- course category and course instructor display section -->
+
       <div>
         <div class="flex flex-col sm:flex-row">
           <div class="flex items-center mb-8 pr-16">
@@ -36,502 +77,281 @@
             </div>
             <div class="text-sm">
               <div class="text-gray-600">Category:</div>
-              <div class="text-gray-900">{{ course.category | uppercase }}</div>
+              <div class="text-gray-900">
+                {{ course.category | uppercase }}
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="">
-        <mat-tab-group animationDuration="0ms" class="bg-gray-50">
-          <mat-tab>
-            <ng-template mat-tab-label class="">
-              <span class="text-blue-800">Description</span>
-            </ng-template>
-            <div class="bg-white">
-              <img
-                class="pt-10"
-                src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/154833-OUCY4R-62-870x440.jpg "
-              />
-              <p class="pt-5">{{ course.description }}</p>
-              <p class="pt-5">{{ course.description }}</p>
-            </div>
-          </mat-tab>
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <span class="text-blue-800">Curriculum</span>
-            </ng-template>
-            <div class="bg-white pt-10">
-              <div class="">
-                <p class="txt-main text-2xl">Chapter one : introduction</p>
-                <ol class=" ">
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div class="">30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/quiz.svg"
-                          class="masterstudy-curriculum-accordion__image"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                </ol>
 
-                <p class="txt-main text-2xl pt-8">Chapter one : introduction</p>
-                <ol type="1">
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
+      <p-tabView class="">
+        <!-- description section -->
+
+        <p-tabPanel header="Description">
+          <div class="bg-white">
+            <img
+              class="pt-10"
+              src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/154833-OUCY4R-62-870x440.jpg "
+            />
+            <p class="pt-5">{{ course.description }}</p>
+            <p class="pt-5">{{ course.description }}</p>
+          </div>
+        </p-tabPanel>
+
+        <!-- curriculum section -->
+
+        <p-tabPanel header="Curriculum">
+          <div class="bg-white pt-10 text-sm text-black">
+            <div class="txt-main">
+              <h1 class="txt-main">Semaine 1</h1>
+              <ol type="" class="">
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
                     </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/quiz.svg"
-                          class="masterstudy-curriculum-accordion__image"
-                        />
-                        <a class="pl-2 font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                </ol>
-                <p class="txt-main text-2xl pt-8">Chapter one : introduction</p>
-                <ol type="1">
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold txt-main" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold txt-main" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
-                        />
-                        <a class="pl-2 font-bold txt-main" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="flex justify-between bg-gray-100 p-4 mt-1">
-                      <div class="flex">
-                        <img
-                          src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/quiz.svg"
-                          class="masterstudy-curriculum-accordion__image"
-                        />
-                        <a class="pl-2 txt-main font-bold" href="">Content 1</a>
-                      </div>
-                      <div>30min</div>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <span class="text-blue-800">FAQ</span>
-            </ng-template>
-            <div class="bg-white pt-5">
-              <div class="card">
-                <p-accordion [multiple]="true">
-                  <p-accordionTab
-                    header="FAQ"
-                    [selected]="true"
-                    class="line-height-3 m-0"
-                  >
-                    Ans:
-                  </p-accordionTab>
-                  <p-accordionTab header="FAQ" class="line-height-3 m-0">
-                    Ans:
-                  </p-accordionTab>
-                  <p-accordionTab header="FAQ" class="line-height-3 m-0">
-                    Ans:
-                  </p-accordionTab>
-                </p-accordion>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <span class="text-blue-800">Announcement</span>
-            </ng-template>
-            <div class="bg-white pt-5">
-              <div class="">
-                <h1 class="txt-main">
-                  Productivity Hacks to Get More Done in 2018
-                </h1>
-                <p class="text-xs txt-main">— 28 February 2017</p>
-                <div class="text-xs text-black">
-                  <p class="font-bold">
-                    1. Facebook News Feed Eradicator (free chrome extension)
-                  </p>
-                  <p>
-                    Stay focused by removing your Facebook newsfeed and
-                    replacing it with an inspirational quote. Disable the tool
-                    anytime you want to see what friends are up to!
-                  </p>
-                  <p class="font-bold">
-                    2. Hide My Inbox (free chrome extension for Gmail)
-                  </p>
-                  <p>
-                    Stay focused by hiding your inbox. Click "show your inbox"
-                    at a scheduled time and batch processs everything one go.
-                  </p>
-                  <p class="font-bold">3. Habitica (free mobile + web app)</p>
-                  <p>
-                    Gamify your to do list. Treat your life like a game and earn
-                    gold goins for getting stuff done!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab>
-            <ng-template mat-tab-label>
-              <span class="text-blue-800">Reviews</span>
-            </ng-template>
-            <div class="bg-white">
-              <form>
-                <div
-                  class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
-                >
-                  <div
-                    class="flex items-center justify-between px-3 py-2 border-b dark:border-gray-600"
-                  >
-                    <div
-                      class="flex flex-wrap items-center divide-gray-200 sm:divide-x sm:rtl:divide-x-reverse dark:divide-gray-600"
-                    >
-                      <div
-                        class="flex items-center space-x-1 rtl:space-x-reverse sm:pe-4"
-                      >
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 12 20"
-                          >
-                            <path
-                              stroke="currentColor"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M1 6v8a5 5 0 1 0 10 0V4.5a3.5 3.5 0 1 0-7 0V13a2 2 0 0 0 4 0V6"
-                            />
-                          </svg>
-                          <span class="sr-only">Attach file</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 16 20"
-                          >
-                            <path
-                              d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Embed map</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 16 20"
-                          >
-                            <path
-                              d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"
-                            />
-                            <path
-                              d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Upload image</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 16 20"
-                          >
-                            <path
-                              d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.96 2.96 0 0 0 .13 5H5Z"
-                            />
-                            <path
-                              d="M14.067 0H7v5a2 2 0 0 1-2 2H0v11a1.969 1.969 0 0 0 1.933 2h12.134A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.933-2ZM6.709 13.809a1 1 0 1 1-1.418 1.409l-2-2.013a1 1 0 0 1 0-1.412l2-2a1 1 0 0 1 1.414 1.414L5.412 12.5l1.297 1.309Zm6-.6-2 2.013a1 1 0 1 1-1.418-1.409l1.3-1.307-1.295-1.295a1 1 0 0 1 1.414-1.414l2 2a1 1 0 0 1-.001 1.408v.004Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Format code</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM13.5 6a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm-7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm3.5 9.5A5.5 5.5 0 0 1 4.6 11h10.81A5.5 5.5 0 0 1 10 15.5Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Add emoji</span>
-                        </button>
-                      </div>
-                      <div
-                        class="flex flex-wrap items-center space-x-1 rtl:space-x-reverse sm:ps-4"
-                      >
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 21 18"
-                          >
-                            <path
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9.5 3h9.563M9.5 9h9.563M9.5 15h9.563M1.5 13a2 2 0 1 1 3.321 1.5L1.5 17h5m-5-15 2-1v6m-2 0h4"
-                            />
-                          </svg>
-                          <span class="sr-only">Add list</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              d="M18 7.5h-.423l-.452-1.09.3-.3a1.5 1.5 0 0 0 0-2.121L16.01 2.575a1.5 1.5 0 0 0-2.121 0l-.3.3-1.089-.452V2A1.5 1.5 0 0 0 11 .5H9A1.5 1.5 0 0 0 7.5 2v.423l-1.09.452-.3-.3a1.5 1.5 0 0 0-2.121 0L2.576 3.99a1.5 1.5 0 0 0 0 2.121l.3.3L2.423 7.5H2A1.5 1.5 0 0 0 .5 9v2A1.5 1.5 0 0 0 2 12.5h.423l.452 1.09-.3.3a1.5 1.5 0 0 0 0 2.121l1.415 1.413a1.5 1.5 0 0 0 2.121 0l.3-.3 1.09.452V18A1.5 1.5 0 0 0 9 19.5h2a1.5 1.5 0 0 0 1.5-1.5v-.423l1.09-.452.3.3a1.5 1.5 0 0 0 2.121 0l1.415-1.414a1.5 1.5 0 0 0 0-2.121l-.3-.3.452-1.09H18a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 18 7.5Zm-8 6a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Settings</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              d="M18 2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2ZM2 18V7h6.7l.4-.409A4.309 4.309 0 0 1 15.753 7H18v11H2Z"
-                            />
-                            <path
-                              d="M8.139 10.411 5.289 13.3A1 1 0 0 0 5 14v2a1 1 0 0 0 1 1h2a1 1 0 0 0 .7-.288l2.886-2.851-3.447-3.45ZM14 8a2.463 2.463 0 0 0-3.484 0l-.971.983 3.468 3.468.987-.971A2.463 2.463 0 0 0 14 8Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Timeline</span>
-                        </button>
-                        <button
-                          type="button"
-                          class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                        >
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              d="M14.707 7.793a1 1 0 0 0-1.414 0L11 10.086V1.5a1 1 0 0 0-2 0v8.586L6.707 7.793a1 1 0 1 0-1.414 1.414l4 4a1 1 0 0 0 1.416 0l4-4a1 1 0 0 0-.002-1.414Z"
-                            />
-                            <path
-                              d="M18 12h-2.55l-2.975 2.975a3.5 3.5 0 0 1-4.95 0L4.55 12H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2Zm-3 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
-                            />
-                          </svg>
-                          <span class="sr-only">Download</span>
-                        </button>
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      data-tooltip-target="tooltip-fullscreen"
-                      class="p-2 text-gray-500 rounded cursor-pointer sm:ms-auto hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
-                    >
-                      <svg
-                        class="w-4 h-4"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 19 19"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M13 1h5m0 0v5m0-5-5 5M1.979 6V1H7m0 16.042H1.979V12M18 12v5.042h-5M13 12l5 5M2 1l5 5m0 6-5 5"
-                        />
-                      </svg>
-                      <span class="sr-only">Full screen</span>
-                    </button>
-                    <div
-                      id="tooltip-fullscreen"
-                      role="tooltip"
-                      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
-                    >
-                      Show full screen
-                      <div class="tooltip-arrow" data-popper-arrow></div>
-                    </div>
+                    <div>30min</div>
                   </div>
-                  <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
-                    <label for="editor" class="sr-only">Publish post</label>
-                    <textarea
-                      id="editor"
-                      rows="8"
-                      class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
-                      placeholder="Write an article..."
-                      required
-                    ></textarea>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2 txt-main" [routerLink]="['/curr']"
+                        >Leçon deux</a
+                      >
+                    </div>
+                    <div class="">30min</div>
                   </div>
-                </div>
-                <button
-                  type="submit"
-                  class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/quiz.svg"
+                        class="masterstudy-curriculum-accordion__image"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">quiz</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+              </ol>
+
+              <h1 class="txt-main pt-10">Semaine 2</h1>
+              <ol type="1">
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2 txt-main" [routerLink]="['/curr']"
+                        >Leçon deux</a
+                      >
+                    </div>
+                    <div class="">30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li></li>
+              </ol>
+
+              <h1 class="txt-main pt-10">Semaine 3</h1>
+              <ol type="1">
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Leçon un</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2 txt-main" [routerLink]="['/curr']"
+                        >Leçon deux</a
+                      >
+                    </div>
+                    <div class="">30min</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex justify-between bg-[#F0F4FA] p-3 mt-1">
+                    <div class="flex">
+                      <img
+                        src="https://lms.goodgradestudent.com/wp-content/plugins/masterstudy-lms-learning-management-system/_core//assets/icons/lessons/text.svg"
+                      />
+                      <a class="pl-2" [routerLink]="['/curr']">Content 1</a>
+                    </div>
+                    <div>30min</div>
+                  </div>
+                </li>
+                <li></li>
+              </ol>
+            </div></div
+        ></p-tabPanel>
+
+        <!-- FAQ section -->
+
+        <p-tabPanel header="FAQ">
+          <div class="bg-white pt-5">
+            <div class="card">
+              <p-accordion [multiple]="true">
+                <p-accordionTab
+                  *ngFor="let faq of faqs"
+                  [header]="faq.question"
+                  class="line-height-3 m-0"
                 >
-                  Publish post
-                </button>
-              </form>
+                  Ans: {{ faq.answer }}
+                </p-accordionTab>
+              </p-accordion>
             </div>
-          </mat-tab>
-        </mat-tab-group>
-      </div>
+          </div>
+        </p-tabPanel>
+
+        <!-- announcement section -->
+
+        <p-tabPanel header="Announcement">
+          <div class="bg-white pt-5">
+            <div class="">
+              <h1 class="txt-main">
+                Productivity Hacks to Get More Done in 2018
+              </h1>
+              <p class="text-xs txt-main">— 28 February 2017</p>
+              <div class="text-xs text-black">
+                <p class="font-bold">
+                  1. Facebook News Feed Eradicator (free chrome extension)
+                </p>
+                <p>
+                  Stay focused by removing your Facebook newsfeed and replacing
+                  it with an inspirational quote. Disable the tool anytime you
+                  want to see what friends are up to!
+                </p>
+                <p class="font-bold">
+                  2. Hide My Inbox (free chrome extension for Gmail)
+                </p>
+                <p>
+                  Stay focused by hiding your inbox. Click "show your inbox" at
+                  a scheduled time and batch processs everything one go.
+                </p>
+                <p class="font-bold">3. Habitica (free mobile + web app)</p>
+                <p>
+                  Gamify your to do list. Treat your life like a game and earn
+                  gold goins for getting stuff done!
+                </p>
+              </div>
+            </div>
+          </div></p-tabPanel
+        >
+
+        <!-- review section -->
+
+        <p-tabPanel header="Review">
+          <div class="pt-10">
+            <p-editor
+              [(ngModel)]="htmlEditor"
+              [style]="{ height: '320px' }"
+            ></p-editor>
+          </div>
+          <div class="card flex justify-content-center mt-3">
+            <p-rating
+              [(ngModel)]="value"
+              [style]="{ color: '#FFA500' }"
+              [cancel]="false"
+            ></p-rating>
+          </div>
+          <button
+            class="bg-blue-600 text-white font-bold justify-center px-7 py-3 mt-3"
+          >
+            Add Review
+          </button>
+        </p-tabPanel>
+      </p-tabView>
     </div>
 
     <div class="xl:w-1/4 pl-5 md:pt-8">
-      <p class="pb-7">
-        <i class="fa fa-heart text-[#3F729B]"><span>&nbsp;&nbsp;</span></i
-        >Add to wishlist
-      </p>
-      <div class=" ">
-        <button
-          class="bg-[#5CBC87] hover:bg-blue-950 text-white font-bold py-3 rounded-xl mb-7 text-center w-full text-xl txt-main"
+      <div class="pb-7 flex">
+        <mat-icon
+          class="text-red-500 text-[17px] border border-solid border-black rounded-full h-16 w-16 text-center pt-1 hover:bg-blue-600 hover:border-blue-600 hover:text-white"
+          >favorite_border</mat-icon
         >
-          ENROLL COURSE
-        </button>
-        <div class="flex justify-between py-3 text-[16px]">
+        <div class="pl-1 pt-0.5 text-gray-800">Add to wishlist</div>
+      </div>
+      <button
+        class="bg-[#5CBC87] hover:bg-blue-950 text-white font-bold py-4 rounded-xl mb-7 text-center w-full txt-main"
+      >
+        ENROLL COURSE
+      </button>
+      <div class="">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Enrolled: <label class="font-bold">{{ course.enrolled }}</label>
           </p>
@@ -539,14 +359,14 @@
           <i class="pi pi-users text-2xl text-blue-700"></i>
         </div>
         <hr class="h-4" />
-        <div class="flex justify-between py-3 text-[16px]">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Duration: <label class="font-bold">{{ course.duration }}</label>
           </p>
           <i class="pi pi-clock text-2xl text-blue-700"></i>
         </div>
         <hr class="h-5" />
-        <div class="flex justify-between py-3 text-[16px]">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Lectures: <label class="font-bold">{{ course.lectures }}</label>
           </p>
@@ -554,7 +374,7 @@
         </div>
         <hr class="h-5" />
 
-        <div class="flex justify-between py-3 text-[16px]">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Video: <label class="font-bold">{{ course.video }}</label>
           </p>
@@ -562,7 +382,7 @@
         </div>
         <hr class="h-5" />
 
-        <div class="flex justify-between py-3 text-[16px]">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Level: <label class="font-bold">{{ course.level }}</label>
           </p>
@@ -570,7 +390,68 @@
         </div>
         <hr class="" />
       </div>
-      <div class="border-l border-gray-300 pl-6">
+      <div class="border-l border-gray-300 pl-7">
+        <!-- top courses -->
+
+        <div class="pt-6">
+          <ol>
+            <li class="mb-5">
+              <a href="">
+                <div class="flex">
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2022/07/joshua-slate-q1bPJfULENA-unsplash-1-75x75.jpg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="mb-5">
+              <a href="">
+                <div class="flex">
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1512686096451-a15c19314d59-75x75.jpeg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="flex">
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1509343256512-d77a5cb3791b-min-75x75.jpeg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ol>
+        </div>
+
         <div>
           <div class="flex justify-between pt-14">
             <hr class="h-1 w-1/5 bg-[#385BCE]" />
@@ -579,28 +460,26 @@
 
           <h1 class="text-xl font-bold pb-5 pt-8">Archive</h1>
 
-          <div>
-            <label
-              for="countries"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Select an option</label
-            >
-            <select
-              id="countries"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            >
-              <option selected>Select Month</option>
-              <option value="US">Sep</option>
-              <option value="CA">Oct</option>
-              <option value="FR">jan</option>
-              <option value="DE">jan</option>
-            </select>
-          </div>
+          <!-- search option -->
+
+          <mat-form-field class="w-full">
+            <mat-label>Select month</mat-label>
+            <mat-select [(value)]="selectedCourse">
+              <mat-option>Select month</mat-option>
+              <mat-option value="option1">July</mat-option>
+              <mat-option value="option2">Augest 2022</mat-option>
+              <mat-option value="option3">September 2023</mat-option>
+              <mat-option value="option2">Augest 2022</mat-option>
+              <mat-option value="option3">September 2023</mat-option>
+            </mat-select>
+          </mat-form-field>
 
           <div class="flex justify-between pt-14">
             <hr class="h-1 w-1/5 bg-[#385BCE]" />
             <hr class="h-1 w-2/3 mt-0.5" />
           </div>
+
+          <!-- working hour -->
 
           <h1 class="pt-14 pb-7 font-bold text-2xl">Worrking hours</h1>
           <div class="divide-y divide-dashed text-gray-700 text-[15px]">
@@ -632,7 +511,7 @@
                 >
               </div>
             </div>
-            <div class="flex justify-between">
+            <div class="flex justify-between mb-10">
               <div class="pb-1 hover:text-red-600">Sunday</div>
               <div class="">
                 <span class="pl-2 pr-2 text-white bg-red-600 rounded"

@@ -1,0 +1,408 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+
+<header class="overflow-hidden background-img">
+  <div class="bg-[#012e5a] h-10 info-font w-[100%]"></div>
+
+  <div class="mr-auto ml-auto pl-[400px] pr-[400px] pt-7 flex gap-[10vw]">
+    <div class="align-middle">
+      <a href="https://lms.goodgradestudent.com/"
+        ><img src="../../../assets/Images/good.webp" alt="" class="w-64 h-auto"
+      /></a>
+    </div>
+    <div>
+      <ul
+        class="flex flex-wrap gap-[2vw] mt-5 text-black font-[Roboto, sans-serif] text-base font-medium"
+      >
+        <li class="home-nav">
+          <a href="https://lms.goodgradestudent.com/">HOME</a>
+        </li>
+        <li class="home-nav"><a [routerLink]="['/coursepage']">COURSES</a></li>
+        <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
+        <li class="home-nav"><a [routerLink]="['/cont']">CONTACT US</a></li>
+        <li class="home-nav">
+          <a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a>
+        </li>
+        <li>
+          <a href="https://lms.goodgradestudent.com/user-account"
+            ><mat-icon>favorite_border</mat-icon></a
+          >
+        </li>
+        <li>
+          <span
+            class="border-solid border-[3.3px] border-x-white text-[20px] search-icon"
+            ><mat-icon class="py-1 font-medium">search</mat-icon></span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="bg-[#F6F6F6] mt-5 mb-16">
+  <hr class="h-1 bg-[#DDDDDD]" />
+  <p
+    class="text-[#aaaaaa] xl:px-[400px] lg:px-[200px] md:px-[50px] mb-99px pb-2 pt-[9px] txt-main text-xs"
+  >
+    <a routerLink="">GOODGRADESTUDENT<span>&nbsp;</span>><span>&nbsp;</span></a
+    >COURSES
+  </p>
+</div>
+
+<section class="px-[380px] pb-5">
+  <div class="flex justify-between mb-16">
+    <div class="mb-">
+      <span class="text-5xl txt-main font-bold">Courses</span>
+    </div>
+    <div class="border flex ml-5">
+      <label class="relative block txt-main">
+        <input
+          class="placeholder:text-slate-400 block bg-white w-full border border-gray-400 py-3 pl-3 pr-5 sm:text-sm"
+          placeholder="Search Courses"
+          type="text"
+          name="search"
+        />
+      </label>
+      <i class="fa fa-search bg-blue-700 text-white justify-center p-4"></i>
+    </div>
+
+    <div class="card flex justify-content-center"></div>
+    <div class="flex txt-main">
+      <div class="border flex">
+        <label class="bg-blue-700 text-white p-3">Sort By:</label>
+        <div class="p-2">
+          <select id="course-order" class="w-64 select-box text-[17px]">
+            <option value="newest">Release Date (newest first)</option>
+            <option value="oldest">Release Date (oldest first)</option>
+            <option value="overall">Overall Rating</option>
+            <option value="popular">Popular (most viewed)</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex pl-5">
+        <a
+          mat-list-item
+          (click)="selectTab('Tab 1')"
+          class="pl-2 text-gray-600 text-xs"
+        >
+          <div class="text-blue-700 border p-2">
+            <mat-icon class="">grid_view</mat-icon>
+          </div></a
+        >
+        <a
+          mat-list-item
+          (click)="selectTab('Tab 2')"
+          class="pl-2 text-gray-600 text-xs"
+        >
+          <div class="text-gray-400 border p-2">
+            <mat-icon class=" ">view_list</mat-icon>
+          </div></a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="flex">
+    <!-- filteroptions -->
+    <div class="w-1/4 mr-7 e border-gray-500 shadow-2xl">
+      <hr class="h-1 bg-blue-700" />
+      <p-panel header="Category" [toggleable]="true">
+        <div *ngFor="let category of categories" class="flex flex-column gap-2">
+          <p-checkbox
+            class="border rounded mb-2"
+            name="group"
+            [value]="category"
+            [(ngModel)]="selectedCategories"
+          ></p-checkbox>
+
+          <div>{{ category.name }}</div>
+        </div>
+      </p-panel>
+      <hr />
+      <p-panel header="Status" [toggleable]="true">
+        <div *ngFor="let status of status" class="flex flex-column gap-2">
+          <p-checkbox
+            class="border rounded mb-2"
+            name="group"
+            [value]="status"
+            [(ngModel)]="selectedCategories"
+          ></p-checkbox>
+
+          <div>{{ status.name }}</div>
+        </div>
+      </p-panel>
+      <hr />
+      <p-panel header="Level" [toggleable]="true">
+        <div *ngFor="let status of level" class="flex flex-column gap-2">
+          <p-checkbox
+            class="border rounded mb-2"
+            name="group"
+            [value]="status"
+            [(ngModel)]="selectedCategories"
+          ></p-checkbox>
+
+          <div>{{ status.name }}</div>
+        </div>
+      </p-panel>
+      <hr />
+      <p-panel header="Instructors" [toggleable]="true">
+        <div *ngFor="let status of Instructors" class="flex flex-column gap-2">
+          <p-checkbox
+            class="border rounded mb-2"
+            name="group"
+            [value]="status"
+            [(ngModel)]="selectedCategories"
+          ></p-checkbox>
+
+          <div>{{ status.name }}</div>
+        </div>
+      </p-panel>
+      <hr />
+      <p-panel header="Price" [toggleable]="true">
+        <div *ngFor="let status of price" class="flex flex-column gap-2">
+          <p-checkbox
+            class="border rounded mb-2"
+            name="group"
+            [value]="status"
+            [(ngModel)]="selectedCategories"
+          ></p-checkbox>
+
+          <div>{{ status.name }}</div>
+        </div>
+      </p-panel>
+
+      <button
+        class="bg-blue-700 hover:bg-green-400 px-16 py-4 text-white txt-main my-5 ml-4 font-bold text-[17px]"
+      >
+        SHOW RESULTS
+      </button>
+
+      <a class="ml-4 txt-main flex" [routerLink]="['/coursepage']"
+        ><p class=""><mat-icon class="text-[18px]">refresh</mat-icon></p>
+        Reset all</a
+      >
+      <hr />
+    </div>
+
+    <div class="w-3/4">
+      <div class="bg-[#BAF2DF] my-5">
+        <hr class="h-1 bg-[#17D292]" />
+        <div class="flex justify-between px-5">
+          <p class="text-center pt-[14px] txt-main">FEATURED COURSES</p>
+          <a class="pt-[14px]" href="">Show all</a>
+        </div>
+      </div>
+
+      <section>
+        <!-- gridview -->
+
+        <div *ngIf="selectedTab === 'Tab 1'">
+          <div class="relative overflow-hidden">
+            <ul class="grid grid-cols-4 gap-x-5 gap-y-10 text-main">
+              <li *ngFor="let course of courses">
+                <div class="h-full border border-green-400">
+                  <div>
+                    <img [src]="course.img" class="w-full h-32" />
+                  </div>
+
+                  <div class="mx-5">
+                    <div class="my-4 text-gray-500 ease-out duration-300">
+                      {{ course.courseCategory }}
+                    </div>
+                    <div class="font-bold text-[17px] txt-main">
+                      {{ course.courseName }}
+                    </div>
+                    <hr class="my-5" />
+
+                    <div class="flex justify-between mb-4">
+                      <div class="flex">
+                        <mat-icon class="text-[20px]">query_builder</mat-icon>
+                        <label class="">{{ course.courseDuration }}</label>
+                      </div>
+                      <label class="font-bold">{{ course.courseAccess }}</label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- listview -->
+
+        <div *ngIf="selectedTab === 'Tab 2'">
+          <div>
+            <div>
+              <div class="relative overflow-hidden">
+                <ul class="gap-y-10 text-main">
+                  <li *ngFor="let course of courses">
+                    <div class="flex">
+                      <div class="">
+                        <img [src]="course.img" class="w-[300px] h-32" />
+                        <a [routerLink]="['/coursedet']"
+                          ><button
+                            class="bg-[#195EC8] text-white w-full text-center py-3 text-[15px] txt-main mt-3"
+                          >
+                            PREVIEW THIS COURSE
+                          </button></a
+                        >
+                        
+                      </div>
+                      <div class="ml-7">
+                        <div class="my-3 text-gray-500">
+                          {{ course.courseCategory }}
+                        </div>
+
+                        <div class="font-bold text-[17px] txt-main my-3">
+                          {{ course.courseName }}
+                        </div>
+                        <div class="flex my-5">
+                          <label class="mr-5 text-[16px]">11 Lectures</label>
+                          <div class="flex">
+                            <mat-icon class="text-[20px]"
+                              >query_builder</mat-icon
+                            >
+                            <label class="">{{ course.courseDuration }}</label>
+                          </div>
+                        </div>
+                        <div class="text-[17px] my-3 text-gray-500">
+                          Ce cours explorera le baseball à travers le prisme de
+                          la race, du sexe et de la culture. Pour le meilleur et
+                          pour le pire, le baseball
+                        </div>
+                        <div class="flex justify-between my-3">
+                          <div class="flex">
+                            <div class="pb-7 flex">
+                              <mat-icon
+                                class="text-red-500 text-[17px] border border-solid border-black rounded-full h-16 w-16 text-center pt-1 hover:bg-blue-600 hover:border-blue-600 hover:text-white"
+                                >favorite_border</mat-icon
+                              >
+                              <div class="pl-1 pt-0.5 text-gray-800">
+                                Add to wishlist
+                              </div>
+                            </div>
+                            <label class="font-bold pl-3">{{
+                              course.courseAccess
+                            }}</label>
+                          </div>
+                          <div class="flex items-center mb-8 pr-16">
+                            <img
+                              class="w-10 h-10 rounded-full mr-4"
+                              src="[course.img]"
+                              alt="photo of teacher"
+                            />
+                            <div class="text-sm">
+                              <div class="text-black">FASIL GETEI</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+      </section>
+
+      <div class="text-center">
+        <a class="">
+          <button
+            class="bg-blue-700 hover:bg-blue-900 px-10 py-4 text-white txt-main my-16 ml-4 font-bold"
+          >
+            LOAD MORE
+          </button></a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- share options -->
+
+  <div class="flex flex-wrap sm:justify-start pt-10">
+    <!-- Facebook Share -->
+    <div class="bg-[#1877F2] w-20 h-5 mr-2 lg:mr-5 rounded mt-0.5 pt-0.5">
+      <p class="text-white text-xs text-center">
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=https://lms.goodgradestudent.com/contact-us/"
+          rel="nofollow"
+          target="_blank"
+        >
+          <i class="fab fa-facebook-f text-blue-600 bg-white rounded-full pl-1"
+            ><span>&nbsp;</span></i
+          >
+          <span>&nbsp;</span>Share
+        </a>
+      </p>
+    </div>
+
+    <!-- Twitter Share -->
+    <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+      <hr class="h-0.5 bg-[#1DCAFF]" />
+      <p class="text-black text-center rounded border border-gray-200">
+        <a
+          href="https://twitter.com/intent/tweet?url=https://lms.goodgradestudent.com/contact-us/"
+          rel="nofollow"
+          target="_blank"
+        >
+          <i class="fab fa-twitter text-[#1DCAFF]"><span>&nbsp;&nbsp;</span></i>
+          Tweet
+        </a>
+      </p>
+    </div>
+
+    <!-- Pinterest Share -->
+    <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+      <hr class="h-0.5 bg-[#C92228]" />
+      <p class="text-black text-center rounded border border-gray-200">
+        <a
+          href="https://pinterest.com/pin/create/button/?url=https://lms.goodgradestudent.com/contact-us/"
+          rel="nofollow"
+          target="_blank"
+        >
+          <i class="fab fa-pinterest text-[#C92228]"
+            ><span>&nbsp;&nbsp;</span></i
+          >
+          Share
+        </a>
+      </p>
+    </div>
+
+    <!-- LinkedIn Share -->
+    <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+      <hr class="h-0.5 bg-[#3F729B]" />
+      <p class="text-black text-center rounded border border-gray-200">
+        <a
+          href="http://www.linkedin.com/sharing/share-offsite/?url=https://lms.goodgradestudent.com/contact-us/"
+          rel="nofollow"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin text-[#3F729B]"
+            ><span>&nbsp;&nbsp;</span></i
+          >
+          Share
+        </a>
+      </p>
+    </div>
+
+    <!-- Digg Share -->
+    <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+      <hr class="h-0.5 bg-[#2169A8]" />
+      <p class="text-black text-center rounded border border-gray-200">
+        <a
+          href="http://digg.com/submit?url=https://lms.goodgradestudent.com/contact-us/"
+          rel="nofollow"
+          target="_blank"
+        >
+          <i class="fab fa-digg text-[#2169A8]"><span>&nbsp;&nbsp;</span></i>
+          Share
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
