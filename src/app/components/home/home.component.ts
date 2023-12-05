@@ -13,6 +13,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class HomeComponent {
   courses: Course[] = [];
   teachers: Teacher[] = [];
+  
 
  applyForm = new FormGroup({
   name: new FormControl(''),
@@ -30,4 +31,6 @@ export class HomeComponent {
     this.courses = this.courseService.getAll()
     this.teachers = this.teacherService.getAll()
   }
+
+  
 }

@@ -50,6 +50,7 @@
         <a href="https://lms.goodgradestudent.com/"><img src="../../../assets/Images/good.webp" alt="" class="w-80 h-auto"></a>
       </div>
 
+
       <div class="menu-container">
         <label for="touch" class="lg:hidden"><span><mat-icon class="text-yellow-500 relative top-4 right-1 left-20 text-[35px] font-bold lg:hidden">dehaze</mat-icon></span></label>               
         <input type="checkbox" id="touch"> 
@@ -65,6 +66,15 @@
           <li class="home-nav display"><a href="/about-us">ABOUT US</a></li>
           <li class="home-nav display"><a href="https://lms.goodgradestudent.com/contact-us">CONTACT US</a></li>
           <li class="home-nav display"><a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a></li>
+
+      <div>
+        <ul class="flex flex-wrap gap-[2vw] mt-5 text-white font-[Roboto, sans-serif] text-base font-medium">
+          <li class="home-nav"><a href="https://lms.goodgradestudent.com/">HOME</a></li>
+          <li class="home-nav"><a [routerLink]="['/coursepage']">COURSES</a></li>
+          <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
+          <li class="home-nav"><a routerLink="cont">CONTACT US</a></li>
+          <li class="home-nav"><a href="https://lms.goodgradestudent.com/shop/">LIBRARY</a></li>
+
           <li><a href="https://lms.goodgradestudent.com/user-account"><mat-icon>favorite_border</mat-icon></a></li>
           <li><span  class="border-solid border-[3.3px] border-x-white text-[20px]  search-icon"><mat-icon class="py-1 font-medium" >search</mat-icon></span></li>
         </ul>
