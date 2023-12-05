@@ -15,7 +15,7 @@ import { CoursedetailComponent } from './components/coursedetail/coursedetail.co
 
 import { AccordionModule } from 'primeng/accordion';
 import { LoginComponent } from './components/login/login.component';
-import { LoginComponent } from './login/login.component';
+
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { EditorModule } from 'primeng/editor';
@@ -45,11 +45,11 @@ import { PaginatorModule } from 'primeng/paginator';
 import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { ContactusComponent } from './components/contactus/contactus.component';
-import { EditorModule } from 'primeng/editor';
-import { DropdownModule } from 'primeng/dropdown';
+
+
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastrModule } from 'ngx-toastr';
-import { TabViewModule } from 'primeng/tabview';
+
 import { HttpClientModule } from '@angular/common/http';
 import { RatingModule } from 'primeng/rating';
 import { CoursepageComponent } from './components/coursepage/coursepage.component';
@@ -67,7 +67,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     CoursedetailComponent,
     LoginComponent,
 
-    AddCourseComponent
+    AddCourseComponent,
 
     CurriculumComponent,
     QuizComponent,
