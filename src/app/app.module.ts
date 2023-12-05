@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -16,6 +17,22 @@ import { AccordionModule } from 'primeng/accordion';
 import { LoginComponent } from './components/login/login.component';
 import { LoginComponent } from './login/login.component';
 import { MatTabsModule } from '@angular/material/tabs';
+
+import { EditorModule } from 'primeng/editor';
+import { ButtonModule } from 'primeng/button';
+
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import { TabViewModule } from 'primeng/tabview';
+import { DropdownModule } from 'primeng/dropdown';
+import { TooltipModule } from 'primeng/tooltip';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+
+import { AddCourseComponent } from './components/add-course/add-course.component';
+import { from } from 'rxjs';
+import { AddLessonComponent } from './components/add-lesson/add-lesson.component';
+
 import { CurriculumComponent } from './components/curriculum/curriculum.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -41,6 +58,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,10 +66,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     AboutusComponent,
     CoursedetailComponent,
     LoginComponent,
+
+    AddCourseComponent
+
     CurriculumComponent,
     QuizComponent,
     ContactusComponent,
     CoursepageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -60,10 +82,23 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     HttpClientModule,
     MatIconModule,
     MatTabsModule,
+
+    EditorModule,
+    ButtonModule,
+    TooltipModule,
+    TabViewModule,
+    ConfirmDialogModule,
+    InputTextareaModule,
+    OverlayPanelModule,
+
     FormsModule,
     MatListModule,
+
     ReactiveFormsModule,
+    DropdownModule,
     AccordionModule,
+
+
     MatSlideToggleModule,
 
     SidebarModule,
@@ -81,6 +116,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     PanelModule,
     CheckboxModule,
     MatAutocompleteModule,
+
     RouterModule.forRoot(routeConfig),
   ],
   providers: [],

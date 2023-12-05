@@ -1,0 +1,472 @@
+
+   
+
+    <form [formGroup]="courseForm" (ngSubmit)="submit()">
+        
+     <div class="flex flex-row">
+        <div class=" w-[800px]">
+        
+       
+        
+        <p-overlayPanel #op [style]="{'margin-top': '6.5rem', 'margin-left': '5rem', width:'800px', 'border-radius': '0', height:'9rem'}">
+            <div class="">
+             <label class=" text-base font-semibold text-main"> Course Title </label> <br>
+              <input type="text" name="" id="definp" class=" h-10 w-[750px]" placeholder="" formControlName="title" autofocus>
+           </div>
+        </p-overlayPanel>
+        <p-button (click)="op.toggle($event)"  [label]="fc['title'].value ? fc['title'].value: 'Your Course title here ...'"  
+        [style]="{width: '800px', height:'50px', 'margin-left': '5rem', 'margin-top': '5rem', position: 'absolute', border:'2px dashed grey', 
+                  'font-size': '45px' ,'font-family': 'Exo, sans-serif', 'font-weight': '200', 'color': 'black', 'border-radius': '0', cursor:'text'}" 
+        class="border-dashed border"></p-button>
+
+        <p-overlayPanel #o [style]="{'margin-top': '11.8rem', 'margin-left': '14.8rem', width:'250px', 'border-radius': '0', height:'330px'}">
+            <div class="w[-230px]">
+                <div class="mt-2 relative left-1 ml-2">  
+                    <select class="w-[190px] inherit bg-[#f0f2f5] border-none text-sm"
+                     name="category" formControlName="cat" (change)="onChange($event)">
+                                <option value=""
+                            label="Choose category">
+                        Choose category                </option>
+                                <option value="50"
+                            label="Art">
+                        Art                </option>
+                                <option value="51"
+                            label="- Artism">
+                        - Artism                </option>
+                                <option value="52"
+                            label="- Art Conceptuel">
+                        - Art Conceptuel                </option>
+                                <option value="56"
+                            label="- Minimalisme">
+                        - Minimalisme                </option>
+                                <option value="62"
+                            label="- La photographie">
+                        - La photographie                </option>
+                                <option value="64"
+                            label="- Des photos">
+                        - Des photos                </option>
+                                <option value="67"
+                            label="- Post-impressionnisme">
+                        - Post-impressionnisme                </option>
+                                <option value="71"
+                            label="- Sculpture">
+                        - Sculpture                </option>
+                                <option value="77"
+                            label="- Art textile">
+                        - Art textile                </option>
+                                <option value="78"
+                            label="- Théâtre">
+                        - Théâtre                </option>
+                                <option value="82"
+                            label="- Art vidéo">
+                        - Art vidéo                </option>
+                                <option value="195"
+                            label="Bases de l'informatique">
+                        Bases de l'informatique                </option>
+                                <option value="197"
+                            label="Commercialisation">
+                        Commercialisation                </option>
+                                <option value="55"
+                            label="Conception Matérielle">
+                        Conception Matérielle                </option>
+                                <option value="57"
+                            label="- Minimalist Design">
+                        - Minimalist Design                </option>
+                                <option value="58"
+                            label="- Motions">
+                        - Motions                </option>
+                                <option value="65"
+                            label="- Polycarbonate">
+                        - Polycarbonate                </option>
+                                <option value="72"
+                            label="- Shapes">
+                        - Shapes                </option>
+                                <option value="81"
+                            label="- Usability">
+                        - Usability                </option>
+                                <option value="86"
+                            label="- Concept d'impression 3D">
+                        - Concept d'impression 3D                </option>
+                                <option value="96"
+                            label="- Colors Choosing">
+                        - Colors Choosing                </option>
+                                <option value="97"
+                            label="- Communication">
+                        - Communication                </option>
+                                <option value="98"
+                            label="- Placement des composants">
+                        - Placement des composants                </option>
+                                <option value="110"
+                            label="- Interaction">
+                        - Interaction                </option>
+                                <option value="194"
+                            label="Électronique">
+                        Électronique                </option>
+                                <option value="74"
+                            label="Formation au logiciel">
+                        Formation au logiciel                </option>
+                                <option value="79"
+                            label="- Unity">
+                        - Unity                </option>
+                                <option value="80"
+                            label="- Unreal Engine 4">
+                        - Unreal Engine 4                </option>
+                                <option value="87"
+                            label="- Analyse des algorithmes">
+                        - Analyse des algorithmes                </option>
+                                <option value="88"
+                            label="- Apache">
+                        - Apache                </option>
+                                <option value="94"
+                            label="- C++">
+                        - C++                </option>
+                                <option value="99"
+                            label="- Cryomoteur">
+                        - Cryomoteur                </option>
+                                <option value="102"
+                            label="- Économie et finances">
+                        - Économie et finances                </option>
+                                <option value="105"
+                            label="- Frostbite">
+                        - Frostbite                </option>
+                                <option value="114"
+                            label="- Nvidia">
+                        - Nvidia                </option>
+                                <option value="115"
+                            label="- PHP, CSS, JS">
+                        - PHP, CSS, JS                </option>
+                                <option value="196"
+                            label="La biologie">
+                        La biologie                </option>
+                                <option value="63"
+                            label="La photographie">
+                        La photographie                </option>
+                                <option value="68"
+                            label="- Real things">
+                        - Real things                </option>
+                                <option value="85"
+                            label="- 360 photos">
+                        - 360 photos                </option>
+                                <option value="89"
+                            label="- Architectural">
+                        - Architectural                </option>
+                                <option value="90"
+                            label="- Astrophoto">
+                        - Astrophoto                </option>
+                                <option value="101"
+                            label="- Documentary">
+                        - Documentary                </option>
+                                <option value="104"
+                            label="- Fashion">
+                        - Fashion                </option>
+                                <option value="106"
+                            label="- Graphic &amp; Web-design">
+                        - Graphic &amp; Web-design                </option>
+                                <option value="108"
+                            label="- Illuminate">
+                        - Illuminate                </option>
+                                <option value="112"
+                            label="- Landscape">
+                        - Landscape                </option>
+                                <option value="113"
+                            label="- Nature">
+                        - Nature                </option>
+                                <option value="198"
+                            label="Mathématiques">
+                        Mathématiques                </option>
+                                <option value="59"
+                            label="Musique">
+                        Musique                </option>
+                                <option value="60"
+                            label="- Théâtre musical">
+                        - Théâtre musical                </option>
+                                <option value="66"
+                            label="- Populaire">
+                        - Populaire                </option>
+                                <option value="69"
+                            label="- Osciller">
+                        - Osciller                </option>
+                                <option value="75"
+                            label="- Musique soul">
+                        - Musique soul                </option>
+                                <option value="92"
+                            label="- Bleues">
+                        - Bleues                </option>
+                                <option value="95"
+                            label="- Classique">
+                        - Classique                </option>
+                                <option value="103"
+                            label="- Électronique">
+                        - Électronique                </option>
+                                <option value="107"
+                            label="- Hip hop">
+                        - Hip hop                </option>
+                                <option value="109"
+                            label="- Indé">
+                        - Indé                </option>
+                                <option value="111"
+                            label="- Le jazz">
+                        - Le jazz                </option>
+                                <option value="53"
+                            label="Sciences environnementales">
+                        Sciences environnementales                </option>
+                                <option value="54"
+                            label="- Aptitude">
+                        - Aptitude                </option>
+                                <option value="61"
+                            label="- Nutrition">
+                        - Nutrition                </option>
+                                <option value="70"
+                            label="- En cours">
+                        - En cours                </option>
+                                <option value="73"
+                            label="- Skiing">
+                        - Skiing                </option>
+                                <option value="76"
+                            label="- natation">
+                        - natation                </option>
+                                <option value="83"
+                            label="- Musculation">
+                        - Musculation                </option>
+                                <option value="84"
+                            label="- Entraînement">
+                        - Entraînement                </option>
+                                <option value="91"
+                            label="- Aller à vélo">
+                        - Aller à vélo                </option>
+                                <option value="93"
+                            label="- La Musculation">
+                        - La Musculation                </option>
+                                <option value="100"
+                            label="- Danse">
+                        - Danse                </option>
+                                <option value="199"
+                            label="Traitement Des signaux numériques">
+                        Traitement Des signaux numériques                </option>
+                        </select>
+                    </div>
+                        <div class="relative left-22 ml-3 w-[190px] top-3 bg-[#eeeeee] h-[230px]">
+                        <label class="text-main text-lg relative top-2 left-2 font-semibold"> Add category </label>
+                   
+                       
+                      
+                           <input type="text"
+                                  id="definp"
+                                  placeholder="Enter name" class="relative top-7 w-[170px] left-2 border-none" formControlName="addCat"/> <br>
+                     <label class="relative top-16 text-main text-sm left-3">Choose parent category</label> <br>
+                        <select class="relative top-20 w-[170px] left-3 border-none text-sm">
+                           <option value="0">Choose category</option>
+                           <option value="50">Art</option>
+                           <option value="195">Bases de l&#039;informatique</option>
+                           <option value="197">Commercialisation</option>
+                           <option value="55">Conception Matérielle</option>
+                           <option value="194">Électronique</option>
+                           <option value="74">Formation au logiciel</option>
+                           <option value="196">La biologie</option>
+                           <option value="63">La photographie</option>
+                           <option value="198">Mathématiques</option>
+                           <option value="59">Musique</option>
+                           <option value="53">Sciences environnementales</option>
+                           <option value="199">Traitement Des signaux numériques</option>
+                    </select>
+                  
+                    </div>
+           </div>
+        </p-overlayPanel>
+        <p-button (click)="o.toggle($event)"
+        [style]="{width: 'auto', height:'45px', 'margin-left': '15rem', 'margin-top': '10rem', position: 'absolute', border:'2px dashed grey', 
+                  'font-size': '10px' ,'font-family': 'Exo, sans-serif', 'font-weight': '200', 'color': 'black', 'border-radius': '0', cursor:'text'}" 
+        class="border-dashed border"><i class="pi pi-bookmark text-blue-600 text-3xl ml-1"></i><span class="relative ml-2 top-1 text-sm"><span class="relative -top-1">Category: </span><br>  <span class="text-black">{{label}}</span> </span></p-button>
+
+
+        
+        
+       
+        
+       
+     
+        
+      
+        <p-tabView class="relative top-48 left-20
+        " >
+            <p-tabPanel header="Description" >
+                <div class="flex flex-col  ">
+                    <label for="img" class="custom-file-upload">
+                        <div *ngIf="imageSrc" class="hover:opacity-10">
+                            <img [src]="imageSrc" alt="">
+                        </div>
+                        <i class="pi pi-image text-4xl flex justify-center mt-32 text-blue-500" *ngIf="!imageSrc"></i>
+                        <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="!imageSrc">Upload Course Image</p>
+                        <input type="file" id="img" name="img" accept="image/*" class="hidden h-32" formControlName="img" (change)="onFileSelected($event)">
+                        
+                    </label>
+                
+                </div>
+                <div class="relative top-7 h-[320px]"><p-editor formControlName="text" [style]="{height: '320px'}"></p-editor></div>
+            </p-tabPanel>
+            <p-tabPanel header="Curriculum" >
+
+                
+                    <form [formGroup]="curriForm" (ngSubmit)="submit()">
+                    <div formArrayName="sections" >
+                        <div *ngFor="let sec of sections().controls; let secIndex=index" class="border-[3px] rounded-md border-blue-700 mt-16">
+                            <div [formGroupName]="secIndex" class="relative mt-14">
+                                
+                                <span class="float-right relative top-1 right-5 hover:cursor-pointer" (click)="removeSection(secIndex)"><i class="pi pi-trash"></i></span>
+                        <label class="ml-2 text-main" >Section {{secIndex + 1}} Title </label>
+                        <input type="text" name="" formControlName="sectionTitle" id="definp" class="border rounded ml-2 mt-2 w-[90%]">
+                        
+
+                      <div formArrayName="lessons">
+                       
+                        <div *ngFor="let lesson of sectionLessons(secIndex).controls; let lessonIndex=index">
+                                                    
+                            <div [formGroupName]="lessonIndex" class="relative mt-12" >
+                                 
+                                 <span class="float-right relative top-1 right-5 hover:cursor-pointer" (click)="removeSectionLesson(secIndex, lessonIndex)"><i class="pi pi-trash"></i></span>
+                                <label class=" ml-3 top-7 text-main">Section {{secIndex + 1}} - Lesson {{lessonIndex + 1}} Title</label>
+                                <input type="text" id="definp" formControlName="title" class="border rounded ml-2 mt-2 w-[90%]" >
+                                <span class="ml-2">Duration:</span>
+                                <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none " formControlName="duration">
+                                <div class="relative top-7 w-[90%] left-9" *ngIf="lessonType[secIndex+1][lessonIndex] == 'text'">
+                                    <br><span class="relative bottom-3 ml-6 w-full text-main">Text-Lesson:</span>
+                                    <p-editor formControlName="textLesson" [style]="{height: '320px'}">
+                                    </p-editor>
+                                </div>
+                                <br><span *ngIf="lessonType[secIndex+1][lessonIndex] == 'video'" class="relative top-6 ml-6 w-full text-main">Video-Lesson:</span>
+                                <label class="relative top-10 ml-8 mb-6 custom-video-upload" *ngIf="lessonType[secIndex+1][lessonIndex] == 'video'">
+                                    <div *ngIf="vidLoaded[secIndex+1][lessonIndex] == 'selected'" class="">
+                                        <img [src]="vidSrc" class="ml-52 align-middle">
+                                    </div>
+                                    <i class="pi pi-video text-5xl flex justify-center mt-32 text-blue-500" *ngIf="vidLoaded[secIndex+1][lessonIndex] == 'notse'"></i>
+                                    <p class="flex justify-center mt-6 text-main font-semibold" *ngIf="vidLoaded[secIndex+1][lessonIndex] == 'notse'">Upload Video Lesson</p>
+                                    <input type="file" class="hidden" formControlName="videoLesson" accept="video/*" (change)="onVideoSelected($event, secIndex, lessonIndex)">
+                                </label>
+
+                            
+                            </div>
+ 
+                        </div> 
+                        
+                    </div>
+                     
+                     <div *ngIf="display">
+                      <button (click)="addTextLesson(secIndex)" class="relative top-9 left-6 bg-[#f1f1f1] h-8 w-44"><i class="pi pi-plus-circle text-blue-500 right-3 align-middle"></i><span class="relative left-2 align-middle">Add Text Lesson</span></button>
+                      <button (click)="addVideoLesson(secIndex)" class="relative top-9 left-9 bg-[#f1f1f1] h-8 w-44"><i class="pi pi-plus-circle text-blue-500 right-3 align-middle"></i><span class="relative left-2 align-middle">Add Video Lesson</span></button>
+                      
+                    </div>    
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+                    <button (click)="addSection()" class="relative top-24 mt-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">Add Section</span></button>
+                  
+                    </form>
+                
+               
+            
+            </p-tabPanel>
+            <p-tabPanel header="FAQ" >
+                <form  [formGroup]="faqForm" (ngSubmit)="submit()">
+                
+                <div formArrayName="aliases">
+                <div class="bg-[#f1f1f1] h-72 relative top-3 mt-5" id="faq-wrapper" 
+                *ngFor="let faq of faqAliase.controls; let i=index">
+                <div [formGroupName]="i">
+                    <span class="float-right relative top-3 right-2 hover:cursor-pointer" (click)="removeFaq(i)"><i class="pi pi-trash"></i></span>
+                <label for="" class="ml-3 relative top-2">
+                    Question {{i + 1}}
+                </label> <br>
+                
+                <textarea [rows]="1" [cols]="30" pInputTextarea [autoResize]="true"  
+                class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" placeholder="Enter FAQ Question" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter FAQ Question'" formControlName="question"
+                ></textarea> <br>
+    
+                <label for="" class="relative top-3 left-3">
+                    Answer {{i + 1}}
+                </label> <br>
+                <textarea [rows]="5" [cols]="80" pInputTextarea [autoResize]="true" 
+                class="mt-5 ml-3 bg-[#f1f1f1] border-none focus:bg-white" onfocus="this.placeholder = ''" placeholder="Enter FAQ Answer"
+                onblur="this.placeholder = 'Enter FAQ Answer'" formControlName="answer"
+                ></textarea>
+               
+            </div>
+            </div>
+            <button (click)="addFaq()" class="relative top-9 bg-[#f1f1f1] h-10 w-40"><i class="pi pi-plus-circle text-blue-500 right-3"></i><span class="relative left-2">New FAQ item</span></button>
+        </div>
+                
+                  
+          </form>
+          
+            </p-tabPanel>
+            <p-tabPanel header="Announcement" >
+                <div class="relative top-7 h-[320px]"><p-editor formControlName="announce" [style]="{height: '320px'}"></p-editor></div>
+            </p-tabPanel>
+        </p-tabView>
+    
+        </div>
+    
+    <div class="relative ml-36 text-main ">
+        <div class="relative top-36">
+        <input type="number" min="0" placeholder="Add Prices" class="rounded text-main font-bold h-14 bg-[#5cbc87] hover:bg-blue-950 hover:cursor-pointer">
+         <i class="pi pi-dollar text-3xl ml-5 relative top-2  text-blue-500"></i>
+        </div>
+    
+        <div class="relative top-52 border border-dashed hover:border-blue-700 h-16">
+            <span class="ml-2">Duration:</span>
+            <input type="text"  placeholder="1" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none ">
+            <i class="pi pi-stopwatch text-3xl ml-5 relative top-2 right-1 text-blue-500"></i>
+        </div>
+    
+        <div class="relative top-64 border border-dashed hover:border-blue-700 h-16">
+            <span class="ml-2">Video:</span>
+            <input type="number" min="0" placeholder="0" id="definp" class="rounded text-main ml-3 font-bold h-[62px] border-none">
+            <i class="pi pi-video text-3xl ml-9 relative top-2 right-1 text-blue-500"></i>
+        </div>
+    
+        <div class="relative top-72 border border-dashed hover:border-blue-700 h-16">
+            <span class="ml-2">Level:</span>
+            <select name="" id="" class="w-52 rounded h-[62px] border-none font-bold ml-3" >
+                <option value="Beginner">Beginner</option>
+                <option value="Intermidate">Intermidate</option>
+                <option value="Advanced">Advanced</option>
+            </select>
+            <i class="pi pi-sort-amount-down-alt text-3xl ml-12 relative top-2 text-blue-500"></i>
+        </div>
+    </div>
+</div>
+<div class="relative top-96">
+<button type="submit" id="de" class="relative left-52 bg-[#385bce] w-44 h-12 text-white text-main font-semibold text-base">Publish Course</button>
+</div>
+    </form>
+
+   
+  
+
+   
+
+    
+   
+
+
+
+
+    
+
+   
+
+
+    
+            
+          
+         
+      
+      
+      
+   
+    
+
+   
+      

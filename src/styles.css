@@ -7,6 +7,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,800;0,900;1,100;1,200;1,800;1,900&display=swap');
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+
+@import "../node_modules/quill/dist/quill.snow.css";
+@import "primeicons/primeicons.css";
+
+
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: rgb(241, 245, 249);
+    color: black;
+    width: 200px;
+    border-radius: 0%;
+    font-size: small;
+    font-family: 'Exo', sans-serif;
+
 @import "primeicons/primeicons.css";
 
 
@@ -18,6 +32,7 @@
     
     font-family: 'Exo', sans-serif;
     
+
     height: 60px;
     }
 
@@ -31,4 +46,29 @@
 .p-tabview .p-tabview-nav li a {
     display: flex;
     justify-content: center;
+
   }
+
+  
+
+  
+  @media (max-width: 600px) {
+
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+      background: rgb(241, 245, 249);
+      color: black;
+      width: 100px;
+      border-radius: 0%;
+      font-size: small;
+      font-family: 'Exo', sans-serif;
+      height: 30px;
+      }
+
+      
+    
+  }
+
+  
+
+  }
+
