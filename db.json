@@ -2,7 +2,7 @@
   "courses": [
     {
       "id": 1,
-      "coursename": "Race, Gender and Culture",
+      "coursename": "Fndamentals of Programming",
       "role": "Teacher",
       "name": "FASIL GETIE",
       "photo": "https://lms.goodgradestudent.com/wp-content/uploads/stm_lms_avatars/stm_lms_avatar8.jpg?v=1686311306",
@@ -72,6 +72,18 @@
       "email": "aSKJC",
       "message": "SCn",
       "id": 20
+    },
+    {
+      "name": "bn",
+      "email": "nv",
+      "message": " bb",
+      "id": 21
+    },
+    {
+      "name": "bnvb",
+      "email": "bnm",
+      "message": "h",
+      "id": 22
     }
   ],
   "faqs": [

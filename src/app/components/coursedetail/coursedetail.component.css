@@ -7,3 +7,8 @@
     font-family: 'Exo', sans-serif;
     
 } 
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+   
+    width: 160px;
+  
+  }

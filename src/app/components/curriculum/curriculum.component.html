@@ -1,7 +1,7 @@
-<section [class.dark-mode]="darkModeService.darkMode" >
+<section [class.dark-mode]="darkModeService.darkMode">
   <hr class="bg-gray-400 h-0.5 text-xs" />
   <!-- header section -->
-  <div class="flex bg-gray-200 justify-between text-xs  ">
+  <div class="flex bg-gray-200 justify-between text-xs dark:bg-black">
     <div class="flex">
       <a class="px-3.5" [routerLink]="['/coursedet']">
         <mat-icon class="text-gray-700 font-bold pt-1.5">arrow_back</mat-icon>
@@ -10,7 +10,7 @@
       <div class="text-sm pl-4">
         <div class="text-gray-600">Course:</div>
         <div class="text-gray-900 font-bold dark:text-white">
-          Communication et gestion interculturelles
+          Communication et gestion interculturelles 
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
       <a class="font-bold pr-3">Lesson</a>
       <a class="font-bold">Materials</a>
     </div>
-    
+
     <div class="flex">
       <div class="border-l border-gray-300 px-2"></div>
       <button (click)="toggleDarkMode()" class="pr-2">
@@ -46,11 +46,13 @@
   </div>
   <hr class="bg-gray-400 h-0.5" />
 
-  <mat-drawer-container class="example-container txt-main" #hasBackdrop value="false">
+  <mat-drawer-container
+    class="example-container txt-main"
+    #hasBackdrop
+    value="false"
+  >
     <mat-drawer #drawer mode="side" class="w-1/5 bg-gray-200">
-
       <div class="bg-gray-200">
-        
         <p class="font-bold text-xl pl-5">
           Communication et gestion interculturelles
         </p>
@@ -89,7 +91,6 @@
           >
             <div class="p-3 border border-b-0 border-gray-200">
               <div class="flex justify-between">
-
                 <div class="text-xl">Introduction</div>
                 <input
                   id="link-checkbox"
@@ -215,8 +216,7 @@
                   <a
                     mat-list-item
                     (click)="selectTab('Tab 4')"
-                    class="pl-2'
-                     text-gray-600 text-xs"
+                    class="pl-2' text-gray-600 text-xs"
                     >Text lesson</a
                   >
                 </div>
@@ -310,7 +310,6 @@
             <div
               class="p-3 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
             >
-            
               <div class="flex justify-between">
                 <div class="text-xl">Quiz : Application mobiles</div>
                 <input
@@ -326,17 +325,18 @@
                   class="masterstudy-curriculum-accordion__image"
                 />
 
-                <p class="pl-2 text-gray-600 text-xs"><a
-                  mat-list-item
-                  (click)="selectTab('Tab 7')"
-                  class="pl-2 text-gray-600 text-xs"
-                  >10 Questions</a
-                ></p>
+                <p class="pl-2 text-gray-600 text-xs">
+                  <a
+                    mat-list-item
+                    (click)="selectTab('Tab 7')"
+                    class="pl-2 text-gray-600 text-xs"
+                    >10 Questions</a
+                  >
+                </p>
               </div>
             </div>
           </div>
         </div>
-    
       </div>
     </mat-drawer>
 
@@ -345,42 +345,38 @@
         <section>
           <div class="h-[90vh] text-xl px-64 overflow-y-auto">
             <div *ngIf="selectedTab === 'Tab 1'">
-              
               deleniti ullam minus eligendi, sit, fuga placeat vero possimus
               mollitia inventore commodi beatae, omnis a maxime pariatur
-              consequuntur quam quis odio?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Excepturi, saepe. Architecto commodi, amet maiores ex quia
-              veritatis repellat maxime beatae? Ullam maiores ducimus ipsa
-              temporibus ea ratione veniam quas inventore!
-              deleniti ullam minus eligendi, sit, fuga placeat vero possimus
-              mollitia inventore commodi beatae, omnis a maxime pariatur
-              consequuntur quam quis odio?
+              consequuntur quam quis odio? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Excepturi, saepe. Architecto
+              commodi, amet maiores ex quia veritatis repellat maxime beatae?
+              Ullam maiores ducimus ipsa temporibus ea ratione veniam quas
+              inventore! deleniti ullam minus eligendi, sit, fuga placeat vero
+              possimus mollitia inventore commodi beatae, omnis a maxime
+              pariatur consequuntur quam quis odio?
             </div>
             <div *ngIf="selectedTab === 'Tab 2'">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Excepturi, saepe. Architecto commodi, amet maiores ex quia
               veritatis repellat maxime beatae? Ullam maiores ducimus ipsa
-              temporibus ea ratione veniam quas inventore!
-              deleniti ullam minus eligendi, sit, fuga placeat vero possimus
-              mollitia inventore commodi beatae, omnis a maxime pariatur
-              consequuntur quam quis odio?
+              temporibus ea ratione veniam quas inventore! deleniti ullam minus
+              eligendi, sit, fuga placeat vero possimus mollitia inventore
+              commodi beatae, omnis a maxime pariatur consequuntur quam quis
+              odio?
             </div>
             <div *ngIf="selectedTab === 'Tab 3'">
-              amet cocing elit. Ullam eius nisi blandiiste libero
-              numquam harum iusto! Veniam omnis dolores quae enim repudiandae
-              ipsam.
+              amet cocing elit. Ullam eius nisi blandiiste libero numquam harum
+              iusto! Veniam omnis dolores quae enim repudiandae ipsam.
             </div>
             <div *ngIf="selectedTab === 'Tab 4'">fourth lesson</div>
             <div *ngIf="selectedTab === 'Tab 5'">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit
               beatae soluta ipsum debitis, quos sed mollitia reprehende
             </div>
-            <div *ngIf="selectedTab === 'Tab 6'">
-              seventh lesson
-            </div>
+            <div *ngIf="selectedTab === 'Tab 6'">seventh lesson</div>
             <div *ngIf="selectedTab === 'Tab 7'">
-              <app-quiz></app-quiz></div>
+              <app-quiz></app-quiz>
+            </div>
           </div>
         </section>
       </div>
