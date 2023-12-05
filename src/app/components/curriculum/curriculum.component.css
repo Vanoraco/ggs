@@ -3,6 +3,14 @@
     font-family: 'Exo', sans-serif;
 
 }
+body {
+  @apply transition-colors;
+}
+
+.dark-mode {
+  @apply bg-[#171717] text-white ;
+  
+}
 
 .example-container {
 

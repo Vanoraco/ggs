@@ -14,7 +14,7 @@
         <li class="home-nav">
           <a href="https://lms.goodgradestudent.com/">HOME</a>
         </li>
-        <li class="home-nav"><a [routerLink]="['/coursedet']">COURSES</a></li>
+        <li class="home-nav"><a [routerLink]="['/coursepage']">COURSES</a></li>
         <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
         <li class="home-nav"><a [routerLink]="['/cont']">CONTACT US</a></li>
         <li class="home-nav">
@@ -50,6 +50,9 @@
       >
         {{ course.coursename }}
       </div>
+
+      <!-- course category and course instructor display section -->
+
       <div>
         <div class="flex flex-col sm:flex-row">
           <div class="flex items-center mb-8 pr-16">
@@ -258,22 +261,16 @@
 
         <!-- FAQ section -->
 
-        <p-tabPanel header="FAQ"
-          ><div class="bg-white pt-5">
+        <p-tabPanel header="FAQ">
+          <div class="bg-white pt-5">
             <div class="card">
               <p-accordion [multiple]="true">
                 <p-accordionTab
-                  header="FAQ"
-                  [selected]="true"
+                  *ngFor="let faq of faqs"
+                  [header]="faq.question"
                   class="line-height-3 m-0"
                 >
-                  Ans:
-                </p-accordionTab>
-                <p-accordionTab header="FAQ" class="line-height-3 m-0">
-                  Ans:
-                </p-accordionTab>
-                <p-accordionTab header="FAQ" class="line-height-3 m-0">
-                  Ans:
+                  Ans: {{ faq.answer }}
                 </p-accordionTab>
               </p-accordion>
             </div>
@@ -322,8 +319,21 @@
             <p-editor
               [(ngModel)]="htmlEditor"
               [style]="{ height: '320px' }"
-            ></p-editor></div
-        ></p-tabPanel>
+            ></p-editor>
+          </div>
+          <div class="card flex justify-content-center mt-3">
+            <p-rating
+              [(ngModel)]="value"
+              [style]="{ color: '#FFA500' }"
+              [cancel]="false"
+            ></p-rating>
+          </div>
+          <button
+            class="bg-blue-600 text-white font-bold justify-center px-7 py-3 mt-3"
+          >
+            Add Review
+          </button>
+        </p-tabPanel>
       </p-tabView>
     </div>
 
@@ -336,13 +346,12 @@
         <div class="pl-1 pt-0.5 text-gray-800">Add to wishlist</div>
       </div>
       <button
-          class="bg-[#5CBC87] hover:bg-blue-950 text-white font-bold py-4 rounded-xl mb-7 text-center w-full  txt-main"
-        >
-          ENROLL COURSE
-        </button>
+        class="bg-[#5CBC87] hover:bg-blue-950 text-white font-bold py-4 rounded-xl mb-7 text-center w-full txt-main"
+      >
+        ENROLL COURSE
+      </button>
       <div class="">
-        
-        <div class="flex justify-between py-3 text-sm txt-main  px-3">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Enrolled: <label class="font-bold">{{ course.enrolled }}</label>
           </p>
@@ -350,14 +359,14 @@
           <i class="pi pi-users text-2xl text-blue-700"></i>
         </div>
         <hr class="h-4" />
-        <div class="flex justify-between py-3  text-sm txt-main  px-3">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Duration: <label class="font-bold">{{ course.duration }}</label>
           </p>
           <i class="pi pi-clock text-2xl text-blue-700"></i>
         </div>
         <hr class="h-5" />
-        <div class="flex justify-between py-3  text-sm txt-main  px-3">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Lectures: <label class="font-bold">{{ course.lectures }}</label>
           </p>
@@ -365,7 +374,7 @@
         </div>
         <hr class="h-5" />
 
-        <div class="flex justify-between py-3  text-sm txt-main  px-3">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Video: <label class="font-bold">{{ course.video }}</label>
           </p>
@@ -373,7 +382,7 @@
         </div>
         <hr class="h-5" />
 
-        <div class="flex justify-between py-3  text-sm txt-main  px-3">
+        <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
             Level: <label class="font-bold">{{ course.level }}</label>
           </p>
@@ -382,59 +391,67 @@
         <hr class="" />
       </div>
       <div class="border-l border-gray-300 pl-7">
-        <div class="pt-6" >
+        <!-- top courses -->
+
+        <div class="pt-6">
           <ol>
-            <li  class="pb-3">
+            <li class="mb-5">
               <a href="">
                 <div class="flex">
-                <img
-                  width="75"
-                  height="75"
-                  src="https://lms.goodgradestudent.com/wp-content/uploads/2022/07/joshua-slate-q1bPJfULENA-unsplash-1-75x75.jpg"
-                />
-                <div class="pl-2">
-                  <div class="font-bold">Traitement des signaux numériques</div>
-                  <button class="bg-green-500 px-3 rounded text-white">Libre</button>
-                  <div>By rekikm</div>
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2022/07/joshua-slate-q1bPJfULENA-unsplash-1-75x75.jpg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
                 </div>
-              </div>
               </a>
             </li>
-            <li class="pb-3">
+            <li class="mb-5">
               <a href="">
                 <div class="flex">
-                <img
-                  width="75"
-                  height="75"
-                  src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1512686096451-a15c19314d59-75x75.jpeg"
-                />
-                <div class="pl-2">
-                  <div class="font-bold">Traitement des signaux numériques</div>
-                  <button class="bg-green-500 px-3 rounded text-white">Libre</button>
-                  <div>By rekikm</div>
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1512686096451-a15c19314d59-75x75.jpeg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
                 </div>
-              </div>
               </a>
             </li>
             <li>
               <a href="">
                 <div class="flex">
-                <img
-                  width="75"
-                  height="75"
-                  src="https://lms.goodgradestudent.com/wp-content/uploads/2022/07/joshua-slate-q1bPJfULENA-unsplash-1-75x75.jpg"
-                />
-                <div class="pl-2">
-                  <div class="font-bold">Traitement des signaux numériques</div>
-                  <button class="bg-green-500 px-3 rounded text-white">Libre</button>
-                  <div>By rekikm</div>
+                  <img
+                    width="75"
+                    height="75"
+                    src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/photo-1509343256512-d77a5cb3791b-min-75x75.jpeg"
+                  />
+                  <div class="pl-2">
+                    <div class="">Traitement des signaux numériques</div>
+                    <button class="bg-green-500 px-3 rounded text-white mt-0.5">
+                      Libre
+                    </button>
+                    <div class="text-gray-400 text-xs mt-1">By Fasil Getie</div>
+                  </div>
                 </div>
-              </div>
               </a>
             </li>
-            
-            </ol>
+          </ol>
         </div>
+
         <div>
           <div class="flex justify-between pt-14">
             <hr class="h-1 w-1/5 bg-[#385BCE]" />
@@ -443,28 +460,26 @@
 
           <h1 class="text-xl font-bold pb-5 pt-8">Archive</h1>
 
-          <div>
-            <label
-              for="countries"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Select an option</label
-            >
-            <select
-              id="countries"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            >
-              <option selected>Select Month</option>
-              <option value="US">Sep</option>
-              <option value="CA">Oct</option>
-              <option value="FR">jan</option>
-              <option value="DE">jan</option>
-            </select>
-          </div>
+          <!-- search option -->
+
+          <mat-form-field class="w-full">
+            <mat-label>Select month</mat-label>
+            <mat-select [(value)]="selectedCourse">
+              <mat-option>Select month</mat-option>
+              <mat-option value="option1">July</mat-option>
+              <mat-option value="option2">Augest 2022</mat-option>
+              <mat-option value="option3">September 2023</mat-option>
+              <mat-option value="option2">Augest 2022</mat-option>
+              <mat-option value="option3">September 2023</mat-option>
+            </mat-select>
+          </mat-form-field>
 
           <div class="flex justify-between pt-14">
             <hr class="h-1 w-1/5 bg-[#385BCE]" />
             <hr class="h-1 w-2/3 mt-0.5" />
           </div>
+
+          <!-- working hour -->
 
           <h1 class="pt-14 pb-7 font-bold text-2xl">Worrking hours</h1>
           <div class="divide-y divide-dashed text-gray-700 text-[15px]">

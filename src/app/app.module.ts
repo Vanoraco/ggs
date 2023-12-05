@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { RouterModule } from '@angular/router';
 import routeConfig from './components/routes';
@@ -30,8 +30,15 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { EditorModule } from 'primeng/editor';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
-
+import { ToastrModule } from 'ngx-toastr';
 import { TabViewModule } from 'primeng/tabview';
+import { HttpClientModule } from '@angular/common/http';
+import { RatingModule } from 'primeng/rating';
+import { CoursepageComponent } from './components/coursepage/coursepage.component';
+import { PanelModule } from 'primeng/panel';
+import { CheckboxModule } from 'primeng/checkbox';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,11 +49,13 @@ import { TabViewModule } from 'primeng/tabview';
     CurriculumComponent,
     QuizComponent,
     ContactusComponent,
+    CoursepageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatIconModule,
     MatTabsModule,
     FormsModule,
@@ -65,9 +74,14 @@ import { TabViewModule } from 'primeng/tabview';
     DropdownModule,
     InputTextModule,
     TabViewModule,
+    ToastrModule.forRoot(),
+    RatingModule,
+    PanelModule,
+    CheckboxModule,
+    MatAutocompleteModule,
     RouterModule.forRoot(routeConfig),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

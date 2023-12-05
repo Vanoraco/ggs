@@ -1,15 +1,15 @@
-<section  >
+<section [class.dark-mode]="darkModeService.darkMode" >
   <hr class="bg-gray-400 h-0.5 text-xs" />
   <!-- header section -->
-  <div class="flex bg-gray-200 justify-between text-xs">
+  <div class="flex bg-gray-200 justify-between text-xs  ">
     <div class="flex">
-      <a class="px-3.5"[routerLink]="['/coursedet']">
+      <a class="px-3.5" [routerLink]="['/coursedet']">
         <mat-icon class="text-gray-700 font-bold pt-1.5">arrow_back</mat-icon>
       </a>
       <button mat-raised-button (click)="drawer.toggle()">Curriculum</button>
       <div class="text-sm pl-4">
         <div class="text-gray-600">Course:</div>
-        <div class="text-gray-900 font-bold">
+        <div class="text-gray-900 font-bold dark:text-white">
           Communication et gestion interculturelles
         </div>
       </div>

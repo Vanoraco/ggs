@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { QuizService } from 'src/app/services/quiz.service';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
@@ -10,56 +11,13 @@ export class QuizComponent {
 
    
 
-    totalRecords: number = 6; 
+  totalRecords: number; 
     currentPage: number = 0; 
     rowsPerPage: number = 1; 
     passingGrade: number = 50; 
-    timeLimit: number = this.totalRecords;
-    quizQuestions: any[] = [
-      {
-        question: '1. What is the capital of France?',
-        options: ['Paris', 'London', 'Berlin', 'Madrid'],
-        answer: 'Paris',
-        selectedOption: null,
-        isCorrect: false
-      },
-      {
-        question: '2. What is the largest planet in our solar system?',
-        options: ['Jupiter', 'Saturn', 'Neptune', 'Earth'],
-        answer: 'Jupiter',
-        selectedOption: null,
-        isCorrect: false
-      },
-      {
-        question: '3. What is the capital of France?',
-        options: ['Paris', 'London', 'Berlin', 'Madrid'],
-        answer: 'Paris',
-        selectedOption: null,
-        isCorrect: false
-      },
-      {
-        question: '4. What is the largest planet in our solar system?',
-        options: ['Jupiter', 'Saturn', 'Neptune', 'Earth'],
-        answer: 'Jupiter',
-        selectedOption: null,
-        isCorrect: false
-      },
-      {
-        question: '5. What is the capital of France?',
-        options: ['Paris', 'London', 'Berlin', 'Madrid'],
-        answer: 'Paris',
-        selectedOption: null,
-        isCorrect: false
-      },
-      
-      {
-        question: '6. What is the largest planet in our solar system?',
-        options: ['Jupiter', 'Saturn', 'Neptune', 'Earth'],
-        answer: 'Jupiter',
-        selectedOption: null,
-        isCorrect: false
-      }
-    ];
+    timeLimit: number = 0;
+    
+    quizQuestions: any[] = [];
   
     currentQuestion: any; 
   quizStarted: boolean = false; 
@@ -68,14 +26,19 @@ export class QuizComponent {
   startTime: number | null = null;
   endTime: number | null = null; 
   
-    constructor() {}
+  constructor(private quizService: QuizService) {
+    this.totalRecords = this.quizService.getTotalQuestions();
+    this.timeLimit = this.totalRecords; 
+  }
   
-    startQuiz() {
-      this.quizStarted = true;
-      this.startTime = Date.now();
-      this.moveToNextQuestion();
-    }
-  
+  startQuiz() {
+    this.quizStarted = true;
+    this.startTime = Date.now();
+    this.quizQuestions = this.quizService.getQuizQuestions();
+    this.totalRecords = this.quizService.getTotalQuestions();
+    this.timeLimit = this.totalRecords; 
+    this.moveToNextQuestion();
+  }
     loadPageData(event: any) {
       this.currentPage = event.page + 1;
       this.setCurrentQuestion();
@@ -125,10 +88,12 @@ export class QuizComponent {
       return this.getScorePercentage() >= this.passingGrade;
     }
     restartQuiz() {
-      this.quizStarted = false;
-      this.quizFinished = false;
-      this.currentPage = 1;
-      this.correctAnswers = 0;
-      this.currentQuestion = null;
-    }
+    this.quizStarted = false;
+    this.quizFinished = false;
+    this.currentPage = 1;
+    this.correctAnswers = 0;
+    this.currentQuestion = null;
+    this.quizQuestions = this.quizService.getQuizQuestions();
+    this.totalRecords = this.quizService.getTotalQuestions();
+  }
   }

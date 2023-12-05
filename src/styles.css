@@ -9,13 +9,6 @@
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
-body {
-    @apply transition-colors;
-  }
-  
-  .dark-mode {
-    @apply bg-[#171717] text-white;
-  }
 
   .p-tabview .p-tabview-nav li .p-tabview-nav-link {
     background: rgb(241, 245, 249);

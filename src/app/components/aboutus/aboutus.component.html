@@ -14,7 +14,7 @@
         <li class="home-nav">
           <a href="https://lms.goodgradestudent.com/">HOME</a>
         </li>
-        <li class="home-nav"><a [routerLink]="['/coursedet']">COURSES</a></li>
+        <li class="home-nav"><a [routerLink]="['/coursepage']">COURSES</a></li>
         <li class="home-nav"><a href="/about-us">ABOUT US</a></li>
         <li class="home-nav"><a [routerLink]="['/cont']">CONTACT US</a></li>
         <li class="home-nav">
@@ -35,6 +35,8 @@
     </div>
   </div>
 </header>
+
+
 
 <link
   rel="stylesheet"
@@ -122,26 +124,26 @@
         CONTACT US
       </p>
     </div>
-    <form class="">
+    <form [formGroup]="feedbackForm" class="" (ngSubmit)="submitForm($event)">
       <div class="flex flex-col sm:flex-row mb-5 txt-main">
         <input
           class="w-full sm:w-1/2 sm:mr-2 mb-2 sm:mb-0 bg-gray-200 border border-gray-200 rounded py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           type="text"
-          name="name"
+          formControlName="name"
           placeholder="Your name"
           required
         />
         <input
           class="w-full sm:w-1/2 sm:ml-2 bg-gray-200 border border-gray-200 rounded py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           type="email"
-          name="email"
+          formControlName="email"
           placeholder="Your email"
           required
         />
       </div>
       <textarea
         class="w-full mt-5 bg-gray-200 border border-gray-200 rounded"
-        name="message"
+        formControlName="message"
         rows="10"
         required
       ></textarea
@@ -154,55 +156,82 @@
   </div>
 </section>
 
-<!-- share option -->
+<!-- Share options -->
 
 <div class="flex flex-wrap justify-center lg:justify-start lg:pl-[400px] pb-5">
+  <!-- Facebook Share -->
   <div class="bg-[#1877F2] w-20 h-5 mr-2 lg:mr-5 rounded mt-1">
     <p class="text-[#e5edfc] text-center">
-      <a href=""
-        ><i class="fab fa-facebook-f text-blue-600 bg-white rounded-full pl-1"
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
+      >
+        <i class="fab fa-facebook-f text-blue-600 bg-white rounded-full pl-1"
           ><span>&nbsp;</span></i
-        ><span>&nbsp;</span>Share</a
-      >
+        >
+        <span>&nbsp;</span>Share
+      </a>
     </p>
   </div>
+
+  <!-- Twitter Share -->
   <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
-    <hr class="h-0.5 bg-[#1DCAFF] mb-0" />
+    <hr class="h-0.5 bg-[#1DCAFF]" />
     <p class="text-black text-center rounded border border-gray-200">
-      <a href=""
-        ><i class="fab fa-twitter text-[#1DCAFF]"><span>&nbsp;&nbsp;</span></i
-        >Tweet</a
+      <a
+        href="https://twitter.com/intent/tweet?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
       >
+        <i class="fab fa-twitter text-[#1DCAFF]"><span>&nbsp;&nbsp;</span></i>
+        Tweet
+      </a>
     </p>
   </div>
+
+  <!-- Pinterest Share -->
   <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
     <hr class="h-0.5 bg-[#C92228]" />
     <p class="text-black text-center rounded border border-gray-200">
-      <a href=""
-        ><i class="fab fa-pinterest text-[#C92228]"><span>&nbsp;&nbsp;</span></i
-        >Share</a
+      <a
+        href="https://pinterest.com/pin/create/button/?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
       >
+        <i class="fab fa-pinterest text-[#C92228]"><span>&nbsp;&nbsp;</span></i>
+        Share
+      </a>
     </p>
   </div>
+
+  <!-- LinkedIn Share -->
   <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
     <hr class="h-0.5 bg-[#3F729B]" />
     <p class="text-black text-center rounded border border-gray-200">
-      <a href=""
-        ><i class="fab fa-linkedin text-[#3F729B]"><span>&nbsp;&nbsp;</span></i
-        >Share</a
+      <a
+        href="http://www.linkedin.com/sharing/share-offsite/?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
       >
+        <i class="fab fa-linkedin text-[#3F729B]"><span>&nbsp;&nbsp;</span></i>
+        Share
+      </a>
     </p>
   </div>
+
+  <!-- Digg Share -->
   <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
     <hr class="h-0.5 bg-[#2169A8]" />
     <p class="text-black text-center rounded border border-gray-200">
-      <a href=""
-        ><i class="fab fa-digg text-[#2169A8]"><span>&nbsp;&nbsp;</span></i
-        >Share</a
+      <a
+        href="http://digg.com/submit?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
       >
+        <i class="fab fa-digg text-[#2169A8]"><span>&nbsp;&nbsp;</span></i>
+        Share
+      </a>
     </p>
   </div>
 </div>
-
-
-

@@ -29,8 +29,7 @@ checkCheckbox() {
 }
 
 goToPreviousTab() {
-  if (this.selectedTab === 'Tab 1') {
-    
+  if (this.selectedTab === 'Tab 1') { 
   } else if (this.selectedTab === 'Tab 2') {
     this.selectedTab = 'Tab 1';
   } else if (this.selectedTab === 'Tab 3') {

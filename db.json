@@ -1,0 +1,136 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "coursename": "Race, Gender and Culture",
+      "role": "Teacher",
+      "name": "FASIL GETIE",
+      "photo": "https://lms.goodgradestudent.com/wp-content/uploads/stm_lms_avatars/stm_lms_avatar8.jpg?v=1686311306",
+      "category": "SCIENCES ENVIRONNEMENTALES",
+      "description": "The primary goal of this quick start guide is to introduce you to Unreal Engine 4’s (UE4) development environment. By the end of this guide, you’ll know how to set up and develop C++ Projects in UE4. This guide shows you how to create a new Unreal Engine project, add a new C++ class to it, compile the project, and add an instance of a new class to your level. By the time you reach the end of this guide, you’ll be able to see your programmed Actor floating above a table in the level.",
+      "curriculum": "",
+      "faq": "",
+      "announcement": "",
+      "enrolled": "36 students",
+      "duration": " 10 hours",
+      "lectures": 11,
+      "video": "9 hours",
+      "level": 2
+    }
+  ],
+  "feedback": [
+    {
+      "name": "yordanos",
+      "email": "yordanostibebu5@gmail.com",
+      "message": "hello there ",
+      "id": 2
+    },
+    {
+      "name": "yoda",
+      "email": "123",
+      "message": "from contact us page",
+      "id": 11
+    },
+    {
+      "name": "yor",
+      "email": "432",
+      "message": "from about us page\n",
+      "id": 12
+    },
+    {
+      "name": "yordanos",
+      "email": "abc@gmail.com",
+      "message": "contact us message",
+      "id": 15
+    },
+    {
+      "name": "aS<C",
+      "email": "SMCSHXmcxbM",
+      "message": "acnb",
+      "id": 16
+    },
+    {
+      "name": "dV",
+      "email": "dv",
+      "message": "DV",
+      "id": 17
+    },
+    {
+      "name": "dV",
+      "email": "dv",
+      "message": "DV",
+      "id": 18
+    },
+    {
+      "name": "dV",
+      "email": "dv",
+      "message": "DV",
+      "id": 19
+    },
+    {
+      "name": "sacha",
+      "email": "aSKJC",
+      "message": "SCn",
+      "id": 20
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "question": "What is Angular?",
+      "answer": "Angular is a platform and framework for building client-side applications with HTML, CSS, and JavaScript/TypeScript."
+    },
+    {
+      "id": 2,
+      "question": "How can I install Angular?",
+      "answer": "You can install Angular CLI using npm: 'npm install -g @angular/cli'. After that, you can create a new project using 'ng new your-project-name'."
+    },
+    {
+      "id": 3,
+      "question": "What is PrimeNG?",
+      "answer": "PrimeNG is a collection of rich UI components for Angular. It is based on the PrimeUI library and provides a set of highly customizable and responsive components."
+    },
+    {
+      "id": 4,
+      "question": "What is Angular?",
+      "answer": "Angular is a platform and framework for building client-side applications with HTML, CSS, and JavaScript/TypeScript."
+    },
+    {
+      "id": 5,
+      "question": "How can I install Angular?",
+      "answer": "You can install Angular CLI using npm: 'npm install -g @angular/cli'. After that, you can create a new project using 'ng new your-project-name'."
+    }
+  ],
+  "questions": [
+    {
+      "question": "What is the capital of Canada?",
+      "options": [
+        "Toronto",
+        "Vancouver",
+        "Ottawa",
+        "Montreal"
+      ],
+      "answer": "Ottawa"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "options": [
+        "Earth",
+        "Mars",
+        "Venus",
+        "Jupiter"
+      ],
+      "answer": "Mars"
+    },
+    {
+      "question": "What is the largest mammal?",
+      "options": [
+        "Elephant",
+        "Blue Whale",
+        "Giraffe",
+        "Hippopotamus"
+      ],
+      "answer": "Blue Whale"
+    }
+  ]
+}
