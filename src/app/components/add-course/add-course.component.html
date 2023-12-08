@@ -370,9 +370,9 @@
             <p-tabPanel header="FAQ" >
                 <form  [formGroup]="faqForm" (ngSubmit)="submit()">
                 
-                <div formArrayName="aliases">
+                <div formArrayName="faqs">
                 <div class="bg-[#f1f1f1] h-72 relative top-3 mt-5" id="faq-wrapper" 
-                *ngFor="let faq of faqAliase.controls; let i=index">
+                *ngFor="let faq of faqs.controls; let i=index">
                 <div [formGroupName]="i">
                     <span class="float-right relative top-3 right-2 hover:cursor-pointer" (click)="removeFaq(i)"><i class="pi pi-trash"></i></span>
                 <label for="" class="ml-3 relative top-2">

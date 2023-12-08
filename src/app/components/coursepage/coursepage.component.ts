@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { CourseService } from 'src/app/services/course.service';
 import { Course } from 'src/app/shared/models/Courses';
 
@@ -14,9 +16,20 @@ export class CoursepageComponent {
   selectedCategories: any[] = [];
   courses: Course[] = [];
   
-  constructor(private courseService: CourseService) {
-    this.courses = this.courseService.getAll()
+  constructor(private courseService: CourseService, activatedRoute: ActivatedRoute) {
+
+    let courseObservable: Observable<Course[]>;
+
+    activatedRoute.params.subscribe(() => {
+      courseObservable.subscribe(serverCourses => {
+        this.courses = serverCourses
+      })
+      
+    })
+
+  
   }
+  
 
   categories: any[] = [
       { name: 'La photographie' },

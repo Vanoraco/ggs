@@ -4,4 +4,5 @@ export class Course {
     courseName!: string;
     courseDuration!: string;
     courseAccess!: string;
+    
 }

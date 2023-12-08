@@ -127,7 +127,7 @@ export class AddCourseComponent {
     });
    
     this.faqForm = this.formBuilder.group({
-      aliases: this.formBuilder.array([ ])
+      faqs: this.formBuilder.array([ ])
     })
 
     this.curriForm = this.formBuilder.group({
@@ -145,8 +145,8 @@ get fc() {
   return this.courseForm.controls;
 }
 
-get faqAliase() {
-  return this.faqForm.get('aliases') as FormArray;
+get faqs() {
+  return this.faqForm.get('faqs') as FormArray;
 }
 
 get curri() {
@@ -237,17 +237,17 @@ addVideoLesson(secIndex: number) {
 
 submit() {
   console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
-               faq: this.faqAliase.value, section: this.sections().value,ld:this.lessonType, fv: this.vidLoaded, co: this.lessonType.length});
+               faq: this.faqs.value, section: this.sections().value,ld:this.lessonType, fv: this.vidLoaded, co: this.lessonType.length});
 }
 
 addFaq() {
   
-    this.faqAliase.push(this.newFaq());
+    this.faqs.push(this.newFaq());
     this.display = true
 }
 
 removeFaq(i: number) {
-  this.faqAliase.removeAt(i)
+  this.faqs.removeAt(i)
 }
 
 

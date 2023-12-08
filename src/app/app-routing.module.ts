@@ -8,6 +8,7 @@ import { QuizComponent } from './components/quiz/quiz.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 import { CoursepageComponent } from './components/coursepage/coursepage.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent
   }, 
-
+  { path: 'login', component: LoginComponent},
   {path: 'curr', component: CurriculumComponent},
   {path: 'home', component: HomeComponent},
   {path: 'quiz', component: QuizComponent},
