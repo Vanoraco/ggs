@@ -36,7 +36,7 @@
   </div>
 </header>
 
-<div *ngFor="let course of courseDetail">
+<div *ngFor="let course of courses">
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -48,7 +48,7 @@
       <div
         class="text-3xl md:text-4xl xl:text-start lg:text-start md text-center sm:text-center lg:text-4xl xl:text-5xl font-bold mb-8 txt-main"
       >
-        {{ course.coursename }}
+        {{ course.courseTitle }}
       </div>
 
       <!-- course category and course instructor display section -->
@@ -58,12 +58,12 @@
           <div class="flex items-center mb-8 pr-16">
             <img
               class="w-10 h-10 rounded-full mr-4"
-              src="{{ course.photo }}"
+              src="{{ course.courseDesImg }}"
               alt="photo of teacher"
             />
             <div class="text-sm">
-              <div class="text-gray-600 l">{{ course.role }}</div>
-              <div class="text-black">{{ course.name | uppercase }}</div>
+              <div class="text-gray-600 l">Teacher</div>
+              <div class="text-black">Fasil</div>
             </div>
           </div>
 
@@ -78,7 +78,7 @@
             <div class="text-sm">
               <div class="text-gray-600">Category:</div>
               <div class="text-gray-900">
-                {{ course.category | uppercase }}
+                {{ course.courseCategory | uppercase }}
               </div>
             </div>
           </div>
@@ -94,8 +94,8 @@
               class="pt-10"
               src="https://lms.goodgradestudent.com/wp-content/uploads/2018/08/154833-OUCY4R-62-870x440.jpg "
             />
-            <p class="pt-5">{{ course.description }}</p>
-            <p class="pt-5">{{ course.description }}</p>
+            <p class="pt-5">{{ course.courseDesText }}</p>
+            
           </div>
         </p-tabPanel>
 
@@ -353,7 +353,7 @@
       <div class="">
         <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
-            Enrolled: <label class="font-bold">{{ course.enrolled }}</label>
+            Enrolled: <label class="font-bold">4</label>
           </p>
 
           <i class="pi pi-users text-2xl text-blue-700"></i>
@@ -361,14 +361,14 @@
         <hr class="h-4" />
         <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
-            Duration: <label class="font-bold">{{ course.duration }}</label>
+            Duration: <label class="font-bold">{{ course.courseDuration }}</label>
           </p>
           <i class="pi pi-clock text-2xl text-blue-700"></i>
         </div>
         <hr class="h-5" />
         <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
-            Lectures: <label class="font-bold">{{ course.lectures }}</label>
+            Lectures: <label class="font-bold">11</label>
           </p>
           <i class="pi pi-users text-2xl text-blue-700"></i>
         </div>
@@ -376,7 +376,7 @@
 
         <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
-            Video: <label class="font-bold">{{ course.video }}</label>
+            Video: <label class="font-bold">2</label>
           </p>
           <i class="pi pi-video text-2xl text-blue-700"></i>
         </div>
@@ -384,7 +384,7 @@
 
         <div class="flex justify-between py-3 text-sm txt-main px-3">
           <p class="">
-            Level: <label class="font-bold">{{ course.level }}</label>
+            Level: <label class="font-bold">Beginner</label>
           </p>
           <i class="pi pi-chart-bar text-2xl text-blue-700"></i>
         </div>

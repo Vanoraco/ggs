@@ -4,6 +4,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TabViewModule } from 'primeng/tabview'
 import { DropdownModule } from 'primeng/dropdown';
+import { CourseService } from 'src/app/services/course.service';
+import { Course } from 'src/app/shared/models/Courses';
 
 
 interface Faq {
@@ -113,7 +115,7 @@ export class AddCourseComponent {
   vidLoaded: string[][] = [[]];
   
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private courseService: CourseService) {}
 
   ngOnInit(): void {
     this.courseForm = this.formBuilder.group({
@@ -124,6 +126,7 @@ export class AddCourseComponent {
       text: '',
       parentCategory: '',
       img: '',
+      announce: ''
     });
    
     this.faqForm = this.formBuilder.group({
@@ -238,6 +241,13 @@ addVideoLesson(secIndex: number) {
 submit() {
   console.log({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
                faq: this.faqs.value, section: this.sections().value,ld:this.lessonType, fv: this.vidLoaded, co: this.lessonType.length});
+    
+               this.courseService.courseAdd({title: this.fc['title'].value, cat: this.fc['cat'].value , text: this.fc['text'].value, Acat: this.fc['addCat'].value, img:this.fc['img'].value,
+               faq: this.faqs.value, announce: this.fc['announce'].value, section: this.sections().value}).subscribe()
+
+               
+
+          
 }
 
 addFaq() {
