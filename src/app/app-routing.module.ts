@@ -28,6 +28,7 @@ const routes: Routes = [
   {path:'coursedet', component:CoursedetailComponent},
   {path: 'coursepage', component:CoursepageComponent},
   {path: 'addcourse', component:AddCourseComponent},
+  
 ];
 
 @NgModule({
