@@ -10,6 +10,7 @@ import { Course } from 'src/app/shared/models/Courses';
 export class CoursepageComponent {
   currentView: string = 'grid';
   selectedTab: string = 'Tab 1';
+  visible: boolean = false;
  
   selectedCategories: any[] = [];
   courses: Course[] = [];
@@ -64,5 +65,9 @@ toggleView(view: string): void {
 selectTab(tab: string) {
   this.selectedTab = tab;
 }
+showDialog() {
+  this.visible = true;
+}
+
 
 }
