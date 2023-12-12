@@ -3,6 +3,8 @@ import { Teacher } from "./app/shared/models/Teachers";
 //import { sample_teacher } from ""
 
 
+
+
 export const sample_teacher: Teacher[] = [
     {
         img: './assets/Images/teacher.jpg',

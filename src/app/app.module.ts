@@ -57,6 +57,10 @@ import { PanelModule } from 'primeng/panel';
 import { CheckboxModule } from 'primeng/checkbox';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
+import { MatMenuModule } from '@angular/material/menu';
+import { DialogModule } from 'primeng/dialog';
+
+
 
 
 @NgModule({
@@ -73,6 +77,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     QuizComponent,
     ContactusComponent,
     CoursepageComponent,
+   
+   
 
   ],
   imports: [
@@ -116,7 +122,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     PanelModule,
     CheckboxModule,
     MatAutocompleteModule,
-
+    MatMenuModule,
+    DialogModule,
     RouterModule.forRoot(routeConfig),
   ],
   providers: [],
