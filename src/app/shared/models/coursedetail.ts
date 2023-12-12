@@ -3,8 +3,8 @@ export interface CourseDet {
   coursename: string;
 
   role: string;
-  name: string;
-  photo: string;
+  courseTitle: string;
+  courseDesImg: string;
 
   category: string;
 

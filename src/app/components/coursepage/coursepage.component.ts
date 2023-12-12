@@ -20,7 +20,11 @@ export class CoursepageComponent {
 
     let courseObservable: Observable<Course[]>;
 
+    
     activatedRoute.params.subscribe(() => {
+      
+      courseObservable = courseService.getAll()
+
       courseObservable.subscribe(serverCourses => {
         this.courses = serverCourses
       })
