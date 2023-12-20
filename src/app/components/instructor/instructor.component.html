@@ -1,0 +1,141 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+/>
+
+
+<section class="px-[70px] py-10 flex">
+  <div>
+    <p-tabView class="">
+      <p-tabPanel header="DASHBOARD">
+        <a [routerLink]="['/dashboard']" class="text-blue-600">
+          click here to go to dashboard
+        </a>
+      </p-tabPanel>
+      <p-tabPanel header="ADD COURSE">
+        <a [routerLink]="['/addcourse']"> click here to add course </a>
+      </p-tabPanel>
+      <p-tabPanel header="ENROLLED COURSE">
+        <h1 class="font-bold">Enrolled Courses</h1>
+        <div class="flex justify-between pt-14 w-full">
+          <hr class="h-1 w-1/12 bg-[#385BCE]" />
+          <hr class="h-1 w-10/12 mt-0.5" />
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="MESSAGES">
+        <p>My Messages</p>
+        <div class="flex justify-between pt-14 w-full">
+          <hr class="h-1 w-1/12 bg-[#385BCE]" />
+          <hr class="h-1 w-10/12 mt-0.5" />
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="MEMBERSHIPS">
+        <h1>My Memberships</h1>
+        <div class="flex justify-between pt-14 w-full">
+          <hr class="h-1 w-1/12 bg-[#385BCE]" />
+          <hr class="h-1 w-10/12 mt-0.5" />
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="FAVOURITE COURSES">
+        <h1>Favorite Courses</h1>
+        <div class="flex justify-between pt-14 w-full">
+          <hr class="h-1 w-1/12 bg-[#385BCE]" />
+          <hr class="h-1 w-10/12 mt-0.5" />
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>help_outline</mat-icon>
+        Enrolled Quizzes
+      </button>
+      <button mat-menu-item>
+        <mat-icon>format_list_bulleted</mat-icon>
+        My Order
+      </button>
+    </mat-menu>
+  </div>
+</section>
+
+<div class="flex flex-wrap justify-center lg:justify-start lg:pl-[400px] pb-5">
+  <!-- Facebook Share -->
+  <div class="bg-[#1877F2] w-20 h-5 mr-2 lg:mr-5 rounded mt-1">
+    <p class="text-[#e5edfc] text-center">
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
+      >
+        <i class="fab fa-facebook-f text-blue-600 bg-white rounded-full pl-1"
+          ><span>&nbsp;</span></i
+        >
+        <span>&nbsp;</span>Share
+      </a>
+    </p>
+  </div>
+
+  <!-- Twitter Share -->
+  <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+    <hr class="h-0.5 bg-[#1DCAFF]" />
+    <p class="text-black text-center rounded border border-gray-200">
+      <a
+        href="https://twitter.com/intent/tweet?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
+      >
+        <i class="fab fa-twitter text-[#1DCAFF]"><span>&nbsp;&nbsp;</span></i>
+        Tweet
+      </a>
+    </p>
+  </div>
+
+  <!-- Pinterest Share -->
+  <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+    <hr class="h-0.5 bg-[#C92228]" />
+    <p class="text-black text-center rounded border border-gray-200">
+      <a
+        href="https://pinterest.com/pin/create/button/?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
+      >
+        <i class="fab fa-pinterest text-[#C92228]"><span>&nbsp;&nbsp;</span></i>
+        Share
+      </a>
+    </p>
+  </div>
+
+  <!-- LinkedIn Share -->
+  <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+    <hr class="h-0.5 bg-[#3F729B]" />
+    <p class="text-black text-center rounded border border-gray-200">
+      <a
+        href="http://www.linkedin.com/sharing/share-offsite/?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
+      >
+        <i class="fab fa-linkedin text-[#3F729B]"><span>&nbsp;&nbsp;</span></i>
+        Share
+      </a>
+    </p>
+  </div>
+
+  <!-- Digg Share -->
+  <div class="bg-[#F7F7F7] w-20 h-7 mr-2 lg:mr-5">
+    <hr class="h-0.5 bg-[#2169A8]" />
+    <p class="text-black text-center rounded border border-gray-200">
+      <a
+        href="http://digg.com/submit?url=https://lms.goodgradestudent.com/contact-us/"
+        rel="nofollow"
+        target="_blank"
+      >
+        <i class="fab fa-digg text-[#2169A8]"><span>&nbsp;&nbsp;</span></i>
+        Share
+      </a>
+    </p>
+  </div>
+</div>

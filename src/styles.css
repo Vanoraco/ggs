@@ -34,3 +34,20 @@
 
 
 
+.p-tabview .p-tabview-nav li#sub .p-tabview-nav-link {
+  background: rgb(211, 14, 47);
+  color: black;
+  width: 200px;
+  border-radius: 0%;
+  font-size: small;
+  font-family: "Exo", sans-serif;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight#sub .p-tabview-nav-link {
+  border-top: 3px solid rgb(228, 8, 8);
+  background: white;
+  color: black;
+}
+
+
+
