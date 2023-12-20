@@ -59,6 +59,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { DialogModule } from 'primeng/dialog';
+import { InstructorComponent } from './components/instructor/instructor.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -77,6 +79,8 @@ import { DialogModule } from 'primeng/dialog';
     QuizComponent,
     ContactusComponent,
     CoursepageComponent,
+    InstructorComponent,
+    DashboardComponent,
    
    
 

@@ -9,6 +9,8 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { CoursedetailComponent } from './components/coursedetail/coursedetail.component';
 import { CoursepageComponent } from './components/coursepage/coursepage.component';
 import { LoginComponent } from './components/login/login.component';
+import { InstructorComponent } from './components/instructor/instructor.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -19,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: '', component: HomeComponent
-  }, 
+  },
   { path: 'login', component: LoginComponent},
   {path: 'curr', component: CurriculumComponent},
   {path: 'home', component: HomeComponent},
@@ -28,7 +30,9 @@ const routes: Routes = [
   {path:'coursedet', component:CoursedetailComponent},
   {path: 'coursepage', component:CoursepageComponent},
   {path: 'addcourse', component:AddCourseComponent},
-  
+  {path: 'instructor', component:InstructorComponent},
+  {path: 'dashboard', component:DashboardComponent}
+
 ];
 
 @NgModule({
