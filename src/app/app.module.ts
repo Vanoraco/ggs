@@ -61,6 +61,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { DialogModule } from 'primeng/dialog';
 import { InstructorComponent } from './components/instructor/instructor.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -81,6 +82,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     CoursepageComponent,
     InstructorComponent,
     DashboardComponent,
+    FooterComponent,
    
    
 
